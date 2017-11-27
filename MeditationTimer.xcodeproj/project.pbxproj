@@ -12,6 +12,7 @@
 		F8D7F4E81FCCAAB600FE786B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8D7F4E61FCCAAB600FE786B /* Main.storyboard */; };
 		F8D7F4EA1FCCAAB600FE786B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8D7F4E91FCCAAB600FE786B /* Assets.xcassets */; };
 		F8D7F4ED1FCCAAB600FE786B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8D7F4EB1FCCAAB600FE786B /* LaunchScreen.storyboard */; };
+		F8D7F4F71FCCAADD00FE786B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D7F4F61FCCAADD00FE786B /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,8 @@
 		F8D7F4E91FCCAAB600FE786B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8D7F4EC1FCCAAB600FE786B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8D7F4EE1FCCAAB600FE786B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8D7F4F41FCCAADD00FE786B /* MeditationTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MeditationTimer.entitlements; sourceTree = "<group>"; };
+		F8D7F4F61FCCAADD00FE786B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8D7F4F71FCCAADD00FE786B /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +44,7 @@
 			children = (
 				F8D7F4E11FCCAAB600FE786B /* MeditationTimer */,
 				F8D7F4E01FCCAAB600FE786B /* Products */,
+				F8D7F4F51FCCAADD00FE786B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +59,7 @@
 		F8D7F4E11FCCAAB600FE786B /* MeditationTimer */ = {
 			isa = PBXGroup;
 			children = (
+				F8D7F4F41FCCAADD00FE786B /* MeditationTimer.entitlements */,
 				F8D7F4E21FCCAAB600FE786B /* AppDelegate.swift */,
 				F8D7F4E41FCCAAB600FE786B /* ViewController.swift */,
 				F8D7F4E61FCCAAB600FE786B /* Main.storyboard */,
@@ -62,6 +68,14 @@
 				F8D7F4EE1FCCAAB600FE786B /* Info.plist */,
 			);
 			path = MeditationTimer;
+			sourceTree = "<group>";
+		};
+		F8D7F4F51FCCAADD00FE786B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F8D7F4F61FCCAADD00FE786B /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,6 +111,11 @@
 					F8D7F4DE1FCCAAB600FE786B = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -274,14 +293,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MeditationTimer/MeditationTimer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5QKMCZ8YUJ;
 				INFOPLIST_FILE = MeditationTimer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pm.exo.MeditationTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -289,14 +310,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MeditationTimer/MeditationTimer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5QKMCZ8YUJ;
 				INFOPLIST_FILE = MeditationTimer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pm.exo.MeditationTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
