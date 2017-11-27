@@ -31,13 +31,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How long do you want to meditate?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccQ-fy-kmI">
-                                <rect key="frame" x="25.5" y="96" width="269.5" height="21"/>
+                                <rect key="frame" x="25" y="52" width="270" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.78823529411764703" green="0.792156862745098" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fje-oL-Cj5">
-                                <rect key="frame" x="0.0" y="117" width="320" height="162"/>
+                                <rect key="frame" x="0.0" y="73" width="320" height="162"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="162" id="Vlw-D2-xDh"/>
                                 </constraints>
@@ -82,7 +82,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04:43" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcJ-wZ-NKh">
-                                <rect key="frame" x="75" y="160.5" width="171.5" height="76.5"/>
+                                <rect key="frame" x="74" y="161" width="172" height="76"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="64"/>
                                 <color key="textColor" red="0.78823529411764703" green="0.792156862745098" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -95,7 +95,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0B-4u-s6G">
-                                <rect key="frame" x="144" y="406" width="32" height="30"/>
+                                <rect key="frame" x="144" y="411" width="32" height="30"/>
                                 <state key="normal" title="Stop">
                                     <color key="titleColor" red="0.92941176469999998" green="0.46274509800000002" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -107,9 +107,9 @@
                         <color key="backgroundColor" red="0.1333333333" green="0.14117647059999999" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="S0B-4u-s6G" firstAttribute="centerX" secondItem="f5e-pI-2qR" secondAttribute="centerX" id="012-Ew-L4j"/>
+                            <constraint firstItem="S0B-4u-s6G" firstAttribute="centerY" secondItem="f5e-pI-2qR" secondAttribute="centerY" multiplier="1.5" id="L7E-fe-Id0"/>
                             <constraint firstItem="MiG-9i-unI" firstAttribute="centerY" secondItem="f5e-pI-2qR" secondAttribute="centerY" multiplier="1.25" id="VpD-gc-IxP"/>
                             <constraint firstItem="zcJ-wZ-NKh" firstAttribute="centerY" secondItem="f5e-pI-2qR" secondAttribute="centerY" multiplier="0.7" id="aEA-01-FY0"/>
-                            <constraint firstItem="S0B-4u-s6G" firstAttribute="top" secondItem="MiG-9i-unI" secondAttribute="bottom" constant="16" id="dyo-2q-9IE"/>
                             <constraint firstItem="zcJ-wZ-NKh" firstAttribute="centerX" secondItem="f5e-pI-2qR" secondAttribute="centerX" id="gDF-LB-3AK"/>
                             <constraint firstItem="MiG-9i-unI" firstAttribute="centerX" secondItem="f5e-pI-2qR" secondAttribute="centerX" id="rId-oL-NfQ"/>
                         </constraints>
@@ -313,19 +313,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good Job!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnw-oA-K0G">
-                                <rect key="frame" x="19" y="160.5" width="282" height="76.5"/>
+                                <rect key="frame" x="19" y="161" width="282" height="76"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="64"/>
                                 <color key="textColor" red="0.78823529410000004" green="0.79215686269999996" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meditated for 10 minutes and 55 seconds." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCs-FL-tLB">
-                                <rect key="frame" x="16" y="301" width="288.5" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meditated for 10 minutes and 55 seconds." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCs-FL-tLB">
+                                <rect key="frame" x="16" y="301" width="288" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="SxK-jw-Itr"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.78823529411764703" green="0.792156862745098" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQH-F5-kyw">
-                                <rect key="frame" x="132" y="383" width="57" height="30"/>
+                                <rect key="frame" x="131.5" y="411" width="57" height="30"/>
                                 <state key="normal" title="Go back">
                                     <color key="titleColor" red="0.92941176469999998" green="0.46274509800000002" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -336,12 +339,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.1333333333" green="0.14117647059999999" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="gQH-F5-kyw" firstAttribute="centerY" secondItem="Tpa-aA-UbQ" secondAttribute="centerY" multiplier="1.5" id="FXe-ZY-ylR"/>
                             <constraint firstItem="qnw-oA-K0G" firstAttribute="centerX" secondItem="Tpa-aA-UbQ" secondAttribute="centerX" id="KO1-yB-dol"/>
                             <constraint firstItem="tCs-FL-tLB" firstAttribute="centerX" secondItem="Tpa-aA-UbQ" secondAttribute="centerX" id="Ka3-ab-b0e"/>
                             <constraint firstItem="gQH-F5-kyw" firstAttribute="centerX" secondItem="Tpa-aA-UbQ" secondAttribute="centerX" id="hye-gq-Ze5"/>
                             <constraint firstItem="tCs-FL-tLB" firstAttribute="top" secondItem="qnw-oA-K0G" secondAttribute="bottom" constant="64" id="snt-gW-hOl"/>
                             <constraint firstItem="qnw-oA-K0G" firstAttribute="centerY" secondItem="Tpa-aA-UbQ" secondAttribute="centerY" multiplier="0.7" id="sqr-nG-92b"/>
-                            <constraint firstItem="gQH-F5-kyw" firstAttribute="top" secondItem="tCs-FL-tLB" secondAttribute="bottom" constant="64" id="zq9-jk-aZB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hVo-ax-KjD"/>
                     </view>
