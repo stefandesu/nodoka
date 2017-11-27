@@ -20,6 +20,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    
+    @IBAction func unwindFromSettings(segue: UIStoryboardSegue) {
+        
+    }
+    
+    @IBAction func unwindFromEndscreen(segue: UIStoryboardSegue) {
+        
+    }
 }
 
