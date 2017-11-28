@@ -53,13 +53,18 @@ class StartViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         userDefaults.set(row, forKey: DefaultsKeys.duration.rawValue)
     }
     
-    // MARK: - Handle unwinds
+    // MARK: - Navigation
     @IBAction func unwindFromSettings(segue: UIStoryboardSegue) {
         
     }
-    
     @IBAction func unwindFromEndscreen(segue: UIStoryboardSegue) {
         
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else { return }
+        if identifier == PropertyKeys.startMeditationSegue, let destination = segue.destination as? MeditationViewController {
+            destination.remainingTime = Double(durationPicker.selectedRow(inComponent: 0)) // TODO: * 60 for minutes (seconds for testing)
+        }
     }
 }
 

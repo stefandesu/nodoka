@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="CourierNew.ttf">
+            <string>CourierNewPSMT</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Start View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -19,15 +24,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WK7-d7-rl2">
-                                <rect key="frame" x="85" y="518" width="150" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="frU-0h-2Uv"/>
-                                </constraints>
+                                <rect key="frame" x="119" y="518" width="82" height="30"/>
                                 <state key="normal" title="⚙ Settings">
                                     <color key="titleColor" red="0.92941176470588238" green="0.46274509803921571" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Uel-G7-3PU" kind="show" id="342-Fj-GCC"/>
+                                    <segue destination="Uel-G7-3PU" kind="show" identifier="openSettings" id="342-Fj-GCC"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How long do you want to meditate?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccQ-fy-kmI">
@@ -49,7 +51,7 @@
                                     <color key="titleColor" red="0.92941176470588238" green="0.46274509803921571" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="dnN-SW-0Ui" kind="showDetail" action="showViewController:sender:" id="FqH-KX-luv"/>
+                                    <segue destination="dnN-SW-0Ui" kind="showDetail" identifier="startMeditation" action="showViewController:sender:" id="FqH-KX-luv"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -74,19 +76,19 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="534.375" y="133.09859154929578"/>
+            <point key="canvasLocation" x="248" y="133"/>
         </scene>
-        <!--View Controller-->
+        <!--Meditation View Controller-->
         <scene sceneID="IwJ-zZ-uPU">
             <objects>
-                <viewController id="dnN-SW-0Ui" sceneMemberID="viewController">
+                <viewController id="dnN-SW-0Ui" customClass="MeditationViewController" customModule="MeditationTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f5e-pI-2qR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04:43" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcJ-wZ-NKh">
-                                <rect key="frame" x="74" y="161" width="172" height="76"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                <rect key="frame" x="64" y="163" width="192.5" height="72.5"/>
+                                <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="64"/>
                                 <color key="textColor" red="0.78823529411764703" green="0.792156862745098" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -96,6 +98,9 @@
                                 <state key="normal" title="Pause">
                                     <color key="titleColor" red="0.92941176469999998" green="0.46274509800000002" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="pauseButtonTapped:" destination="dnN-SW-0Ui" eventType="touchUpInside" id="d6Q-GO-hG9"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0B-4u-s6G">
                                 <rect key="frame" x="144" y="411" width="32" height="30"/>
@@ -103,7 +108,7 @@
                                     <color key="titleColor" red="0.92941176469999998" green="0.46274509800000002" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="LD4-wj-dxg" kind="showDetail" action="showViewController:sender:" id="Zad-gW-XKa"/>
+                                    <segue destination="LD4-wj-dxg" kind="showDetail" identifier="endMeditation" action="showViewController:sender:" id="Zad-gW-XKa"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -118,10 +123,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zPr-Qh-vhP"/>
                     </view>
+                    <connections>
+                        <outlet property="durationLabel" destination="zcJ-wZ-NKh" id="fCU-O8-Rg2"/>
+                        <outlet property="pauseButton" destination="MiG-9i-unI" id="azS-aV-4mA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NzS-O4-0oX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1338.75" y="134.1549295774648"/>
+            <point key="canvasLocation" x="941" y="132"/>
         </scene>
         <!--Settings-->
         <scene sceneID="1HN-Fw-NnI">
@@ -289,7 +298,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vS0-li-Kvu" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="hDD-15-QH4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1339" y="943"/>
+            <point key="canvasLocation" x="283" y="881"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HWM-JI-4vg">
@@ -305,12 +314,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UE1-xf-q1l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="534" y="944"/>
+            <point key="canvasLocation" x="-521" y="882"/>
         </scene>
-        <!--View Controller-->
+        <!--Finish View Controller-->
         <scene sceneID="avz-09-dCj">
             <objects>
-                <viewController id="LD4-wj-dxg" sceneMemberID="viewController">
+                <viewController id="LD4-wj-dxg" customClass="FinishViewController" customModule="MeditationTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tpa-aA-UbQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -351,11 +360,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hVo-ax-KjD"/>
                     </view>
+                    <connections>
+                        <outlet property="finalTimeLabel" destination="tCs-FL-tLB" id="5MM-eO-8eQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yra-zb-qbI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="PXi-tH-eih" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2182.5" y="130.98591549295776"/>
+            <point key="canvasLocation" x="1661" y="131"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9Ad-tt-RYK">
@@ -372,7 +384,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c1B-t3-0vv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-287" y="134"/>
+            <point key="canvasLocation" x="-467" y="131"/>
         </scene>
     </scenes>
 </document>
