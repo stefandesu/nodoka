@@ -18,11 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        // set userDefaults standard values
+        // Set userDefaults standard values
         let userDefaultsStandards = [
             DefaultsKeys.duration.rawValue: 5
         ]
         userDefaults.register(defaults: userDefaultsStandards)
+        
+        // Set status bar to white
+        UIApplication.shared.statusBarStyle = .lightContent
         
         return true
     }

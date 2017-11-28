@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		F8867F571FCDAF8900A2C009 /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8867F561FCDAF8900A2C009 /* Themes.swift */; };
 		F8867F591FCDB31D00A2C009 /* DefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8867F581FCDB31D00A2C009 /* DefaultsKeys.swift */; };
+		F8CE06B91FCDCB780000CEAA /* MeditationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CE06B81FCDCB780000CEAA /* MeditationViewController.swift */; };
+		F8CE06BB1FCDCBC60000CEAA /* PropertyKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CE06BA1FCDCBC60000CEAA /* PropertyKeys.swift */; };
+		F8CE06BD1FCDCDDA0000CEAA /* FinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CE06BC1FCDCDDA0000CEAA /* FinishViewController.swift */; };
 		F8D7F4E31FCCAAB600FE786B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D7F4E21FCCAAB600FE786B /* AppDelegate.swift */; };
 		F8D7F4E51FCCAAB600FE786B /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D7F4E41FCCAAB600FE786B /* StartViewController.swift */; };
 		F8D7F4E81FCCAAB600FE786B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8D7F4E61FCCAAB600FE786B /* Main.storyboard */; };
@@ -20,6 +23,9 @@
 /* Begin PBXFileReference section */
 		F8867F561FCDAF8900A2C009 /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
 		F8867F581FCDB31D00A2C009 /* DefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsKeys.swift; sourceTree = "<group>"; };
+		F8CE06B81FCDCB780000CEAA /* MeditationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationViewController.swift; sourceTree = "<group>"; };
+		F8CE06BA1FCDCBC60000CEAA /* PropertyKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyKeys.swift; sourceTree = "<group>"; };
+		F8CE06BC1FCDCDDA0000CEAA /* FinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishViewController.swift; sourceTree = "<group>"; };
 		F8D7F4DF1FCCAAB600FE786B /* MeditationTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeditationTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D7F4E21FCCAAB600FE786B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8D7F4E41FCCAAB600FE786B /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +75,9 @@
 				F8D7F4E41FCCAAB600FE786B /* StartViewController.swift */,
 				F8867F561FCDAF8900A2C009 /* Themes.swift */,
 				F8D7F4E61FCCAAB600FE786B /* Main.storyboard */,
+				F8CE06BC1FCDCDDA0000CEAA /* FinishViewController.swift */,
+				F8CE06B81FCDCB780000CEAA /* MeditationViewController.swift */,
+				F8CE06BA1FCDCBC60000CEAA /* PropertyKeys.swift */,
 				F8D7F4E91FCCAAB600FE786B /* Assets.xcassets */,
 				F8D7F4EB1FCCAAB600FE786B /* LaunchScreen.storyboard */,
 				F8D7F4EE1FCCAAB600FE786B /* Info.plist */,
@@ -163,6 +172,9 @@
 			files = (
 				F8D7F4E51FCCAAB600FE786B /* StartViewController.swift in Sources */,
 				F8867F591FCDB31D00A2C009 /* DefaultsKeys.swift in Sources */,
+				F8CE06BB1FCDCBC60000CEAA /* PropertyKeys.swift in Sources */,
+				F8CE06BD1FCDCDDA0000CEAA /* FinishViewController.swift in Sources */,
+				F8CE06B91FCDCB780000CEAA /* MeditationViewController.swift in Sources */,
 				F8867F571FCDAF8900A2C009 /* Themes.swift in Sources */,
 				F8D7F4E31FCCAAB600FE786B /* AppDelegate.swift in Sources */,
 			);
