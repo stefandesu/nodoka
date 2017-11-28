@@ -14,6 +14,7 @@
 		F8CE06BD1FCDCDDA0000CEAA /* FinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CE06BC1FCDCDDA0000CEAA /* FinishViewController.swift */; };
 		F8CE06BF1FCDD4C00000CEAA /* bell001.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F8CE06BE1FCDD4C00000CEAA /* bell001.mp3 */; };
 		F8CE06C11FCDD5900000CEAA /* AudioHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CE06C01FCDD5900000CEAA /* AudioHelper.swift */; };
+		F8CE06C31FCDD9F80000CEAA /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CE06C21FCDD9F80000CEAA /* SettingsTableViewController.swift */; };
 		F8D7F4E31FCCAAB600FE786B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D7F4E21FCCAAB600FE786B /* AppDelegate.swift */; };
 		F8D7F4E51FCCAAB600FE786B /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D7F4E41FCCAAB600FE786B /* StartViewController.swift */; };
 		F8D7F4E81FCCAAB600FE786B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8D7F4E61FCCAAB600FE786B /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 		F8CE06BC1FCDCDDA0000CEAA /* FinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishViewController.swift; sourceTree = "<group>"; };
 		F8CE06BE1FCDD4C00000CEAA /* bell001.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bell001.mp3; sourceTree = "<group>"; };
 		F8CE06C01FCDD5900000CEAA /* AudioHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioHelper.swift; sourceTree = "<group>"; };
+		F8CE06C21FCDD9F80000CEAA /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		F8D7F4DF1FCCAAB600FE786B /* MeditationTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeditationTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D7F4E21FCCAAB600FE786B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8D7F4E41FCCAAB600FE786B /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				F8D7F4E41FCCAAB600FE786B /* StartViewController.swift */,
 				F8867F561FCDAF8900A2C009 /* Themes.swift */,
 				F8D7F4E61FCCAAB600FE786B /* Main.storyboard */,
+				F8CE06C21FCDD9F80000CEAA /* SettingsTableViewController.swift */,
 				F8CE06BC1FCDCDDA0000CEAA /* FinishViewController.swift */,
 				F8CE06B81FCDCB780000CEAA /* MeditationViewController.swift */,
 				F8CE06C01FCDD5900000CEAA /* AudioHelper.swift */,
@@ -185,6 +188,7 @@
 				F8867F571FCDAF8900A2C009 /* Themes.swift in Sources */,
 				F8CE06C11FCDD5900000CEAA /* AudioHelper.swift in Sources */,
 				F8D7F4E31FCCAAB600FE786B /* AppDelegate.swift in Sources */,
+				F8CE06C31FCDD9F80000CEAA /* SettingsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

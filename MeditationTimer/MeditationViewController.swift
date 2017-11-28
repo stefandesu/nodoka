@@ -62,7 +62,7 @@ class MeditationViewController: UIViewController {
         }
         
         if remainingTime <= 0.0 {
-            // TODO: Play the gong
+            // Play gong and segue to end screen
             AudioHelper.shared.play()
             performSegue(withIdentifier: PropertyKeys.endMeditationSegue, sender: self)
         }
@@ -91,9 +91,9 @@ class MeditationViewController: UIViewController {
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Invalidate timer before anything else
+        // Stop timer before anything else
         stopTimer()
-        // Reenable system idle timer
+        // Re-enable system idle timer
         UIApplication.shared.isIdleTimerDisabled = false
         guard let identifier = segue.identifier else { return }
         if identifier == PropertyKeys.endMeditationSegue, let destination = segue.destination as? FinishViewController {

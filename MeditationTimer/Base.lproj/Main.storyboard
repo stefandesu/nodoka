@@ -135,7 +135,7 @@
         <!--Settings-->
         <scene sceneID="1HN-Fw-NnI">
             <objects>
-                <tableViewController id="Axb-ed-gXc" sceneMemberID="viewController">
+                <tableViewController id="Axb-ed-gXc" customClass="SettingsTableViewController" customModule="MeditationTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="YSh-Uf-yyn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -191,7 +191,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="hcd-CK-Nye">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="hcd-CK-Nye">
                                         <rect key="frame" x="0.0" y="123" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hcd-CK-Nye" id="d2d-kQ-nKT">
@@ -287,7 +287,7 @@
                             <outlet property="delegate" destination="Axb-ed-gXc" id="W9U-HV-ut9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Settings" id="y04-Ua-hh1">
+                    <navigationItem key="navigationItem" title="Settings" largeTitleDisplayMode="never" id="y04-Ua-hh1">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="26h-eK-KLI">
                             <connections>
                                 <segue destination="hDD-15-QH4" kind="unwind" unwindAction="unwindFromSettingsWithSegue:" id="89n-eu-06N"/>
