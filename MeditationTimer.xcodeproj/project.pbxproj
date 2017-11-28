@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F8867F571FCDAF8900A2C009 /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8867F561FCDAF8900A2C009 /* Themes.swift */; };
+		F8867F591FCDB31D00A2C009 /* DefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8867F581FCDB31D00A2C009 /* DefaultsKeys.swift */; };
 		F8D7F4E31FCCAAB600FE786B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D7F4E21FCCAAB600FE786B /* AppDelegate.swift */; };
 		F8D7F4E51FCCAAB600FE786B /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D7F4E41FCCAAB600FE786B /* StartViewController.swift */; };
 		F8D7F4E81FCCAAB600FE786B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8D7F4E61FCCAAB600FE786B /* Main.storyboard */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F8867F561FCDAF8900A2C009 /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
+		F8867F581FCDB31D00A2C009 /* DefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsKeys.swift; sourceTree = "<group>"; };
 		F8D7F4DF1FCCAAB600FE786B /* MeditationTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeditationTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D7F4E21FCCAAB600FE786B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8D7F4E41FCCAAB600FE786B /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -61,7 +65,9 @@
 			children = (
 				F8D7F4F41FCCAADD00FE786B /* MeditationTimer.entitlements */,
 				F8D7F4E21FCCAAB600FE786B /* AppDelegate.swift */,
+				F8867F581FCDB31D00A2C009 /* DefaultsKeys.swift */,
 				F8D7F4E41FCCAAB600FE786B /* StartViewController.swift */,
+				F8867F561FCDAF8900A2C009 /* Themes.swift */,
 				F8D7F4E61FCCAAB600FE786B /* Main.storyboard */,
 				F8D7F4E91FCCAAB600FE786B /* Assets.xcassets */,
 				F8D7F4EB1FCCAAB600FE786B /* LaunchScreen.storyboard */,
@@ -156,6 +162,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8D7F4E51FCCAAB600FE786B /* StartViewController.swift in Sources */,
+				F8867F591FCDB31D00A2C009 /* DefaultsKeys.swift in Sources */,
+				F8867F571FCDAF8900A2C009 /* Themes.swift in Sources */,
 				F8D7F4E31FCCAAB600FE786B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

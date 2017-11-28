@@ -12,10 +12,18 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let userDefaults = UserDefaults.standard
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // set userDefaults standard values
+        let userDefaultsStandards = [
+            DefaultsKeys.duration.rawValue: 5
+        ]
+        userDefaults.register(defaults: userDefaultsStandards)
+        
         return true
     }
 
