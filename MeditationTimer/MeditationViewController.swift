@@ -16,7 +16,7 @@ class MeditationViewController: UIViewController {
     var timeMeditated: TimeInterval = 0
     
     var timer = Timer()
-    
+    var isOpenEnd = false
 
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var pauseButton: UIButton!
@@ -24,7 +24,11 @@ class MeditationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // TODO: Check if remainingTime was set properly, otherwise abort
+        // Check if remainingTime was set properly, otherwise abort
+        guard remainingTime != nil else {
+            navigationController?.popViewController(animated: true)
+            return
+        }
 
         // Set up and start the timer
         startTimer()
@@ -52,19 +56,23 @@ class MeditationViewController: UIViewController {
     }
     
     @objc func timerTick() {
-        remainingTime! -= 1.0
         timeMeditated += 1.0
-        updateLabel()
-        
-        if remainingTime == 2.0 {
-            // Prepare gong sound ahead of time
-            AudioHelper.shared.sound?.prepareToPlay()
-        }
-        
-        if remainingTime <= 0.0 {
-            // Play gong and segue to end screen
-            AudioHelper.shared.play()
-            performSegue(withIdentifier: PropertyKeys.endMeditationSegue, sender: self)
+        if isOpenEnd {
+            remainingTime! += 1.0
+            updateLabel()
+        } else {
+            remainingTime! -= 1.0
+            updateLabel()
+            
+            if remainingTime == 2.0 {
+                // Prepare gong sound ahead of time
+                AudioHelper.shared.sound?.prepareToPlay()
+            }
+            
+            if remainingTime <= 0.0 {
+                // Segue to end screen
+                performSegue(withIdentifier: PropertyKeys.endMeditationSegue, sender: self)
+            }
         }
     }
     
@@ -93,8 +101,11 @@ class MeditationViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Stop timer before anything else
         stopTimer()
+        // Play gong
+        AudioHelper.shared.play()
         // Re-enable system idle timer
         UIApplication.shared.isIdleTimerDisabled = false
+        // Actual preparation for segue
         guard let identifier = segue.identifier else { return }
         if identifier == PropertyKeys.endMeditationSegue, let destination = segue.destination as? FinishViewController {
             destination.finalTimeMeditated = timeMeditated

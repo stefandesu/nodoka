@@ -63,7 +63,9 @@ class StartViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier else { return }
         if identifier == PropertyKeys.startMeditationSegue, let destination = segue.destination as? MeditationViewController {
-            destination.remainingTime = Double(durationPicker.selectedRow(inComponent: 0)) // TODO: * 60 for minutes (seconds for testing)
+            let minutes = durationPicker.selectedRow(inComponent: 0)
+            destination.remainingTime = Double(minutes) // TODO: * 60 for minutes (seconds for testing)
+            destination.isOpenEnd = minutes == 0 ? true : false
         }
     }
 }
