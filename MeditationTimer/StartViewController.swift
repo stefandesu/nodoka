@@ -28,7 +28,7 @@ class StartViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         // Set up UIPickerView
         durationPicker.dataSource = self
         durationPicker.delegate = self
-        durationPicker.selectRow(userDefaults.integer(forKey: DefaultsKeys.duration.rawValue), inComponent: 0, animated: false)
+        durationPicker.selectRow(userDefaults.integer(forKey: DefaultsKeys.duration), inComponent: 0, animated: false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,7 +50,7 @@ class StartViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     
     // MARK: - UIPickerViewDelegate
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        userDefaults.set(row, forKey: DefaultsKeys.duration.rawValue)
+        userDefaults.set(row, forKey: DefaultsKeys.duration)
     }
     
     // MARK: - Navigation

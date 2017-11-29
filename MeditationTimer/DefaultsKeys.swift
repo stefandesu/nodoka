@@ -8,7 +8,9 @@
 
 import Foundation
 
-enum DefaultsKeys: String {
-    case duration = "duration"
+struct DefaultsKeys {
+    static let duration = "duration"
+    static let startGong = "startGong"
+    static let endGong = "endGong"
 }
 
