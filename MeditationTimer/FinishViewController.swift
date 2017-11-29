@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FinishViewController: UIViewController {
+class FinishViewController: ThemedViewController {
 
     @IBOutlet weak var finalTimeLabel: UILabel!
     

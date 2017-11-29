@@ -10,7 +10,7 @@
 
 import UIKit
 
-class MeditationViewController: UIViewController {
+class MeditationViewController: ThemedViewController {
     
     let userDefaults = UserDefaults.standard
     

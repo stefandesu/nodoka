@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StartViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class StartViewController: ThemedViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     let userDefaults = UserDefaults.standard
     

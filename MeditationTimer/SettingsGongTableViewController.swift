@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsGongTableViewController: UITableViewController {
+class SettingsGongTableViewController: ThemedTableViewController {
     
     var currentGong: Int?
     var segueIdentifier: String?
@@ -21,8 +21,6 @@ class SettingsGongTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Table background color
-        tableView.backgroundColor = UIColor(red:0.13, green:0.14, blue:0.15, alpha:1.0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,19 +58,4 @@ class SettingsGongTableViewController: UITableViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        // Set cell theme
-        cell.backgroundColor = UIColor(red:0.20, green:0.21, blue:0.22, alpha:1.0)
-        if cell.selectionStyle != .none {
-            cell.selectionStyle = UITableViewCellSelectionStyle.gray
-        }
-        cell.tintColor = UIColor(red:0.93, green:0.46, blue:0.08, alpha:1.0)
-        
-        // Set theme of all cell labels
-        let labels = ThemeHelper.findAllLabels(view: tableView)
-        for label in labels {
-            label.textColor = UIColor(red:0.79, green:0.79, blue:0.80, alpha:1.0)
-        }
-    }
-
 }
