@@ -12,6 +12,8 @@ import UIKit
 
 class MeditationViewController: UIViewController {
     
+    let userDefaults = UserDefaults.standard
+    
     var remainingTime: TimeInterval!
     var timeMeditated: TimeInterval = 0
     
@@ -35,9 +37,12 @@ class MeditationViewController: UIViewController {
         updateLabel()
         
         // Play starting gong
-        // TODO: Read gong sound settings from UserDefaults
         // AudioHelper.shared.configureAudioPlayer(with: ...)
-        AudioHelper.shared.play()
+        let startGong = userDefaults.integer(forKey: DefaultsKeys.startGong)
+        if startGong != 0 {
+            AudioHelper.shared.configureAudioPlayer(with: startGong)
+            AudioHelper.shared.play()
+        }
         
         // Disable system idle timer
         UIApplication.shared.isIdleTimerDisabled = true
@@ -63,11 +68,6 @@ class MeditationViewController: UIViewController {
         } else {
             remainingTime! -= 1.0
             updateLabel()
-            
-            if remainingTime == 2.0 {
-                // Prepare gong sound ahead of time
-                AudioHelper.shared.sound?.prepareToPlay()
-            }
             
             if remainingTime <= 0.0 {
                 // Segue to end screen
@@ -102,7 +102,11 @@ class MeditationViewController: UIViewController {
         // Stop timer before anything else
         stopTimer()
         // Play gong
-        AudioHelper.shared.play()
+        let endGong = userDefaults.integer(forKey: DefaultsKeys.endGong)
+        if endGong != 0 {
+            AudioHelper.shared.configureAudioPlayer(with: endGong)
+            AudioHelper.shared.play()
+        }
         // Re-enable system idle timer
         UIApplication.shared.isIdleTimerDisabled = false
         // Actual preparation for segue

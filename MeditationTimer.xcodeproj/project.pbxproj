@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F84E7F641FCF342600BF9320 /* SettingsGongTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E7F631FCF342600BF9320 /* SettingsGongTableViewController.swift */; };
+		F84E7F661FCF3A1500BF9320 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E7F651FCF3A1500BF9320 /* ThemeHelper.swift */; };
 		F8867F571FCDAF8900A2C009 /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8867F561FCDAF8900A2C009 /* Themes.swift */; };
 		F8867F591FCDB31D00A2C009 /* DefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8867F581FCDB31D00A2C009 /* DefaultsKeys.swift */; };
 		F8CE06B91FCDCB780000CEAA /* MeditationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CE06B81FCDCB780000CEAA /* MeditationViewController.swift */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F84E7F631FCF342600BF9320 /* SettingsGongTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGongTableViewController.swift; sourceTree = "<group>"; };
+		F84E7F651FCF3A1500BF9320 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 		F8867F561FCDAF8900A2C009 /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
 		F8867F581FCDB31D00A2C009 /* DefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsKeys.swift; sourceTree = "<group>"; };
 		F8CE06B81FCDCB780000CEAA /* MeditationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationViewController.swift; sourceTree = "<group>"; };
@@ -81,7 +85,9 @@
 				F8D7F4E41FCCAAB600FE786B /* StartViewController.swift */,
 				F8867F561FCDAF8900A2C009 /* Themes.swift */,
 				F8D7F4E61FCCAAB600FE786B /* Main.storyboard */,
+				F84E7F631FCF342600BF9320 /* SettingsGongTableViewController.swift */,
 				F8CE06C21FCDD9F80000CEAA /* SettingsTableViewController.swift */,
+				F84E7F651FCF3A1500BF9320 /* ThemeHelper.swift */,
 				F8CE06BC1FCDCDDA0000CEAA /* FinishViewController.swift */,
 				F8CE06B81FCDCB780000CEAA /* MeditationViewController.swift */,
 				F8CE06C01FCDD5900000CEAA /* AudioHelper.swift */,
@@ -183,10 +189,12 @@
 				F8D7F4E51FCCAAB600FE786B /* StartViewController.swift in Sources */,
 				F8867F591FCDB31D00A2C009 /* DefaultsKeys.swift in Sources */,
 				F8CE06BB1FCDCBC60000CEAA /* PropertyKeys.swift in Sources */,
+				F84E7F641FCF342600BF9320 /* SettingsGongTableViewController.swift in Sources */,
 				F8CE06BD1FCDCDDA0000CEAA /* FinishViewController.swift in Sources */,
 				F8CE06B91FCDCB780000CEAA /* MeditationViewController.swift in Sources */,
 				F8867F571FCDAF8900A2C009 /* Themes.swift in Sources */,
 				F8CE06C11FCDD5900000CEAA /* AudioHelper.swift in Sources */,
+				F84E7F661FCF3A1500BF9320 /* ThemeHelper.swift in Sources */,
 				F8D7F4E31FCCAAB600FE786B /* AppDelegate.swift in Sources */,
 				F8CE06C31FCDD9F80000CEAA /* SettingsTableViewController.swift in Sources */,
 			);

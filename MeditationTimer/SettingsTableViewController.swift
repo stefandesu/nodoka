@@ -9,7 +9,14 @@
 import UIKit
 
 class SettingsTableViewController: UITableViewController {
-
+    
+    let userDefaults = UserDefaults.standard
+    
+    var startGong: Int = 0
+    var endGong: Int = 0
+    @IBOutlet weak var startGongLabel: UILabel!
+    @IBOutlet weak var endGongLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +29,27 @@ class SettingsTableViewController: UITableViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor(red:0.79, green:0.79, blue:0.80, alpha:1.0)]
         // Navigation bar button (tint) color
         navigationController?.navigationBar.tintColor = UIColor(red:0.93, green:0.46, blue:0.08, alpha:1.0)
+        
+        // Load current settings from defaults
+        startGong = userDefaults.integer(forKey: DefaultsKeys.startGong)
+        endGong = userDefaults.integer(forKey: DefaultsKeys.endGong)
+        
+        
+        updateLabels()
+    }
+    
+    func updateLabels() {
+        // Gong labels
+        if startGong == 0 {
+            startGongLabel.text = "None"
+        } else {
+            startGongLabel.text = "\(startGong)"
+        }
+        if endGong == 0 {
+            endGongLabel.text = "None"
+        } else {
+            endGongLabel.text = "\(endGong)"
+        }
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -32,7 +60,7 @@ class SettingsTableViewController: UITableViewController {
         }
         
         // Set theme of all cell labels
-        let labels = findAllLabels(view: tableView)
+        let labels = ThemeHelper.findAllLabels(view: tableView)
         for label in labels {
             label.textColor = UIColor(red:0.79, green:0.79, blue:0.80, alpha:1.0)
         }
@@ -42,16 +70,30 @@ class SettingsTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    func findAllLabels(view: UIView, currentDepth: Int = 0, maxDepth: Int = 3) -> [UILabel] {
-        guard currentDepth <= maxDepth else { return [UILabel]() }
-        
-        // Determine all UILabels on current layer
-        var labels = view.subviews.flatMap { $0 as? UILabel }
-        // Add all UILabels on next layer
-        for subview in view.subviews {
-            labels += findAllLabels(view: subview, currentDepth: currentDepth + 1, maxDepth: maxDepth)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else { return }
+        if identifier == PropertyKeys.settingsGongStartSegue || identifier == PropertyKeys.settingsGongEndSegue {
+            if let destination = segue.destination as? SettingsGongTableViewController {
+                if identifier == PropertyKeys.settingsGongStartSegue {
+                    destination.currentGong = startGong
+                } else {
+                    destination.currentGong = endGong
+                }
+                destination.delegate = self
+                destination.segueIdentifier = identifier
+            }
         }
-        return labels
+    }
+    
+    func setGong(_ gong: Int, for identifier: String) {
+        if identifier == PropertyKeys.settingsGongStartSegue {
+            startGong = gong
+            userDefaults.set(gong, forKey: DefaultsKeys.startGong)
+        } else {
+            endGong = gong
+            userDefaults.set(gong, forKey: DefaultsKeys.endGong)
+        }
+        updateLabels()
     }
 
     override func didReceiveMemoryWarning() {

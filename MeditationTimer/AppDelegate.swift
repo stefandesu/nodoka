@@ -20,7 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Set userDefaults standard values
         let userDefaultsStandards = [
-            DefaultsKeys.duration.rawValue: 5
+            DefaultsKeys.duration: 5,
+            DefaultsKeys.startGong: 1,
+            DefaultsKeys.endGong: 1
         ]
         userDefaults.register(defaults: userDefaultsStandards)
         
