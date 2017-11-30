@@ -12,8 +12,10 @@ import AVFoundation
 class AudioHelper: NSObject, AVAudioPlayerDelegate {
     
     static let shared = AudioHelper()
+    static let availableSounds = [1]
     
-    var sound: AVAudioPlayer?
+    var sounds: [Int: AVAudioPlayer?] = [:]
+    
     
     static func setAudioSession(to status: Bool) {
         // make sure sound plays even on mute
@@ -37,12 +39,21 @@ class AudioHelper: NSObject, AVAudioPlayerDelegate {
     
     override init() {
         super.init()
-        configureAudioPlayer(with: 1)
+        for sound in AudioHelper.availableSounds {
+            configureAudioPlayer(with: sound)
+        }
     }
     
-    func play() {
+    func play(_ bellNumber: Int) {
         AudioHelper.setAudioSession(to: true)
-        sound?.play()
+        sounds[bellNumber]??.play()
+    }
+    func stop() {
+        AudioHelper.setAudioSession(to: false)
+        for sound in AudioHelper.availableSounds {
+            sounds[sound]??.stop()
+            sounds[sound]??.currentTime = 0
+        }
     }
     
     func configureAudioPlayer(with bellNumber: Int) {
@@ -56,9 +67,9 @@ class AudioHelper: NSObject, AVAudioPlayerDelegate {
         filename += "\(bellNumber).mp3"
         if let path = Bundle.main.path(forResource: filename, ofType:nil) {
             let url = URL(fileURLWithPath: path)
-            sound = try? AVAudioPlayer(contentsOf: url)
-            sound?.delegate = self
-            sound?.volume = 0.3
+            sounds[bellNumber] = try? AVAudioPlayer(contentsOf: url)
+            sounds[bellNumber]??.delegate = self
+            sounds[bellNumber]??.volume = 0.3
         }
     }
 

@@ -47,6 +47,8 @@ class SettingsGongTableViewController: ThemedTableViewController {
         cell.textLabel?.text = gongs[indexPath.row]
         if indexPath.row == currentGong! {
             cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
         }
 
         return cell
@@ -55,7 +57,17 @@ class SettingsGongTableViewController: ThemedTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         delegate?.setGong(indexPath.row, for: segueIdentifier!)
-        navigationController?.popViewController(animated: true)
+        currentGong = indexPath.row
+        // Play gong as preview
+        AudioHelper.shared.stop()
+        if currentGong != 0 {
+            AudioHelper.shared.play(currentGong!)
+        }
+        tableView.reloadData()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        AudioHelper.shared.stop()
     }
     
 }

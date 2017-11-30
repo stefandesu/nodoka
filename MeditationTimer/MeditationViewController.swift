@@ -40,8 +40,8 @@ class MeditationViewController: ThemedViewController {
         // AudioHelper.shared.configureAudioPlayer(with: ...)
         let startGong = userDefaults.integer(forKey: DefaultsKeys.startGong)
         if startGong != 0 {
-            AudioHelper.shared.configureAudioPlayer(with: startGong)
-            AudioHelper.shared.play()
+            AudioHelper.shared.stop()
+            AudioHelper.shared.play(startGong)
         }
         
         // Disable system idle timer
@@ -104,8 +104,8 @@ class MeditationViewController: ThemedViewController {
         // Play gong
         let endGong = userDefaults.integer(forKey: DefaultsKeys.endGong)
         if endGong != 0 {
-            AudioHelper.shared.configureAudioPlayer(with: endGong)
-            AudioHelper.shared.play()
+            AudioHelper.shared.stop()
+            AudioHelper.shared.play(endGong)
         }
         // Re-enable system idle timer
         UIApplication.shared.isIdleTimerDisabled = false
