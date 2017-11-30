@@ -21,10 +21,8 @@ class AudioHelper: NSObject, AVAudioPlayerDelegate {
         // make sure sound plays even on mute
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
-            print("AVAudioSession Category Playback OK")
             do {
                 try AVAudioSession.sharedInstance().setActive(status)
-                print("AVAudioSession is Active")
             } catch _ as NSError {
                 // print(error.localizedDescription)
             }
@@ -64,12 +62,12 @@ class AudioHelper: NSObject, AVAudioPlayerDelegate {
         } else if bellNumber < 100 {
             filename += "0"
         }
-        filename += "\(bellNumber).mp3"
-        if let path = Bundle.main.path(forResource: filename, ofType:nil) {
-            let url = URL(fileURLWithPath: path)
-            sounds[bellNumber] = try? AVAudioPlayer(contentsOf: url)
+        filename += "\(bellNumber)"
+        if let sound = NSDataAsset(name: filename) {
+            sounds[bellNumber] = try? AVAudioPlayer(data: sound.data, fileTypeHint: AVFileType.mp3.rawValue)
             sounds[bellNumber]??.delegate = self
             sounds[bellNumber]??.volume = 0.3
+            sounds[bellNumber]??.prepareToPlay()
         }
     }
 

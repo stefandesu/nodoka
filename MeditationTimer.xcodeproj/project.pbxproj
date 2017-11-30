@@ -17,7 +17,6 @@
 		F8CE06B91FCDCB780000CEAA /* MeditationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CE06B81FCDCB780000CEAA /* MeditationViewController.swift */; };
 		F8CE06BB1FCDCBC60000CEAA /* PropertyKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CE06BA1FCDCBC60000CEAA /* PropertyKeys.swift */; };
 		F8CE06BD1FCDCDDA0000CEAA /* FinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CE06BC1FCDCDDA0000CEAA /* FinishViewController.swift */; };
-		F8CE06BF1FCDD4C00000CEAA /* bell001.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F8CE06BE1FCDD4C00000CEAA /* bell001.mp3 */; };
 		F8CE06C11FCDD5900000CEAA /* AudioHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CE06C01FCDD5900000CEAA /* AudioHelper.swift */; };
 		F8CE06C31FCDD9F80000CEAA /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CE06C21FCDD9F80000CEAA /* SettingsTableViewController.swift */; };
 		F8D7F4E31FCCAAB600FE786B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D7F4E21FCCAAB600FE786B /* AppDelegate.swift */; };
@@ -39,7 +38,6 @@
 		F8CE06B81FCDCB780000CEAA /* MeditationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationViewController.swift; sourceTree = "<group>"; };
 		F8CE06BA1FCDCBC60000CEAA /* PropertyKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyKeys.swift; sourceTree = "<group>"; };
 		F8CE06BC1FCDCDDA0000CEAA /* FinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishViewController.swift; sourceTree = "<group>"; };
-		F8CE06BE1FCDD4C00000CEAA /* bell001.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bell001.mp3; sourceTree = "<group>"; };
 		F8CE06C01FCDD5900000CEAA /* AudioHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioHelper.swift; sourceTree = "<group>"; };
 		F8CE06C21FCDD9F80000CEAA /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		F8D7F4DF1FCCAAB600FE786B /* MeditationTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeditationTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +63,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F881AF4A1FD0420700941850 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				F8867F561FCDAF8900A2C009 /* Themes.swift */,
+				F84E7F6D1FCF642600BF9320 /* ThemedUISwitch.swift */,
+				F84E7F691FCF5C2D00BF9320 /* ThemedViewController.swift */,
+				F84E7F671FCF59E600BF9320 /* ThemedTableViewController.swift */,
+				F84E7F651FCF3A1500BF9320 /* ThemeHelper.swift */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
+		F881AF4B1FD0422F00941850 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F8D7F4E21FCCAAB600FE786B /* AppDelegate.swift */,
+				F8867F581FCDB31D00A2C009 /* DefaultsKeys.swift */,
+				F8CE06C01FCDD5900000CEAA /* AudioHelper.swift */,
+				F8CE06BA1FCDCBC60000CEAA /* PropertyKeys.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		F881AF4C1FD0424000941850 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F8D7F4E41FCCAAB600FE786B /* StartViewController.swift */,
+				F84E7F631FCF342600BF9320 /* SettingsGongTableViewController.swift */,
+				F8CE06C21FCDD9F80000CEAA /* SettingsTableViewController.swift */,
+				F8CE06BC1FCDCDDA0000CEAA /* FinishViewController.swift */,
+				F8CE06B81FCDCB780000CEAA /* MeditationViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		F8D7F4D61FCCAAB600FE786B = {
 			isa = PBXGroup;
 			children = (
@@ -86,25 +119,13 @@
 			isa = PBXGroup;
 			children = (
 				F8D7F4F41FCCAADD00FE786B /* MeditationTimer.entitlements */,
-				F8D7F4E21FCCAAB600FE786B /* AppDelegate.swift */,
-				F8867F581FCDB31D00A2C009 /* DefaultsKeys.swift */,
-				F8D7F4E41FCCAAB600FE786B /* StartViewController.swift */,
-				F8867F561FCDAF8900A2C009 /* Themes.swift */,
-				F8D7F4E61FCCAAB600FE786B /* Main.storyboard */,
-				F84E7F6D1FCF642600BF9320 /* ThemedUISwitch.swift */,
-				F84E7F631FCF342600BF9320 /* SettingsGongTableViewController.swift */,
-				F8CE06C21FCDD9F80000CEAA /* SettingsTableViewController.swift */,
-				F84E7F691FCF5C2D00BF9320 /* ThemedViewController.swift */,
-				F84E7F671FCF59E600BF9320 /* ThemedTableViewController.swift */,
-				F84E7F651FCF3A1500BF9320 /* ThemeHelper.swift */,
-				F8CE06BC1FCDCDDA0000CEAA /* FinishViewController.swift */,
-				F8CE06B81FCDCB780000CEAA /* MeditationViewController.swift */,
-				F8CE06C01FCDD5900000CEAA /* AudioHelper.swift */,
-				F8CE06BA1FCDCBC60000CEAA /* PropertyKeys.swift */,
-				F8CE06BE1FCDD4C00000CEAA /* bell001.mp3 */,
-				F8D7F4E91FCCAAB600FE786B /* Assets.xcassets */,
-				F8D7F4EB1FCCAAB600FE786B /* LaunchScreen.storyboard */,
 				F8D7F4EE1FCCAAB600FE786B /* Info.plist */,
+				F8D7F4E91FCCAAB600FE786B /* Assets.xcassets */,
+				F8D7F4E61FCCAAB600FE786B /* Main.storyboard */,
+				F8D7F4EB1FCCAAB600FE786B /* LaunchScreen.storyboard */,
+				F881AF4B1FD0422F00941850 /* Utilities */,
+				F881AF4C1FD0424000941850 /* View Controllers */,
+				F881AF4A1FD0420700941850 /* Themes */,
 			);
 			path = MeditationTimer;
 			sourceTree = "<group>";
@@ -182,7 +203,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8D7F4ED1FCCAAB600FE786B /* LaunchScreen.storyboard in Resources */,
-				F8CE06BF1FCDD4C00000CEAA /* bell001.mp3 in Resources */,
 				F8D7F4EA1FCCAAB600FE786B /* Assets.xcassets in Resources */,
 				F8D7F4E81FCCAAB600FE786B /* Main.storyboard in Resources */,
 			);

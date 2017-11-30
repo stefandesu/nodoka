@@ -29,6 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Set status bar to white
         UIApplication.shared.statusBarStyle = .lightContent
         
+        // Force initialization of shared AudioHelper instance
+        AudioHelper.shared.stop()
+        
         return true
     }
 
