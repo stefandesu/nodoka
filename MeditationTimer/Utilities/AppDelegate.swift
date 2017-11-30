@@ -24,7 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             DefaultsKeys.startGong: 1,
             DefaultsKeys.endGong: 1,
             DefaultsKeys.theme: Theme.availableThemes.first!,
-            DefaultsKeys.healthKitEnabled: false
+            DefaultsKeys.healthKitEnabled: false,
+            DefaultsKeys.changedBrightness: true
         ]
         userDefaults.register(defaults: userDefaultsStandards)
         

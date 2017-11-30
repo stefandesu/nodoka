@@ -14,5 +14,6 @@ struct DefaultsKeys {
     static let endGong = "endGong"
     static let theme = "theme"
     static let healthKitEnabled = "healthKitEnabled"
+    static let changedBrightness = "changedBrightness"
 }
 

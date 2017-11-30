@@ -446,7 +446,7 @@
         <!--Advanced Options-->
         <scene sceneID="WLO-97-zgU">
             <objects>
-                <tableViewController title="Advanced Options" id="7kN-AY-XOd" customClass="ThemedTableViewController" customModule="MeditationTimer" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Advanced Options" id="7kN-AY-XOd" customClass="SettingsAdvancedTableViewController" customModule="MeditationTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="fXp-KV-WTs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -454,28 +454,36 @@
                         <sections>
                             <tableViewSection id="12F-WN-CUI">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Bdc-Gb-WGO">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="jCc-Kz-bNy">
                                         <rect key="frame" x="0.0" y="35" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bdc-Gb-WGO" id="9pf-Ly-5YB">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jCc-Kz-bNy" id="jfO-yD-PnY">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="3DC-GZ-6AJ">
-                                        <rect key="frame" x="0.0" y="79" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3DC-GZ-6AJ" id="Zhv-QZ-ABD">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="MPW-Oa-0Py">
-                                        <rect key="frame" x="0.0" y="123" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MPW-Oa-0Py" id="VTA-rq-RWh">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bEq-9k-3h2">
+                                                    <rect key="frame" x="16" y="6" width="288" height="31"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dim screen during meditation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9e1-UL-M4m">
+                                                            <rect key="frame" x="0.0" y="0.0" width="239" height="31"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="05a-pt-Alo" customClass="ThemedUISwitch" customModule="MeditationTimer" customModuleProvider="target">
+                                                            <rect key="frame" x="239" y="0.0" width="51" height="31"/>
+                                                            <connections>
+                                                                <action selector="brightnessSwitchChanged:" destination="7kN-AY-XOd" eventType="valueChanged" id="1of-eK-3S5"/>
+                                                            </connections>
+                                                        </switch>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bEq-9k-3h2" firstAttribute="centerY" secondItem="jfO-yD-PnY" secondAttribute="centerY" id="Xzd-zi-FDl"/>
+                                                <constraint firstItem="bEq-9k-3h2" firstAttribute="leading" secondItem="jfO-yD-PnY" secondAttribute="leading" constant="16" id="esI-TT-Ioa"/>
+                                                <constraint firstAttribute="trailing" secondItem="bEq-9k-3h2" secondAttribute="trailing" constant="16" id="rDz-XW-nmd"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -486,6 +494,9 @@
                             <outlet property="delegate" destination="7kN-AY-XOd" id="6jv-CR-NJe"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="brightnessSwitch" destination="05a-pt-Alo" id="XRJ-ny-vt4"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PzA-2b-efk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

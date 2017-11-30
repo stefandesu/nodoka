@@ -17,6 +17,11 @@ class FinishViewController: ThemedViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // restore view alpha
+        UIView.animate(withDuration: 3, delay: 0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+            self.view.alpha = 1.0
+        }, completion: nil)
 
         // Set the label
         if let finalTimeMeditated = finalTimeMeditated {

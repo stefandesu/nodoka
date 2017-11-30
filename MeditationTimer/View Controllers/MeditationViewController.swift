@@ -6,8 +6,6 @@
 //  Copyright © 2017 Stefan Peters. All rights reserved.
 //
 
-// TODO: Support for open end sessions
-
 import UIKit
 
 class MeditationViewController: ThemedViewController {
@@ -16,6 +14,7 @@ class MeditationViewController: ThemedViewController {
     
     var remainingTime: TimeInterval!
     var timeMeditated: TimeInterval = 0
+    var previousBrightness = CGFloat(0.5)
     
     var timer = Timer()
     var isOpenEnd = false
@@ -46,6 +45,14 @@ class MeditationViewController: ThemedViewController {
         
         // Disable system idle timer
         UIApplication.shared.isIdleTimerDisabled = true
+        
+        // Screen brightness
+        if userDefaults.bool(forKey: DefaultsKeys.changedBrightness) {
+            previousBrightness = UIScreen.main.brightness
+            if previousBrightness > 0.1 {
+                UIScreen.main.setBrightness(0.1, animated: true)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -109,6 +116,10 @@ class MeditationViewController: ThemedViewController {
         }
         // Re-enable system idle timer
         UIApplication.shared.isIdleTimerDisabled = false
+        // Readjust screen brightness
+        if userDefaults.bool(forKey: DefaultsKeys.changedBrightness) {
+            UIScreen.main.setBrightness(previousBrightness, animated: true)
+        }
         // Actual preparation for segue
         guard let identifier = segue.identifier else { return }
         if identifier == PropertyKeys.endMeditationSegue, let destination = segue.destination as? FinishViewController {
