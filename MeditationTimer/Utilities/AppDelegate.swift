@@ -35,6 +35,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Force initialization of shared AudioHelper instance
         AudioHelper.shared.stop()
         
+        // Create sessions folder for persistence if it doesn't exist
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        var isDir : ObjCBool = false
+        let archivePath = documentsDirectory.appendingPathComponent("sessions").path
+        if !FileManager.default.fileExists(atPath: archivePath, isDirectory: &isDir) {
+            try? FileManager.default.createDirectory(atPath: archivePath, withIntermediateDirectories: false, attributes: nil)
+        }
+        
         return true
     }
 

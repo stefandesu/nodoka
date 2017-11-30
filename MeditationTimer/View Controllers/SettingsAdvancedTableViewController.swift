@@ -22,4 +22,14 @@ class SettingsAdvancedTableViewController: ThemedTableViewController {
     @IBAction func brightnessSwitchChanged(_ sender: UISwitch) {
         userDefaults.set(brightnessSwitch.isOn, forKey: DefaultsKeys.changedBrightness)
     }
+    
+    @IBAction func debugDeleteSavedSessions(_ sender: Any) {
+        let result = MeditationSession.deleteAllSessions()
+        let message = result ? "Sessions deleted." : "An error occured."
+        let alertController = UIAlertController(title: "Deleting Sessions", message: message, preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+        alertController.addAction(okayAction)
+        present(alertController, animated: false, completion: nil)
+    }
+    
 }

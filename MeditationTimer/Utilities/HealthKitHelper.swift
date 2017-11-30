@@ -59,17 +59,20 @@ class HealthKitHelper {
         }
     }
     
-    func writeMindfulnessData(delegate: HealthKitHelperDelegate?, date: Date, duration: TimeInterval) {
+    func writeMindfulnessData(delegate: HealthKitHelperDelegate?, session: MeditationSession) {
         guard let healthStore = healthStore, let sampleType = HKSampleType.categoryType(forIdentifier: HKCategoryTypeIdentifier.mindfulSession), checkAuthorizationStatus(delegate: nil) == HKAuthorizationStatus.sharingAuthorized else {
             delegate?.healthKitWriteComplete(status: false)
             print("Health Kit write failed.")
             return
         }
-        let sample = HKCategorySample(type: sampleType, value: HKCategoryValue.notApplicable.rawValue, start: date.addingTimeInterval(-duration), end: date)
+        let sample = HKCategorySample(type: sampleType, value: HKCategoryValue.notApplicable.rawValue, start: session.date.addingTimeInterval(-session.duration), end: session.date)
         healthStore.save(sample, withCompletion: { (result, error) in
             delegate?.healthKitWriteComplete(status: result)
             if result {
                 print("Health Kit data successfully written!")
+                var session = session
+                session.savedToHealth = true
+                session.save()
             } else {
                 print("Health Kit write failed.")
             }

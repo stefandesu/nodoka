@@ -30,10 +30,13 @@ class FinishViewController: ThemedViewController {
             let minutePad = minutes == 1 ? "" : "s"
             let secondPad = seconds == 1 ? "" : "s"
             finalTimeLabel.text = "Meditated for \(minutes) minute\(minutePad) and \(seconds) second\(secondPad)."
+            // Create MeditationSession object and save to disk
+            let session = MeditationSession(date: Date(), duration: finalTimeMeditated)
+            session.save()
             // Write to Apple Health
             if userDefaults.bool(forKey: DefaultsKeys.healthKitEnabled) {
                 HealthKitHelper.healthQueue.async {
-                    HealthKitHelper.shared.writeMindfulnessData(delegate: nil, date: Date(), duration: finalTimeMeditated)
+                    HealthKitHelper.shared.writeMindfulnessData(delegate: nil, session: session)
                 }
             }
         } else {

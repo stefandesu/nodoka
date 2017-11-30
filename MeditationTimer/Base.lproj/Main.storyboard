@@ -488,6 +488,32 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Debug" id="ieJ-ha-nEh">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="nRC-yf-8qs">
+                                        <rect key="frame" x="0.0" y="135" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nRC-yf-8qs" id="uS0-CU-Azd">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNS-xe-tui">
+                                                    <rect key="frame" x="16" y="6" width="288" height="30"/>
+                                                    <state key="normal" title="Delete locally saved meditation sessions"/>
+                                                    <connections>
+                                                        <action selector="debugDeleteSavedSessions:" destination="7kN-AY-XOd" eventType="touchUpInside" id="ENt-GP-dSt"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="kNS-xe-tui" firstAttribute="centerY" secondItem="uS0-CU-Azd" secondAttribute="centerY" id="Hat-Uh-ZUF"/>
+                                                <constraint firstAttribute="trailing" secondItem="kNS-xe-tui" secondAttribute="trailing" constant="16" id="ng9-PT-zPl"/>
+                                                <constraint firstItem="kNS-xe-tui" firstAttribute="leading" secondItem="uS0-CU-Azd" secondAttribute="leading" constant="16" id="xTj-Bj-QDr"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="7kN-AY-XOd" id="uTx-Om-T1s"/>
