@@ -21,7 +21,7 @@ class ThemedUISwitch: UISwitch {
     }
     
     func setUpTheme() {
-        onTintColor = UIColor(red:0.93, green:0.46, blue:0.08, alpha:1.0)
+        onTintColor = Theme.currentTheme.accent
     }
     
 }

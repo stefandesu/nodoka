@@ -19,15 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         // Set userDefaults standard values
-        let userDefaultsStandards = [
+        let userDefaultsStandards: [String: Any] = [
             DefaultsKeys.duration: 5,
             DefaultsKeys.startGong: 1,
-            DefaultsKeys.endGong: 1
+            DefaultsKeys.endGong: 1,
+            DefaultsKeys.theme: Theme.availableThemes.first!,
+            DefaultsKeys.healthKitEnabled: false
         ]
         userDefaults.register(defaults: userDefaultsStandards)
         
         // Set status bar to white
-        UIApplication.shared.statusBarStyle = .lightContent
+        UIApplication.shared.statusBarStyle = Theme.currentTheme.statusBar
         
         // Force initialization of shared AudioHelper instance
         AudioHelper.shared.stop()

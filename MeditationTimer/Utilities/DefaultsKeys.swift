@@ -12,5 +12,7 @@ struct DefaultsKeys {
     static let duration = "duration"
     static let startGong = "startGong"
     static let endGong = "endGong"
+    static let theme = "theme"
+    static let healthKitEnabled = "healthKitEnabled"
 }
 

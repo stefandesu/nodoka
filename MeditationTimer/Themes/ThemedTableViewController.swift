@@ -9,34 +9,58 @@
 import UIKit
 
 class ThemedTableViewController: UITableViewController {
+    
+    @IBOutlet var themedLabels: [UILabel] = []
+    @IBOutlet var themedButtons: [UIButton] = []
+    @IBOutlet var themedSwitches: [UISwitch] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setUpTheme()
+    }
+    
+    func setUpTheme() {
         // Set table view theme
         // Table background color
-        tableView.backgroundColor = UIColor(red:0.13, green:0.14, blue:0.15, alpha:1.0)
+        tableView.backgroundColor = Theme.currentTheme.background
         // Navigation bar background (bar tint) color
-        navigationController?.navigationBar.barTintColor = UIColor(red:0.06, green:0.07, blue:0.08, alpha:1.0)
+        navigationController?.navigationBar.barTintColor = Theme.currentTheme.nagivationBar
         // Navigation bar title text color
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor(red:0.79, green:0.79, blue:0.80, alpha:1.0)]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: Theme.currentTheme.text]
         // Navigation bar button (tint) color
-        navigationController?.navigationBar.tintColor = UIColor(red:0.93, green:0.46, blue:0.08, alpha:1.0)
+        navigationController?.navigationBar.tintColor = Theme.currentTheme.accent
+        // Refresh table
+        tableView.reloadData()
+        
+        // Set up UI elements
+        for label in themedLabels {
+            label.textColor = Theme.currentTheme.text
+        }
+        for button in themedButtons {
+            button.setTitleColor(Theme.currentTheme.accent, for: .normal)
+        }
+        for swiitch in themedSwitches {
+            swiitch.onTintColor = Theme.currentTheme.accent
+        }
     }
 
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         // Set cell theme
-        cell.backgroundColor = UIColor(red:0.20, green:0.21, blue:0.22, alpha:1.0)
-        cell.tintColor = UIColor(red:0.93, green:0.46, blue:0.08, alpha:1.0)
+        cell.backgroundColor = Theme.currentTheme.cell
+        cell.tintColor = Theme.currentTheme.accent
         
         let customSelectedView = UIView()
-        customSelectedView.backgroundColor = UIColor(red:0.30, green:0.31, blue:0.52, alpha:1.0)
+        customSelectedView.backgroundColor = Theme.currentTheme.cellSelected
         cell.selectedBackgroundView = customSelectedView
         
         // Set theme of all cell labels
         let labels = ThemeHelper.findAllLabels(view: tableView)
         for label in labels {
-            label.textColor = UIColor(red:0.79, green:0.79, blue:0.80, alpha:1.0)
+            label.textColor = Theme.currentTheme.text
         }
     }
     

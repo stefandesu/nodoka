@@ -13,6 +13,7 @@ class AudioHelper: NSObject, AVAudioPlayerDelegate {
     
     static let shared = AudioHelper()
     static let availableSounds = [1]
+    static let audioQueue = DispatchQueue(label: "audioQueue", attributes: .concurrent)
     
     var sounds: [Int: AVAudioPlayer?] = [:]
     
@@ -43,14 +44,18 @@ class AudioHelper: NSObject, AVAudioPlayerDelegate {
     }
     
     func play(_ bellNumber: Int) {
-        AudioHelper.setAudioSession(to: true)
-        sounds[bellNumber]??.play()
+        AudioHelper.audioQueue.async {
+            AudioHelper.setAudioSession(to: true)
+            self.sounds[bellNumber]??.play()
+        }
     }
+    
     func stop() {
-        AudioHelper.setAudioSession(to: false)
-        for sound in AudioHelper.availableSounds {
-            sounds[sound]??.stop()
-            sounds[sound]??.currentTime = 0
+        AudioHelper.audioQueue.async {
+            for sound in AudioHelper.availableSounds {
+                self.sounds[sound]??.stop()
+                self.sounds[sound]??.currentTime = 0
+            }
         }
     }
     

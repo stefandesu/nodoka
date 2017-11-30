@@ -9,13 +9,34 @@
 import UIKit
 
 class ThemedViewController: UIViewController {
+    
+    @IBOutlet var themedLabels: [UILabel] = []
+    @IBOutlet var themedButtons: [UIButton] = []
+    @IBOutlet var themedSwitches: [UISwitch] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Set table view theme
-        // Table background color
-        view.backgroundColor = UIColor(red:0.13, green:0.14, blue:0.15, alpha:1.0)
     }
 
+    func setUpTheme() {
+        // Set table view theme
+        // Table background color
+        view.backgroundColor = Theme.currentTheme.background
+        
+        // Set up UI elements
+        for label in themedLabels {
+            label.textColor = Theme.currentTheme.text
+        }
+        for button in themedButtons {
+            button.setTitleColor(Theme.currentTheme.accent, for: .normal)
+        }
+        for swiitch in themedSwitches {
+            swiitch.onTintColor = Theme.currentTheme.accent
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setUpTheme()
+    }
 }

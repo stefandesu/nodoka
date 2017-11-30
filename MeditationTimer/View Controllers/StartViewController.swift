@@ -30,6 +30,11 @@ class StartViewController: ThemedViewController, UIPickerViewDataSource, UIPicke
         durationPicker.delegate = self
         durationPicker.selectRow(userDefaults.integer(forKey: DefaultsKeys.duration), inComponent: 0, animated: false)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        durationPicker.reloadAllComponents()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -44,8 +49,7 @@ class StartViewController: ThemedViewController, UIPickerViewDataSource, UIPicke
         return durationList.count
     }
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        // TODO: Switch to using themes
-        return NSAttributedString(string: durationList[row], attributes: [NSAttributedStringKey.foregroundColor: UIColor(red:0.79, green:0.79, blue:0.80, alpha:1.0)])
+        return NSAttributedString(string: durationList[row], attributes: [NSAttributedStringKey.foregroundColor: Theme.currentTheme.text])
     }
     
     // MARK: - UIPickerViewDelegate
@@ -64,7 +68,7 @@ class StartViewController: ThemedViewController, UIPickerViewDataSource, UIPicke
         guard let identifier = segue.identifier else { return }
         if identifier == PropertyKeys.startMeditationSegue, let destination = segue.destination as? MeditationViewController {
             let minutes = durationPicker.selectedRow(inComponent: 0)
-            destination.remainingTime = Double(minutes) // TODO: * 60 for minutes (seconds for testing)
+            destination.remainingTime = Double(minutes*60) // TODO: * 60 for minutes (seconds for testing)
             destination.isOpenEnd = minutes == 0 ? true : false
         }
     }
