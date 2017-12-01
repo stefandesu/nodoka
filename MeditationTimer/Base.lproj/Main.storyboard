@@ -39,10 +39,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fje-oL-Cj5">
-                                <rect key="frame" x="0.0" y="73" width="320" height="162"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="162" id="Vlw-D2-xDh"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="91" width="320" height="216"/>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9z-5Z-BLe">
                                 <rect key="frame" x="111" y="320" width="98" height="70"/>
@@ -54,27 +51,39 @@
                                     <segue destination="dnN-SW-0Ui" kind="showDetail" identifier="startMeditation" action="showViewController:sender:" id="FqH-KX-luv"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9xy-vO-ibH">
+                                <rect key="frame" x="145" y="77" width="30" height="30"/>
+                                <state key="normal" title="▲"/>
+                                <connections>
+                                    <action selector="hidePickerPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PMu-Bu-ooE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="9xy-vO-ibH" firstAttribute="top" secondItem="ccQ-fy-kmI" secondAttribute="bottom" constant="4" id="3dT-c6-sm9"/>
+                            <constraint firstItem="9xy-vO-ibH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6ml-t6-Hp2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fje-oL-Cj5" secondAttribute="trailing" id="6qr-7e-LOs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="WK7-d7-rl2" secondAttribute="bottom" constant="20" id="O9X-B1-e44"/>
-                            <constraint firstItem="fje-oL-Cj5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="SpB-PI-mG9"/>
-                            <constraint firstItem="fje-oL-Cj5" firstAttribute="top" secondItem="ccQ-fy-kmI" secondAttribute="bottom" id="TiH-4v-Lvt"/>
                             <constraint firstItem="ccQ-fy-kmI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cId-Ep-yuH"/>
+                            <constraint firstItem="fje-oL-Cj5" firstAttribute="top" secondItem="9xy-vO-ibH" secondAttribute="bottom" constant="-16" id="eX9-je-erg"/>
                             <constraint firstItem="G9z-5Z-BLe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kFo-f5-IUR"/>
                             <constraint firstItem="G9z-5Z-BLe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.25" id="kpK-QW-LUX"/>
                             <constraint firstItem="ccQ-fy-kmI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="mTe-KW-Bc7"/>
-                            <constraint firstItem="fje-oL-Cj5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ro8-9F-1g2"/>
                             <constraint firstItem="WK7-d7-rl2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="u4N-oS-dRH"/>
+                            <constraint firstItem="fje-oL-Cj5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xV5-mV-tfm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="YHN-O0-vGh"/>
                     <connections>
+                        <outlet property="durationLabel" destination="ccQ-fy-kmI" id="gmo-EZ-DOk"/>
                         <outlet property="durationPicker" destination="fje-oL-Cj5" id="YQI-S5-yH0"/>
+                        <outlet property="hidePickerButton" destination="9xy-vO-ibH" id="drR-dK-xjc"/>
                         <outletCollection property="themedButtons" destination="WK7-d7-rl2" collectionClass="NSMutableArray" id="RzE-cu-nwT"/>
                         <outletCollection property="themedLabels" destination="ccQ-fy-kmI" collectionClass="NSMutableArray" id="W8x-nh-sGf"/>
                         <outletCollection property="themedButtons" destination="G9z-5Z-BLe" collectionClass="NSMutableArray" id="xWO-Mu-yLc"/>
+                        <outletCollection property="themedButtons" destination="9xy-vO-ibH" collectionClass="NSMutableArray" id="CC8-2N-2ri"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

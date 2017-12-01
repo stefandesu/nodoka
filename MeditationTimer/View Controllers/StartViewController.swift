@@ -11,8 +11,11 @@ import UIKit
 class StartViewController: ThemedViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     let userDefaults = UserDefaults.standard
+    var pickerHidden = false
     
+    @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var durationPicker: UIPickerView!
+    @IBOutlet weak var hidePickerButton: UIButton!
     
     var durationList: [String] {
         var list = ["Open End"]
@@ -29,6 +32,8 @@ class StartViewController: ThemedViewController, UIPickerViewDataSource, UIPicke
         durationPicker.dataSource = self
         durationPicker.delegate = self
         durationPicker.selectRow(userDefaults.integer(forKey: DefaultsKeys.duration), inComponent: 0, animated: false)
+        pickerHidden = userDefaults.bool(forKey: DefaultsKeys.durationPickerHidden)
+        updatePickerDisplay()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,6 +45,30 @@ class StartViewController: ThemedViewController, UIPickerViewDataSource, UIPicke
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func hidePickerPressed(_ sender: UIButton) {
+        if pickerHidden {
+            pickerHidden = false
+        } else {
+            pickerHidden = true
+        }
+        updatePickerDisplay()
+        userDefaults.set(pickerHidden, forKey: DefaultsKeys.durationPickerHidden)
+    }
+    
+    func updatePickerDisplay() {
+        if !pickerHidden {
+            durationPicker.isHidden = false
+            durationLabel.text = "How long do you want to meditate?"
+            hidePickerButton.setTitle("▲", for: .normal)
+        } else {
+            durationPicker.isHidden = true
+            let duration = userDefaults.integer(forKey: DefaultsKeys.duration)
+            durationLabel.text = duration == 0 ? "Open End" : "\(duration) minute" + (duration > 1 ? "s" : "")
+            hidePickerButton.setTitle("▼", for: .normal)
+        }
+    }
+    
     
     // MARK: - UIPickerViewDataSource
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
