@@ -21,6 +21,7 @@ class MeditationViewController: ThemedViewController {
 
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var pauseButton: UIButton!
+    @IBOutlet weak var infoLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +54,20 @@ class MeditationViewController: ThemedViewController {
                 UIScreen.main.setBrightness(0.1, animated: true)
             }
         }
+        
+        infoLabel.text = ""
+        
+        // Set up enter background and became active notifications
+        NotificationCenter.default.addObserver(self, selector: #selector(appDidEnterBackground), name: .UIApplicationDidEnterBackground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(appDidBecomeActive), name: .UIApplicationDidBecomeActive, object: nil)
+    }
+    
+    @objc func appDidEnterBackground() {
+        stopTimer()
+    }
+    @objc func appDidBecomeActive() {
+        startTimer()
+        infoLabel.text = "The timer only works when the application is active."
     }
 
     override func didReceiveMemoryWarning() {

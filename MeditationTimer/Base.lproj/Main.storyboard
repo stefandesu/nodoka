@@ -90,7 +90,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04:43" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcJ-wZ-NKh">
-                                <rect key="frame" x="64" y="163" width="192.5" height="72.5"/>
+                                <rect key="frame" x="63.5" y="162.5" width="193" height="73"/>
                                 <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="64"/>
                                 <color key="textColor" red="0.78823529411764703" green="0.792156862745098" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -114,12 +114,24 @@
                                     <segue destination="LD4-wj-dxg" kind="showDetail" identifier="endMeditation" action="showViewController:sender:" id="Zad-gW-XKa"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOX-C9-aoH">
+                                <rect key="frame" x="16" y="28" width="288" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="q3d-fq-kOE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="S0B-4u-s6G" firstAttribute="centerX" secondItem="f5e-pI-2qR" secondAttribute="centerX" id="012-Ew-L4j"/>
+                            <constraint firstItem="xOX-C9-aoH" firstAttribute="top" secondItem="zPr-Qh-vhP" secondAttribute="top" constant="8" id="3er-Q1-C29"/>
+                            <constraint firstItem="xOX-C9-aoH" firstAttribute="leading" secondItem="zPr-Qh-vhP" secondAttribute="leading" constant="16" id="BwN-VQ-O7l"/>
                             <constraint firstItem="S0B-4u-s6G" firstAttribute="centerY" secondItem="f5e-pI-2qR" secondAttribute="centerY" multiplier="1.5" id="L7E-fe-Id0"/>
                             <constraint firstItem="MiG-9i-unI" firstAttribute="centerY" secondItem="f5e-pI-2qR" secondAttribute="centerY" multiplier="1.25" id="VpD-gc-IxP"/>
+                            <constraint firstItem="zPr-Qh-vhP" firstAttribute="trailing" secondItem="xOX-C9-aoH" secondAttribute="trailing" constant="16" id="X4m-jZ-zdO"/>
                             <constraint firstItem="zcJ-wZ-NKh" firstAttribute="centerY" secondItem="f5e-pI-2qR" secondAttribute="centerY" multiplier="0.7" id="aEA-01-FY0"/>
                             <constraint firstItem="zcJ-wZ-NKh" firstAttribute="centerX" secondItem="f5e-pI-2qR" secondAttribute="centerX" id="gDF-LB-3AK"/>
                             <constraint firstItem="MiG-9i-unI" firstAttribute="centerX" secondItem="f5e-pI-2qR" secondAttribute="centerX" id="rId-oL-NfQ"/>
@@ -128,10 +140,12 @@
                     </view>
                     <connections>
                         <outlet property="durationLabel" destination="zcJ-wZ-NKh" id="fCU-O8-Rg2"/>
+                        <outlet property="infoLabel" destination="xOX-C9-aoH" id="FWx-mm-g5j"/>
                         <outlet property="pauseButton" destination="MiG-9i-unI" id="azS-aV-4mA"/>
                         <outletCollection property="themedButtons" destination="MiG-9i-unI" collectionClass="NSMutableArray" id="p1z-VS-Fwd"/>
                         <outletCollection property="themedButtons" destination="S0B-4u-s6G" collectionClass="NSMutableArray" id="ET5-oV-yZb"/>
                         <outletCollection property="themedLabels" destination="zcJ-wZ-NKh" collectionClass="NSMutableArray" id="79C-Az-hfd"/>
+                        <outletCollection property="themedLabels" destination="xOX-C9-aoH" collectionClass="NSMutableArray" id="90l-An-RdO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NzS-O4-0oX" userLabel="First Responder" sceneMemberID="firstResponder"/>
