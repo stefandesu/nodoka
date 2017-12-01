@@ -69,7 +69,6 @@ class HealthKitHelper {
         healthStore.save(sample, withCompletion: { (result, error) in
             delegate?.healthKitWriteComplete(status: result)
             if result {
-                print("Health Kit data successfully written!")
                 var session = session
                 session.savedToHealth = true
                 session.save()

@@ -260,7 +260,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1YE-ZP-X5w" customClass="ThemedUISwitch" customModule="MeditationTimer" customModuleProvider="target">
+                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1YE-ZP-X5w">
                                                             <rect key="frame" x="239" y="0.0" width="51" height="31"/>
                                                             <connections>
                                                                 <action selector="healthSwitchChanged:" destination="Axb-ed-gXc" eventType="valueChanged" id="i0l-xX-qhb"/>
@@ -484,7 +484,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="05a-pt-Alo" customClass="ThemedUISwitch" customModule="MeditationTimer" customModuleProvider="target">
+                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="05a-pt-Alo">
                                                             <rect key="frame" x="239" y="0.0" width="51" height="31"/>
                                                             <connections>
                                                                 <action selector="brightnessSwitchChanged:" destination="7kN-AY-XOd" eventType="valueChanged" id="1of-eK-3S5"/>

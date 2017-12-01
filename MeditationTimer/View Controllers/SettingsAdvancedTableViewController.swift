@@ -32,10 +32,6 @@ class SettingsAdvancedTableViewController: ThemedTableViewController {
                 sender.setTitle("Deleting of sessions done.", for: .normal)
             }
         }
-//        let alertController = UIAlertController(title: "Deleting Sessions", message: "Sessions deleted.", preferredStyle: .alert)
-//        let okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
-//        alertController.addAction(okayAction)
-//        present(alertController, animated: false, completion: nil)
     }
     @IBAction func debugCreateLocalSessions(_ sender: UIButton) {
         let debugQueue = DispatchQueue(label: "debugQueue", attributes: .concurrent)

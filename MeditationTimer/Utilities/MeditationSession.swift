@@ -22,7 +22,6 @@ struct MeditationSession: Codable {
             return index
         } else {
             // create empty index file
-            print("creating empty index file")
             let propertyListEncoder = PropertyListEncoder()
             let encodedIndex = try? propertyListEncoder.encode([String: Date]())
             do {

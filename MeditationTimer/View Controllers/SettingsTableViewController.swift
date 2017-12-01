@@ -76,7 +76,6 @@ class SettingsTableViewController: ThemedTableViewController, HealthKitHelperDel
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        print("view will disappear")
         
         NotificationCenter.default.removeObserver(self,
               name: .UIApplicationDidBecomeActive,
@@ -85,9 +84,6 @@ class SettingsTableViewController: ThemedTableViewController, HealthKitHelperDel
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("view will appear")
-        print("meditation sessions: \(MeditationSession.getNumberOfSessions())")
-        print("index: \(MeditationSession.index.count)")
         
         NotificationCenter.default.addObserver(self,
             selector: #selector(applicationDidBecomeActive),
@@ -98,7 +94,6 @@ class SettingsTableViewController: ThemedTableViewController, HealthKitHelperDel
     }
     
     func refreshView() {
-        print("refreshView")
         // Load current settings from defaults
         startGong = userDefaults.integer(forKey: DefaultsKeys.startGong)
         endGong = userDefaults.integer(forKey: DefaultsKeys.endGong)
@@ -115,16 +110,16 @@ class SettingsTableViewController: ThemedTableViewController, HealthKitHelperDel
     }
     
     @objc func applicationDidBecomeActive() {
-        print("app did become active")
         refreshView()
     }
     
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         if section == 0 {
             return healthKitStatus
-        } else {
-            return nil
+        } else if section == 2 {
+            return "Recorded \(MeditationSession.index.count) meditation sessions."
         }
+        return nil
     }
     
     func updateLabels() {

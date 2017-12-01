@@ -11,9 +11,7 @@
 		F84E7F661FCF3A1500BF9320 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E7F651FCF3A1500BF9320 /* ThemeHelper.swift */; };
 		F84E7F681FCF59E600BF9320 /* ThemedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E7F671FCF59E600BF9320 /* ThemedTableViewController.swift */; };
 		F84E7F6A1FCF5C2D00BF9320 /* ThemedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E7F691FCF5C2D00BF9320 /* ThemedViewController.swift */; };
-		F84E7F6E1FCF642600BF9320 /* ThemedUISwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E7F6D1FCF642600BF9320 /* ThemedUISwitch.swift */; };
 		F881AF511FD0522100941850 /* SettingsThemeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881AF501FD0522100941850 /* SettingsThemeTableViewController.swift */; };
-		F881AF531FD0552400941850 /* ThemedUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881AF521FD0552400941850 /* ThemedUIButton.swift */; };
 		F881AF551FD06C6400941850 /* HealthKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881AF541FD06C6400941850 /* HealthKitHelper.swift */; };
 		F881AF571FD0AB0C00941850 /* UIScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881AF561FD0AB0C00941850 /* UIScreenExtension.swift */; };
 		F881AF591FD0AB5B00941850 /* SettingsAdvancedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881AF581FD0AB5B00941850 /* SettingsAdvancedTableViewController.swift */; };
@@ -39,9 +37,7 @@
 		F84E7F651FCF3A1500BF9320 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 		F84E7F671FCF59E600BF9320 /* ThemedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedTableViewController.swift; sourceTree = "<group>"; };
 		F84E7F691FCF5C2D00BF9320 /* ThemedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedViewController.swift; sourceTree = "<group>"; };
-		F84E7F6D1FCF642600BF9320 /* ThemedUISwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedUISwitch.swift; sourceTree = "<group>"; };
 		F881AF501FD0522100941850 /* SettingsThemeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsThemeTableViewController.swift; sourceTree = "<group>"; };
-		F881AF521FD0552400941850 /* ThemedUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedUIButton.swift; sourceTree = "<group>"; };
 		F881AF541FD06C6400941850 /* HealthKitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitHelper.swift; sourceTree = "<group>"; };
 		F881AF561FD0AB0C00941850 /* UIScreenExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreenExtension.swift; sourceTree = "<group>"; };
 		F881AF581FD0AB5B00941850 /* SettingsAdvancedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAdvancedTableViewController.swift; sourceTree = "<group>"; };
@@ -81,8 +77,6 @@
 			isa = PBXGroup;
 			children = (
 				F8867F561FCDAF8900A2C009 /* Theme.swift */,
-				F881AF521FD0552400941850 /* ThemedUIButton.swift */,
-				F84E7F6D1FCF642600BF9320 /* ThemedUISwitch.swift */,
 				F84E7F691FCF5C2D00BF9320 /* ThemedViewController.swift */,
 				F84E7F671FCF59E600BF9320 /* ThemedTableViewController.swift */,
 				F84E7F651FCF3A1500BF9320 /* ThemeHelper.swift */,
@@ -237,14 +231,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F881AF591FD0AB5B00941850 /* SettingsAdvancedTableViewController.swift in Sources */,
-				F881AF531FD0552400941850 /* ThemedUIButton.swift in Sources */,
 				F881AF571FD0AB0C00941850 /* UIScreenExtension.swift in Sources */,
 				F8D7F4E51FCCAAB600FE786B /* StartViewController.swift in Sources */,
 				F8867F591FCDB31D00A2C009 /* DefaultsKeys.swift in Sources */,
 				F8CE06BB1FCDCBC60000CEAA /* PropertyKeys.swift in Sources */,
 				F84E7F641FCF342600BF9320 /* SettingsGongTableViewController.swift in Sources */,
 				F881AF511FD0522100941850 /* SettingsThemeTableViewController.swift in Sources */,
-				F84E7F6E1FCF642600BF9320 /* ThemedUISwitch.swift in Sources */,
 				F84E7F681FCF59E600BF9320 /* ThemedTableViewController.swift in Sources */,
 				F8CE06BD1FCDCDDA0000CEAA /* FinishViewController.swift in Sources */,
 				F881AF5D1FD1D08C00941850 /* DebugListTableViewController.swift in Sources */,

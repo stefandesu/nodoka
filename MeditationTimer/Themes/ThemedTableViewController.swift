@@ -16,6 +16,7 @@ class ThemedTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.rowHeight = 44.0
     }
     
     override func viewWillAppear(_ animated: Bool) {
