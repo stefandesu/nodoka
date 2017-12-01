@@ -23,13 +23,33 @@ class SettingsAdvancedTableViewController: ThemedTableViewController {
         userDefaults.set(brightnessSwitch.isOn, forKey: DefaultsKeys.changedBrightness)
     }
     
-    @IBAction func debugDeleteSavedSessions(_ sender: Any) {
-        let result = MeditationSession.deleteAllSessions()
-        let message = result ? "Sessions deleted." : "An error occured."
-        let alertController = UIAlertController(title: "Deleting Sessions", message: message, preferredStyle: .alert)
-        let okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
-        alertController.addAction(okayAction)
-        present(alertController, animated: false, completion: nil)
+    @IBAction func debugDeleteSavedSessions(_ sender: UIButton) {
+        let debugQueue = DispatchQueue(label: "debugQueue", attributes: .concurrent)
+        sender.setTitle("Deleting...", for: .normal)
+        debugQueue.async {
+            MeditationSession.deleteAllSessions()
+            DispatchQueue.main.async {
+                sender.setTitle("Deleting of sessions done.", for: .normal)
+            }
+        }
+//        let alertController = UIAlertController(title: "Deleting Sessions", message: "Sessions deleted.", preferredStyle: .alert)
+//        let okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+//        alertController.addAction(okayAction)
+//        present(alertController, animated: false, completion: nil)
+    }
+    @IBAction func debugCreateLocalSessions(_ sender: UIButton) {
+        let debugQueue = DispatchQueue(label: "debugQueue", attributes: .concurrent)
+        sender.setTitle("Creating...", for: .normal)
+        debugQueue.async {
+            for _ in 1...100 {
+                let session = MeditationSession(date: Date(), duration: 60)
+                session.save()
+            }
+            DispatchQueue.main.async {
+                sender.setTitle("Creating of sessions done.", for: .normal)
+            }
+        }
     }
     
 }
+

@@ -48,7 +48,7 @@ class SettingsTableViewController: ThemedTableViewController, HealthKitHelperDel
         }
         // Retrospectively write unwritten sessions
         if status {
-            for session in MeditationSession.getSessions() {
+            for session in MeditationSession.getAllSessions() {
                 if !session.savedToHealth {
                     HealthKitHelper.shared.writeMindfulnessData(delegate: nil, session: session)
                 }
@@ -86,7 +86,8 @@ class SettingsTableViewController: ThemedTableViewController, HealthKitHelperDel
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("view will appear")
-        print("meditation sessions: \(MeditationSession.getSessions().count)")
+        print("meditation sessions: \(MeditationSession.getNumberOfSessions())")
+        print("index: \(MeditationSession.index.count)")
         
         NotificationCenter.default.addObserver(self,
             selector: #selector(applicationDidBecomeActive),

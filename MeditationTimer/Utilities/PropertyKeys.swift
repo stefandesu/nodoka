@@ -17,4 +17,5 @@ struct PropertyKeys {
     static let settingsGongCellIdentifier = "settingsGongCell"
     static let settingsThemeSegue = "settingsTheme"
     static let settingsThemeCellIdentifier = "settingsThemeCell"
+    static let debugListCell = "debugListCell"
 }

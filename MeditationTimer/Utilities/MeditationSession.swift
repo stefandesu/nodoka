@@ -15,6 +15,48 @@ struct MeditationSession: Codable {
     var archiveURL: URL {
         return MeditationSession.ArchiveDirectory.appendingPathComponent(identifier).appendingPathExtension("plist")
     }
+    static let IndexURL = DocumentsDirectory.appendingPathComponent("sessions").appendingPathExtension("plist")
+    static var index: [String: Date] {
+        let propertyListDecoder = PropertyListDecoder()
+        if let data = try? Data(contentsOf: IndexURL), let index = try? propertyListDecoder.decode([String: Date].self, from: data) {
+            return index
+        } else {
+            // create empty index file
+            print("creating empty index file")
+            let propertyListEncoder = PropertyListEncoder()
+            let encodedIndex = try? propertyListEncoder.encode([String: Date]())
+            do {
+                try encodedIndex?.write(to: IndexURL, options: .noFileProtection)
+            } catch {
+                print(error.localizedDescription)
+            }
+            return [String: Date]()
+        }
+    }
+    static func writeToIndex(session: MeditationSession) {
+        var index = self.index
+        index[session.identifier] = session.date
+        // write to file
+        let propertyListEncoder = PropertyListEncoder()
+        let encodedIndex = try? propertyListEncoder.encode(index)
+        do {
+            try encodedIndex?.write(to: IndexURL, options: .noFileProtection)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    static func removeFromIndex(identifier: String) {
+        var index = self.index
+        index.removeValue(forKey: identifier)
+        // write to file
+        let propertyListEncoder = PropertyListEncoder()
+        let encodedIndex = try? propertyListEncoder.encode(index)
+        do {
+            try encodedIndex?.write(to: IndexURL, options: .noFileProtection)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
     
     var identifier: String
     var date: Date
@@ -33,13 +75,13 @@ struct MeditationSession: Codable {
         let encodedSession = try? propertyListEncoder.encode(self)
         do {
             try encodedSession?.write(to: archiveURL, options: .noFileProtection)
-            print("apparently saved")
+            MeditationSession.writeToIndex(session: self)
         } catch {
             print(error.localizedDescription)
         }
     }
     
-    static func getSessions() -> [MeditationSession] {
+    static func getAllSessions() -> [MeditationSession] {
         do {
             // Get the directory contents urls
             let directoryContents = try FileManager.default.contentsOfDirectory(at: ArchiveDirectory, includingPropertiesForKeys: nil, options: [])
@@ -57,17 +99,55 @@ struct MeditationSession: Codable {
         }
     }
     
-    static func deleteAllSessions() -> Bool {
+    static func getNumberOfSessions() -> Int {
         do {
             // Get the directory contents urls
             let directoryContents = try FileManager.default.contentsOfDirectory(at: ArchiveDirectory, includingPropertiesForKeys: nil, options: [])
-            for file in directoryContents {
-                try FileManager.default.removeItem(at: file)
-            }
-            return true
+            return directoryContents.count
         } catch {
             print(error.localizedDescription)
-            return false
+            return -1
+        }
+    }
+    
+    static func getSessions() -> [String] {
+        do {
+            // Get the directory contents urls
+            let directoryContents = try FileManager.default.contentsOfDirectory(at: ArchiveDirectory, includingPropertiesForKeys: nil, options: [])
+            var sessions = [String]()
+            for file in directoryContents {
+                sessions.append(file.lastPathComponent)
+            }
+            return sessions
+        } catch {
+            print(error.localizedDescription)
+            return [String]()
+        }
+    }
+    
+    static func getSession(identifier: String) -> MeditationSession? {
+        let file = ArchiveDirectory.appendingPathComponent(identifier).appendingPathExtension("plist")
+        let propertyListDecoder = PropertyListDecoder()
+        if let data = try? Data(contentsOf: file), let session = try? propertyListDecoder.decode(MeditationSession.self, from: data) {
+            return session
+        } else {
+            return nil
+        }
+    }
+    static func removeSession(identifier: String) {
+        // remove file from disk
+        let file = ArchiveDirectory.appendingPathComponent(identifier).appendingPathExtension("plist")
+        try? FileManager.default.removeItem(at: file)
+        // remove from index
+        removeFromIndex(identifier: identifier)
+    }
+    
+    static func deleteAllSessions() {
+        for identifier in getSessions() {
+            removeSession(identifier: identifier)
+        }
+        for (identifier, _) in index {
+            removeSession(identifier: identifier)
         }
     }
 }

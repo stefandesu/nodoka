@@ -58,7 +58,7 @@ class ThemedTableViewController: UITableViewController {
         cell.selectedBackgroundView = customSelectedView
         
         // Set theme of all cell labels
-        let labels = ThemeHelper.findAllLabels(view: tableView)
+        let labels = ThemeHelper.findAllLabels(view: cell)
         for label in labels {
             label.textColor = Theme.currentTheme.text
         }

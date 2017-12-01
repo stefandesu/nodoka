@@ -17,7 +17,9 @@ class ThemeHelper {
         var labels = view.subviews.flatMap { $0 as? UILabel }
         // Add all UILabels on next layer
         for subview in view.subviews {
-            labels += findAllLabels(view: subview, currentDepth: currentDepth + 1, maxDepth: maxDepth)
+            if type(of: subview) != UIButton.self {
+                labels += findAllLabels(view: subview, currentDepth: currentDepth + 1, maxDepth: maxDepth)
+            }
         }
         return labels
     }
