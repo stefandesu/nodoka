@@ -17,6 +17,7 @@
 		F881AF591FD0AB5B00941850 /* SettingsAdvancedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881AF581FD0AB5B00941850 /* SettingsAdvancedTableViewController.swift */; };
 		F881AF5B1FD0ADB900941850 /* MeditationSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881AF5A1FD0ADB900941850 /* MeditationSession.swift */; };
 		F881AF5D1FD1D08C00941850 /* DebugListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881AF5C1FD1D08C00941850 /* DebugListTableViewController.swift */; };
+		F881AF621FD1F97800941850 /* SettingsVersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881AF611FD1F97800941850 /* SettingsVersionViewController.swift */; };
 		F8867F571FCDAF8900A2C009 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8867F561FCDAF8900A2C009 /* Theme.swift */; };
 		F8867F591FCDB31D00A2C009 /* DefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8867F581FCDB31D00A2C009 /* DefaultsKeys.swift */; };
 		F8CE06B91FCDCB780000CEAA /* MeditationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CE06B81FCDCB780000CEAA /* MeditationViewController.swift */; };
@@ -43,6 +44,7 @@
 		F881AF581FD0AB5B00941850 /* SettingsAdvancedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAdvancedTableViewController.swift; sourceTree = "<group>"; };
 		F881AF5A1FD0ADB900941850 /* MeditationSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationSession.swift; sourceTree = "<group>"; };
 		F881AF5C1FD1D08C00941850 /* DebugListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugListTableViewController.swift; sourceTree = "<group>"; };
+		F881AF611FD1F97800941850 /* SettingsVersionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVersionViewController.swift; sourceTree = "<group>"; };
 		F8867F561FCDAF8900A2C009 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		F8867F581FCDB31D00A2C009 /* DefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsKeys.swift; sourceTree = "<group>"; };
 		F8CE06B81FCDCB780000CEAA /* MeditationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		F881AF4C1FD0424000941850 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F881AF611FD1F97800941850 /* SettingsVersionViewController.swift */,
 				F881AF5C1FD1D08C00941850 /* DebugListTableViewController.swift */,
 				F8D7F4E41FCCAAB600FE786B /* StartViewController.swift */,
 				F84E7F631FCF342600BF9320 /* SettingsGongTableViewController.swift */,
@@ -160,6 +163,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8D7F4F11FCCAAB600FE786B /* Build configuration list for PBXNativeTarget "MeditationTimer" */;
 			buildPhases = (
+				F881AF601FD1F81600941850 /* Increment Build Number */,
 				F8D7F4DB1FCCAAB600FE786B /* Sources */,
 				F8D7F4DC1FCCAAB600FE786B /* Frameworks */,
 				F8D7F4DD1FCCAAB600FE786B /* Resources */,
@@ -225,6 +229,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F881AF601FD1F81600941850 /* Increment Build Number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Increment Build Number";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F8D7F4DB1FCCAAB600FE786B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -242,6 +263,7 @@
 				F881AF5D1FD1D08C00941850 /* DebugListTableViewController.swift in Sources */,
 				F8CE06B91FCDCB780000CEAA /* MeditationViewController.swift in Sources */,
 				F8867F571FCDAF8900A2C009 /* Theme.swift in Sources */,
+				F881AF621FD1F97800941850 /* SettingsVersionViewController.swift in Sources */,
 				F881AF551FD06C6400941850 /* HealthKitHelper.swift in Sources */,
 				F8CE06C11FCDD5900000CEAA /* AudioHelper.swift in Sources */,
 				F84E7F661FCF3A1500BF9320 /* ThemeHelper.swift in Sources */,
@@ -389,7 +411,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5QKMCZ8YUJ;
 				INFOPLIST_FILE = MeditationTimer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pm.exo.MeditationTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -406,7 +428,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5QKMCZ8YUJ;
 				INFOPLIST_FILE = MeditationTimer/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pm.exo.MeditationTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";

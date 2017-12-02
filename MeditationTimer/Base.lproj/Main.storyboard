@@ -350,7 +350,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="RTu-He-vCR" kind="show" id="ebQ-fm-BjF"/>
+                                            <segue destination="RTu-He-vCR" kind="show" identifier="" id="ebQ-fm-BjF"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -680,13 +680,49 @@
         <!--About-->
         <scene sceneID="ecD-Zt-PRD">
             <objects>
-                <viewController title="About" id="RTu-He-vCR" customClass="ThemedViewController" customModule="MeditationTimer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="About" id="RTu-He-vCR" customClass="SettingsVersionViewController" customModule="MeditationTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z0R-Y6-d0H">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empowered-owl-1-logo-trans" translatesAutoresizingMaskIntoConstraints="NO" id="ztE-rN-vHw">
+                                <rect key="frame" x="40" y="72" width="240" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="s33-QS-x6D"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meditation Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6r-lN-3jf">
+                                <rect key="frame" x="8" y="188" width="304" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version ..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beA-DY-mfK">
+                                <rect key="frame" x="8" y="220" width="304" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="beA-DY-mfK" firstAttribute="top" secondItem="b6r-lN-3jf" secondAttribute="bottom" constant="8" id="4hc-bw-34F"/>
+                            <constraint firstItem="0ll-RG-hra" firstAttribute="trailing" secondItem="ztE-rN-vHw" secondAttribute="trailing" constant="40" id="8Au-9X-OZA"/>
+                            <constraint firstItem="0ll-RG-hra" firstAttribute="trailing" secondItem="beA-DY-mfK" secondAttribute="trailing" constant="8" id="Bb7-2j-Aor"/>
+                            <constraint firstItem="beA-DY-mfK" firstAttribute="leading" secondItem="0ll-RG-hra" secondAttribute="leading" constant="8" id="Rlt-7w-Ppd"/>
+                            <constraint firstItem="ztE-rN-vHw" firstAttribute="top" secondItem="0ll-RG-hra" secondAttribute="top" constant="8" id="Vll-69-JUW"/>
+                            <constraint firstItem="ztE-rN-vHw" firstAttribute="leading" secondItem="0ll-RG-hra" secondAttribute="leading" constant="40" id="Zdo-6b-uOj"/>
+                            <constraint firstItem="0ll-RG-hra" firstAttribute="trailing" secondItem="b6r-lN-3jf" secondAttribute="trailing" constant="8" id="qLf-Z6-6lg"/>
+                            <constraint firstItem="b6r-lN-3jf" firstAttribute="leading" secondItem="0ll-RG-hra" secondAttribute="leading" constant="8" id="s0C-s9-smR"/>
+                            <constraint firstItem="b6r-lN-3jf" firstAttribute="top" secondItem="ztE-rN-vHw" secondAttribute="bottom" constant="16" id="wQy-ED-b7c"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="0ll-RG-hra"/>
                     </view>
+                    <connections>
+                        <outlet property="versionLabel" destination="beA-DY-mfK" id="0na-MQ-FAM"/>
+                        <outletCollection property="themedLabels" destination="b6r-lN-3jf" collectionClass="NSMutableArray" id="r2H-be-8fH"/>
+                        <outletCollection property="themedLabels" destination="beA-DY-mfK" collectionClass="NSMutableArray" id="AO1-hx-kVz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="STO-FI-g5M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -782,6 +818,9 @@
             <point key="canvasLocation" x="-533" y="-61"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="empowered-owl-1-logo-trans" width="512" height="512"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="aPt-n7-Z8Q"/>
     </inferredMetricsTieBreakers>
