@@ -10,6 +10,7 @@ import Foundation
 
 struct DefaultsKeys {
     static let duration = "duration"
+    static let preparation = "preparation"
     static let startGong = "startGong"
     static let endGong = "endGong"
     static let theme = "theme"

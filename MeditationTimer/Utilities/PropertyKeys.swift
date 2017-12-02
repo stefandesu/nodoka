@@ -18,4 +18,7 @@ struct PropertyKeys {
     static let settingsThemeSegue = "settingsTheme"
     static let settingsThemeCellIdentifier = "settingsThemeCell"
     static let debugListCell = "debugListCell"
+    static let settingsDurationSegue = "settingsDuration"
+    static let preparationPickerTag = 0
+    static let meditationPickerTag = 1
 }

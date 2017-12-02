@@ -29,7 +29,12 @@ class FinishViewController: ThemedViewController {
             let seconds = Int(finalTimeMeditated)%60
             let minutePad = minutes == 1 ? "" : "s"
             let secondPad = seconds == 1 ? "" : "s"
-            finalTimeLabel.text = "Meditated for \(minutes) minute\(minutePad) and \(seconds) second\(secondPad)."
+            var text = "Meditated for"
+            text += minutes > 0 ? " \(minutes) minute\(minutePad)" : ""
+            text += minutes > 0 && seconds > 0 ? " and" : ""
+            text += seconds > 0 || minutes == 0 ? " \(seconds) second\(secondPad)" : ""
+            text += "."
+            finalTimeLabel.text = text
             // Create MeditationSession object and save to disk
             let session = MeditationSession(date: Date(), duration: finalTimeMeditated)
             session.save()

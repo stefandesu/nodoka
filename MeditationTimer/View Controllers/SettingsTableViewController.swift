@@ -69,6 +69,7 @@ class SettingsTableViewController: ThemedTableViewController, HealthKitHelperDel
     @IBOutlet weak var endGongLabel: UILabel!
     @IBOutlet weak var themeLabel: UILabel!
     @IBOutlet weak var healthSwitch: UISwitch!
+    @IBOutlet weak var durationLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -123,6 +124,12 @@ class SettingsTableViewController: ThemedTableViewController, HealthKitHelperDel
     }
     
     func updateLabels() {
+        // Update Duration Label
+        let meditationTime = userDefaults.integer(forKey: DefaultsKeys.duration)
+        let preparationTime = userDefaults.integer(forKey: DefaultsKeys.preparation)
+        let meditationTimeString = meditationTime == 0 ? "Open End" : "\(meditationTime) min."
+        let preparationTimeString = "\(preparationTime) sec."
+        durationLabel.text = "\(preparationTimeString) | \(meditationTimeString)"
         // Gong labels
         if startGong == 0 {
             startGongLabel.text = "None"
