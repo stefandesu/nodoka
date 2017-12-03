@@ -65,11 +65,8 @@ class SettingsTableViewController: ThemedTableViewController, HealthKitHelperDel
     var healthKitEnabled = false
     var healthKitStatus = ""
     var isCurrentlyAuthorizingHealthKit = false
-    @IBOutlet weak var startGongLabel: UILabel!
-    @IBOutlet weak var endGongLabel: UILabel!
     @IBOutlet weak var themeLabel: UILabel!
     @IBOutlet weak var healthSwitch: UISwitch!
-    @IBOutlet weak var durationLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -124,23 +121,6 @@ class SettingsTableViewController: ThemedTableViewController, HealthKitHelperDel
     }
     
     func updateLabels() {
-        // Update Duration Label
-        let meditationTime = userDefaults.integer(forKey: DefaultsKeys.duration)
-        let preparationTime = userDefaults.integer(forKey: DefaultsKeys.preparation)
-        let meditationTimeString = meditationTime == 0 ? "Open End" : "\(meditationTime) min."
-        let preparationTimeString = "\(preparationTime) sec."
-        durationLabel.text = "\(preparationTimeString) | \(meditationTimeString)"
-        // Gong labels
-        if startGong == 0 {
-            startGongLabel.text = "None"
-        } else {
-            startGongLabel.text = "\(startGong)"
-        }
-        if endGong == 0 {
-            endGongLabel.text = "None"
-        } else {
-            endGongLabel.text = "\(endGong)"
-        }
         // Theme label
         themeLabel.text = theme
         // Health Kit
@@ -162,15 +142,11 @@ class SettingsTableViewController: ThemedTableViewController, HealthKitHelperDel
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier else { return }
-        if identifier == PropertyKeys.settingsGongStartSegue || identifier == PropertyKeys.settingsGongEndSegue {
+        if identifier == PropertyKeys.settingsGongStartSegue {
             if let destination = segue.destination as? SettingsGongTableViewController {
-                if identifier == PropertyKeys.settingsGongStartSegue {
-                    destination.currentGong = startGong
-                } else {
-                    destination.currentGong = endGong
-                }
+                destination.currentStartGong = startGong
+                destination.currentEndGong = endGong
                 destination.delegate = self
-                destination.segueIdentifier = identifier
             }
         }
         if identifier == PropertyKeys.settingsThemeSegue {
