@@ -404,7 +404,7 @@ Preparation: 5 Seconds</string>
         <scene sceneID="dc4-Xz-gXc">
             <objects>
                 <tableViewController title="Feedback &amp; Support" id="pgA-51-Iv8" customClass="FeedbackTableViewController" customModule="MeditationTimer" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="8N3-Ax-78m">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="8N3-Ax-78m" customClass="FeedbackTableView" customModule="MeditationTimer" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -425,6 +425,9 @@ Preparation: 5 Seconds</string>
                                                         <segment title="Bug"/>
                                                         <segment title="Other"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="typeSegmentChanged:" destination="pgA-51-Iv8" eventType="valueChanged" id="mpe-3A-u9D"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                             <constraints>
@@ -456,6 +459,9 @@ Preparation: 5 Seconds</string>
                                                         </label>
                                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vg2-5m-wxd">
                                                             <rect key="frame" x="239" y="0.0" width="51" height="31"/>
+                                                            <connections>
+                                                                <action selector="logSwitchChanged:" destination="pgA-51-Iv8" eventType="valueChanged" id="MF7-Zz-1Rx"/>
+                                                            </connections>
                                                         </switch>
                                                     </subviews>
                                                 </stackView>
@@ -506,11 +512,15 @@ Preparation: 5 Seconds</string>
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yVH-BL-KZI">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yVH-BL-KZI">
                                                     <rect key="frame" x="16" y="8" width="288" height="28"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="contactEditingChanged:" destination="pgA-51-Iv8" eventType="editingChanged" id="QMr-pc-f4o"/>
+                                                        <action selector="textFieldReturnPressed:" destination="pgA-51-Iv8" eventType="primaryActionTriggered" id="zsH-xu-Wcf"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -559,6 +569,7 @@ Preparation: 5 Seconds</string>
                         <outlet property="descriptionTextView" destination="2nU-95-kP8" id="cpf-qT-oL6"/>
                         <outlet property="logFileSwitch" destination="vg2-5m-wxd" id="gVj-kt-uaN"/>
                         <outlet property="selectedFeedbackType" destination="FCx-Yb-ppF" id="zoD-hj-JVI"/>
+                        <outlet property="sendButton" destination="oUc-Ys-TMN" id="cg4-VY-NcH"/>
                         <outletCollection property="themedSwitches" destination="vg2-5m-wxd" collectionClass="NSMutableArray" id="LqK-gg-v1e"/>
                         <outletCollection property="themedTextViews" destination="2nU-95-kP8" collectionClass="NSMutableArray" id="nBe-bd-psS"/>
                         <outletCollection property="themedButtons" destination="oUc-Ys-TMN" collectionClass="NSMutableArray" id="Pm2-ML-jrU"/>

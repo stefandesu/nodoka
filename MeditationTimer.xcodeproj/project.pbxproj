@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F8269AAB1FD4734E00471A39 /* TelegramHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8269AAA1FD4734E00471A39 /* TelegramHelper.swift */; };
+		F8269AAD1FD479C000471A39 /* FeedbackTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8269AAC1FD479C000471A39 /* FeedbackTableView.swift */; };
 		F8362FDC1FD4197400783923 /* FeedbackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8362FDB1FD4197400783923 /* FeedbackTableViewController.swift */; };
 		F84E7F641FCF342600BF9320 /* SettingsGongTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E7F631FCF342600BF9320 /* SettingsGongTableViewController.swift */; };
 		F84E7F661FCF3A1500BF9320 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E7F651FCF3A1500BF9320 /* ThemeHelper.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F8269AAA1FD4734E00471A39 /* TelegramHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelegramHelper.swift; sourceTree = "<group>"; };
+		F8269AAC1FD479C000471A39 /* FeedbackTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackTableView.swift; sourceTree = "<group>"; };
 		F8362FDB1FD4197400783923 /* FeedbackTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackTableViewController.swift; sourceTree = "<group>"; };
 		F84E7F631FCF342600BF9320 /* SettingsGongTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGongTableViewController.swift; sourceTree = "<group>"; };
 		F84E7F651FCF3A1500BF9320 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
@@ -93,7 +97,9 @@
 		F881AF4B1FD0422F00941850 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				F8269AAC1FD479C000471A39 /* FeedbackTableView.swift */,
 				F881AF5A1FD0ADB900941850 /* MeditationSession.swift */,
+				F8269AAA1FD4734E00471A39 /* TelegramHelper.swift */,
 				F881AF561FD0AB0C00941850 /* UIScreenExtension.swift */,
 				F8D7F4E21FCCAAB600FE786B /* AppDelegate.swift */,
 				F8867F581FCDB31D00A2C009 /* DefaultsKeys.swift */,
@@ -267,6 +273,7 @@
 				F84E7F681FCF59E600BF9320 /* ThemedTableViewController.swift in Sources */,
 				F8CE06BD1FCDCDDA0000CEAA /* FinishViewController.swift in Sources */,
 				F881AF5D1FD1D08C00941850 /* DebugListTableViewController.swift in Sources */,
+				F8269AAD1FD479C000471A39 /* FeedbackTableView.swift in Sources */,
 				F8CE06B91FCDCB780000CEAA /* MeditationViewController.swift in Sources */,
 				F8867F571FCDAF8900A2C009 /* Theme.swift in Sources */,
 				F881AF621FD1F97800941850 /* SettingsVersionViewController.swift in Sources */,
@@ -278,6 +285,7 @@
 				F8362FDC1FD4197400783923 /* FeedbackTableViewController.swift in Sources */,
 				F881AF641FD2BA4F00941850 /* SettingsDurationTableViewController.swift in Sources */,
 				F8CE06C31FCDD9F80000CEAA /* SettingsTableViewController.swift in Sources */,
+				F8269AAB1FD4734E00471A39 /* TelegramHelper.swift in Sources */,
 				F84E7F6A1FCF5C2D00BF9320 /* ThemedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
