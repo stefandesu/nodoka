@@ -21,4 +21,6 @@ struct PropertyKeys {
     static let settingsDurationSegue = "settingsDuration"
     static let preparationPickerTag = 0
     static let meditationPickerTag = 1
+    static let setSound1TableViewCellIdentifier = "setSound1TableViewCell"
+    static let setSound2TableViewCellIdentifier = "setSound2TableViewCell"
 }

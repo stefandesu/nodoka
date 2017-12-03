@@ -23,5 +23,8 @@ struct DefaultsKeys {
     static let feedbackLog = "feedbackLog"
     static let feedbackDescription = "feedbackDescription"
     static let feedbackAuthor = "feedbackAuthor"
+    // Sound volume
+    static let useSystemSound = "useSystemSound"
+    static let soundVolume = "soundVolume"
 }
 

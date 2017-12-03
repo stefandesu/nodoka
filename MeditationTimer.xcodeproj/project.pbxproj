@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		F8269AAB1FD4734E00471A39 /* TelegramHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8269AAA1FD4734E00471A39 /* TelegramHelper.swift */; };
 		F8269AAD1FD479C000471A39 /* FeedbackTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8269AAC1FD479C000471A39 /* FeedbackTableView.swift */; };
+		F8269AB01FD4AB0900471A39 /* SetSound1TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8269AAE1FD4AB0900471A39 /* SetSound1TableViewCell.swift */; };
+		F8269AB11FD4AB0900471A39 /* SetSound1TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8269AAF1FD4AB0900471A39 /* SetSound1TableViewCell.xib */; };
+		F8269AB51FD4B42F00471A39 /* SetSound2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8269AB31FD4B42F00471A39 /* SetSound2TableViewCell.swift */; };
+		F8269AB61FD4B42F00471A39 /* SetSound2TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8269AB41FD4B42F00471A39 /* SetSound2TableViewCell.xib */; };
 		F8362FDC1FD4197400783923 /* FeedbackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8362FDB1FD4197400783923 /* FeedbackTableViewController.swift */; };
 		F84E7F641FCF342600BF9320 /* SettingsGongTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E7F631FCF342600BF9320 /* SettingsGongTableViewController.swift */; };
 		F84E7F661FCF3A1500BF9320 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E7F651FCF3A1500BF9320 /* ThemeHelper.swift */; };
@@ -40,6 +44,10 @@
 /* Begin PBXFileReference section */
 		F8269AAA1FD4734E00471A39 /* TelegramHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelegramHelper.swift; sourceTree = "<group>"; };
 		F8269AAC1FD479C000471A39 /* FeedbackTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackTableView.swift; sourceTree = "<group>"; };
+		F8269AAE1FD4AB0900471A39 /* SetSound1TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSound1TableViewCell.swift; sourceTree = "<group>"; };
+		F8269AAF1FD4AB0900471A39 /* SetSound1TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetSound1TableViewCell.xib; sourceTree = "<group>"; };
+		F8269AB31FD4B42F00471A39 /* SetSound2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSound2TableViewCell.swift; sourceTree = "<group>"; };
+		F8269AB41FD4B42F00471A39 /* SetSound2TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetSound2TableViewCell.xib; sourceTree = "<group>"; };
 		F8362FDB1FD4197400783923 /* FeedbackTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackTableViewController.swift; sourceTree = "<group>"; };
 		F84E7F631FCF342600BF9320 /* SettingsGongTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGongTableViewController.swift; sourceTree = "<group>"; };
 		F84E7F651FCF3A1500BF9320 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
@@ -83,6 +91,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F8269AB21FD4AB0F00471A39 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				F8269AAE1FD4AB0900471A39 /* SetSound1TableViewCell.swift */,
+				F8269AAF1FD4AB0900471A39 /* SetSound1TableViewCell.xib */,
+				F8269AB31FD4B42F00471A39 /* SetSound2TableViewCell.swift */,
+				F8269AB41FD4B42F00471A39 /* SetSound2TableViewCell.xib */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		F881AF4A1FD0420700941850 /* Themes */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +174,7 @@
 				F8D7F4EB1FCCAAB600FE786B /* LaunchScreen.storyboard */,
 				F881AF4B1FD0422F00941850 /* Utilities */,
 				F881AF4C1FD0424000941850 /* View Controllers */,
+				F8269AB21FD4AB0F00471A39 /* Other */,
 				F881AF4A1FD0420700941850 /* Themes */,
 			);
 			path = MeditationTimer;
@@ -233,6 +253,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8269AB11FD4AB0900471A39 /* SetSound1TableViewCell.xib in Resources */,
+				F8269AB61FD4B42F00471A39 /* SetSound2TableViewCell.xib in Resources */,
 				F8D7F4ED1FCCAAB600FE786B /* LaunchScreen.storyboard in Resources */,
 				F8D7F4EA1FCCAAB600FE786B /* Assets.xcassets in Resources */,
 				F8D7F4E81FCCAAB600FE786B /* Main.storyboard in Resources */,
@@ -264,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F881AF591FD0AB5B00941850 /* SettingsAdvancedTableViewController.swift in Sources */,
+				F8269AB51FD4B42F00471A39 /* SetSound2TableViewCell.swift in Sources */,
 				F881AF571FD0AB0C00941850 /* UIScreenExtension.swift in Sources */,
 				F8D7F4E51FCCAAB600FE786B /* StartViewController.swift in Sources */,
 				F8867F591FCDB31D00A2C009 /* DefaultsKeys.swift in Sources */,
@@ -285,6 +308,7 @@
 				F8362FDC1FD4197400783923 /* FeedbackTableViewController.swift in Sources */,
 				F881AF641FD2BA4F00941850 /* SettingsDurationTableViewController.swift in Sources */,
 				F8CE06C31FCDD9F80000CEAA /* SettingsTableViewController.swift in Sources */,
+				F8269AB01FD4AB0900471A39 /* SetSound1TableViewCell.swift in Sources */,
 				F8269AAB1FD4734E00471A39 /* TelegramHelper.swift in Sources */,
 				F84E7F6A1FCF5C2D00BF9320 /* ThemedViewController.swift in Sources */,
 			);

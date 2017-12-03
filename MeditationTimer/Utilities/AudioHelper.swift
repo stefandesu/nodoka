@@ -16,7 +16,7 @@ class AudioHelper: NSObject, AVAudioPlayerDelegate {
     static let audioQueue = DispatchQueue(label: "audioQueue", attributes: .concurrent)
     
     var sounds: [Int: AVAudioPlayer?] = [:]
-    
+    let userDefaults = UserDefaults.standard
     
     static func setAudioSession(to status: Bool) {
         // make sure sound plays even on mute
@@ -42,8 +42,18 @@ class AudioHelper: NSObject, AVAudioPlayerDelegate {
             configureAudioPlayer(with: sound)
         }
     }
-    
     func play(_ bellNumber: Int) {
+        // Set sound volume
+        if userDefaults.bool(forKey: DefaultsKeys.useSystemSound) {
+            sounds[bellNumber]??.volume = 0.3
+        } else {
+            print(AVAudioSession.sharedInstance().outputVolume)
+            // TODO: Adjust formula
+            let volume = 0.7 * (userDefaults.float(forKey: DefaultsKeys.soundVolume) / AVAudioSession.sharedInstance().outputVolume)
+            sounds[bellNumber]??.volume = volume
+            print(volume)
+        }
+        // Play async in separate queue
         AudioHelper.audioQueue.async {
             AudioHelper.setAudioSession(to: true)
             self.sounds[bellNumber]??.play()
@@ -71,7 +81,6 @@ class AudioHelper: NSObject, AVAudioPlayerDelegate {
         if let sound = NSDataAsset(name: filename) {
             sounds[bellNumber] = try? AVAudioPlayer(data: sound.data, fileTypeHint: AVFileType.mp3.rawValue)
             sounds[bellNumber]??.delegate = self
-            sounds[bellNumber]??.volume = 0.3
             sounds[bellNumber]??.prepareToPlay()
         }
     }

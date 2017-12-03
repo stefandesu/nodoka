@@ -28,7 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             DefaultsKeys.healthKitEnabled: false,
             DefaultsKeys.changedBrightness: true,
             DefaultsKeys.durationPickerHidden: false,
-            DefaultsKeys.feedbackNotSent: false
+            DefaultsKeys.feedbackNotSent: false,
+            DefaultsKeys.useSystemSound: true,
+            DefaultsKeys.soundVolume: 0.2
         ]
         userDefaults.register(defaults: userDefaultsStandards)
         
