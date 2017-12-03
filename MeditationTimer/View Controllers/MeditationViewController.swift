@@ -13,6 +13,7 @@ class MeditationViewController: ThemedViewController {
     let userDefaults = UserDefaults.standard
     
     var remainingTime: TimeInterval!
+    var preparationTime: TimeInterval!
     var timeMeditated: TimeInterval = 0
     var previousBrightness = CGFloat(0.5)
     
@@ -27,7 +28,7 @@ class MeditationViewController: ThemedViewController {
         super.viewDidLoad()
         
         // Check if remainingTime was set properly, otherwise abort
-        guard remainingTime != nil else {
+        guard remainingTime != nil, preparationTime != nil else {
             navigationController?.popViewController(animated: true)
             return
         }
@@ -35,14 +36,6 @@ class MeditationViewController: ThemedViewController {
         // Set up and start the timer
         startTimer()
         updateLabel()
-        
-        // Play starting gong
-        // AudioHelper.shared.configureAudioPlayer(with: ...)
-        let startGong = userDefaults.integer(forKey: DefaultsKeys.startGong)
-        if startGong != 0 {
-            AudioHelper.shared.stop()
-            AudioHelper.shared.play(startGong)
-        }
         
         // Disable system idle timer
         UIApplication.shared.isIdleTimerDisabled = true
@@ -83,28 +76,47 @@ class MeditationViewController: ThemedViewController {
     }
     
     @objc func timerTick() {
-        timeMeditated += 1.0
-        if isOpenEnd {
-            remainingTime! += 1.0
+        if preparationTime > 0 {
+            // Preparing
+            preparationTime = preparationTime - 1.0
+            if preparationTime == 0 {
+                // Play starting gong
+                let startGong = userDefaults.integer(forKey: DefaultsKeys.startGong)
+                if startGong != 0 {
+                    AudioHelper.shared.stop()
+                    AudioHelper.shared.play(startGong)
+                }
+            }
             updateLabel()
         } else {
-            remainingTime! -= 1.0
-            updateLabel()
-            
-            if remainingTime <= 0.0 {
-                // Segue to end screen
-                performSegue(withIdentifier: PropertyKeys.endMeditationSegue, sender: self)
+            // Meditating
+            timeMeditated += 1.0
+            if isOpenEnd {
+                remainingTime! += 1.0
+                updateLabel()
+            } else {
+                remainingTime! -= 1.0
+                updateLabel()
+                
+                if remainingTime <= 0.0 {
+                    // Segue to end screen
+                    performSegue(withIdentifier: PropertyKeys.endMeditationSegue, sender: self)
+                }
             }
         }
     }
     
     func updateLabel() {
-        let formatter = DateComponentsFormatter()
-        formatter.unitsStyle = .positional
-        formatter.allowedUnits = [.minute, .second]
-        formatter.zeroFormattingBehavior = [.pad]
-        let formattedDuration = formatter.string(from: remainingTime)
-        durationLabel.text = (remainingTime < 10*60 ? "0" : "") + (formattedDuration ?? "?:??")
+        if preparationTime > 0 {
+            durationLabel.text = "\(Int(preparationTime!))"
+        } else {
+            let formatter = DateComponentsFormatter()
+            formatter.unitsStyle = .positional
+            formatter.allowedUnits = [.minute, .second]
+            formatter.zeroFormattingBehavior = [.pad]
+            let formattedDuration = formatter.string(from: remainingTime)
+            durationLabel.text = (remainingTime < 10*60 ? "0" : "") + (formattedDuration ?? "?:??")
+        }
     }
     
     @IBAction func pauseButtonTapped(_ sender: Any) {
@@ -120,6 +132,16 @@ class MeditationViewController: ThemedViewController {
     }
 
     // MARK: - Navigation
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == PropertyKeys.endMeditationSegue && timeMeditated > 0.0  {
+            return true
+        } else {
+            stopTimer()
+            navigationController?.popViewController(animated: true)
+            return false
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Stop timer before anything else
         stopTimer()
