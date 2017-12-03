@@ -32,7 +32,7 @@
 		F8D7F4E81FCCAAB600FE786B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8D7F4E61FCCAAB600FE786B /* Main.storyboard */; };
 		F8D7F4EA1FCCAAB600FE786B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8D7F4E91FCCAAB600FE786B /* Assets.xcassets */; };
 		F8D7F4ED1FCCAAB600FE786B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8D7F4EB1FCCAAB600FE786B /* LaunchScreen.storyboard */; };
-		F8D7F4F71FCCAADD00FE786B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D7F4F61FCCAADD00FE786B /* HealthKit.framework */; };
+		F8D7F4F71FCCAADD00FE786B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D7F4F61FCCAADD00FE786B /* HealthKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */

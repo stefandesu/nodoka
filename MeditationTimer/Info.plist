@@ -19,11 +19,13 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>138</string>
+	<string>140</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSHealthShareUsageDescription</key>
+	<string>This app does not require reading data from Apple Health.</string>
 	<key>NSHealthUpdateUsageDescription</key>
-	<string>This is used to write mindfulness data to Apple Health.</string>
+	<string>Your meditation sessions can be written as mindfulness data to Apple Health.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
