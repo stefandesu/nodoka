@@ -13,6 +13,8 @@ class ThemedTableViewController: UITableViewController {
     @IBOutlet var themedLabels: [UILabel] = []
     @IBOutlet var themedButtons: [UIButton] = []
     @IBOutlet var themedSwitches: [UISwitch] = []
+    @IBOutlet var themedTextViews: [UITextView] = []
+    @IBOutlet var themedTextFields: [UITextField] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +48,14 @@ class ThemedTableViewController: UITableViewController {
         }
         for swiitch in themedSwitches {
             swiitch.onTintColor = Theme.currentTheme.accent
+        }
+        for textView in themedTextViews {
+            textView.backgroundColor = Theme.currentTheme.cell
+            textView.textColor = Theme.currentTheme.text
+        }
+        for textField in themedTextFields {
+            textField.backgroundColor = Theme.currentTheme.cell
+            textField.textColor = Theme.currentTheme.text
         }
     }
 

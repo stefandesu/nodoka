@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F8362FDC1FD4197400783923 /* FeedbackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8362FDB1FD4197400783923 /* FeedbackTableViewController.swift */; };
 		F84E7F641FCF342600BF9320 /* SettingsGongTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E7F631FCF342600BF9320 /* SettingsGongTableViewController.swift */; };
 		F84E7F661FCF3A1500BF9320 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E7F651FCF3A1500BF9320 /* ThemeHelper.swift */; };
 		F84E7F681FCF59E600BF9320 /* ThemedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E7F671FCF59E600BF9320 /* ThemedTableViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F8362FDB1FD4197400783923 /* FeedbackTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackTableViewController.swift; sourceTree = "<group>"; };
 		F84E7F631FCF342600BF9320 /* SettingsGongTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGongTableViewController.swift; sourceTree = "<group>"; };
 		F84E7F651FCF3A1500BF9320 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 		F84E7F671FCF59E600BF9320 /* ThemedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedTableViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 		F881AF4C1FD0424000941850 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F8362FDB1FD4197400783923 /* FeedbackTableViewController.swift */,
 				F881AF631FD2BA4F00941850 /* SettingsDurationTableViewController.swift */,
 				F881AF611FD1F97800941850 /* SettingsVersionViewController.swift */,
 				F881AF5C1FD1D08C00941850 /* DebugListTableViewController.swift */,
@@ -272,6 +275,7 @@
 				F84E7F661FCF3A1500BF9320 /* ThemeHelper.swift in Sources */,
 				F881AF5B1FD0ADB900941850 /* MeditationSession.swift in Sources */,
 				F8D7F4E31FCCAAB600FE786B /* AppDelegate.swift in Sources */,
+				F8362FDC1FD4197400783923 /* FeedbackTableViewController.swift in Sources */,
 				F881AF641FD2BA4F00941850 /* SettingsDurationTableViewController.swift in Sources */,
 				F8CE06C31FCDD9F80000CEAA /* SettingsTableViewController.swift in Sources */,
 				F84E7F6A1FCF5C2D00BF9320 /* ThemedViewController.swift in Sources */,

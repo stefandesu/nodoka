@@ -18,7 +18,7 @@ class SettingsDurationTableViewController: ThemedTableViewController, UIPickerVi
     var meditationTimeList: [String] {
         var list = ["Open End"]
         for minutes in 1...45 {
-            list.append("\(minutes) \(minutes == 1 ? "minute" : "minutes")")
+            list.append("\(minutes) \(minutes == 1 ? "Minute" : "Minutes")")
         }
         return list
     }
@@ -26,7 +26,7 @@ class SettingsDurationTableViewController: ThemedTableViewController, UIPickerVi
     var preparationTimeList: [String] {
         var list = ["No Preparation"]
         for seconds in 1...60 {
-            list.append("\(seconds) \(seconds == 1 ? "second" : "seconds")")
+            list.append("\(seconds) \(seconds == 1 ? "Second" : "Seconds")")
         }
         return list
     }
