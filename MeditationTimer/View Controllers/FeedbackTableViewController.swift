@@ -39,8 +39,6 @@ class FeedbackTableViewController: ThemedTableViewController {
         }
     }
     
-    table
-    
     @IBAction func submitButtonTapped(_ sender: UIButton) {
         sender.setTitle("Submitting...", for: .normal)
         sender.isEnabled = false
