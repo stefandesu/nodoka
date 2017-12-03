@@ -41,7 +41,7 @@ class StartViewController: ThemedViewController {
         guard let identifier = segue.identifier else { return }
         if identifier == PropertyKeys.startMeditationSegue, let destination = segue.destination as? MeditationViewController {
             let meditationMinutes = userDefaults.integer(forKey: DefaultsKeys.duration)
-            let preparationSeconds = userDefaults.integer(forKey: DefaultsKeys.duration)
+            let preparationSeconds = userDefaults.integer(forKey: DefaultsKeys.preparation)
             destination.remainingTime = Double(meditationMinutes*60)
             destination.isOpenEnd = meditationMinutes == 0 ? true : false
             destination.preparationTime = Double(preparationSeconds)

@@ -56,9 +56,11 @@ class MeditationViewController: ThemedViewController {
     }
     
     @objc func appDidEnterBackground() {
+        print("appDidEnterBackground")
         stopTimer()
     }
     @objc func appDidBecomeActive() {
+        print("appDidBecomeActive")
         startTimer()
         infoLabel.text = "The timer only works when the application is active."
     }
@@ -76,6 +78,7 @@ class MeditationViewController: ThemedViewController {
     }
     
     @objc func timerTick() {
+        print("Timer Tick (\(preparationTime), \(remainingTime), \(timeMeditated))")
         if preparationTime > 0 {
             // Preparing
             preparationTime = preparationTime - 1.0
@@ -136,26 +139,35 @@ class MeditationViewController: ThemedViewController {
         if identifier == PropertyKeys.endMeditationSegue && timeMeditated > 0.0  {
             return true
         } else {
-            stopTimer()
+            preLeaveRoutine()            
+            // Go back to main screen
             navigationController?.popViewController(animated: true)
             return false
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Stop timer before anything else
+    func preLeaveRoutine() {
+        print("preLeaveRoutine")
+        // Stop timer
         stopTimer()
-        // Play gong
-        let endGong = userDefaults.integer(forKey: DefaultsKeys.endGong)
-        if endGong != 0 {
-            AudioHelper.shared.stop()
-            AudioHelper.shared.play(endGong)
-        }
         // Re-enable system idle timer
         UIApplication.shared.isIdleTimerDisabled = false
         // Readjust screen brightness
         if userDefaults.bool(forKey: DefaultsKeys.changedBrightness) {
             UIScreen.main.setBrightness(previousBrightness, animated: true)
+        }
+        // Remove notification observers
+        NotificationCenter.default.removeObserver(self, name: .UIApplicationDidEnterBackground, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .UIApplicationDidBecomeActive, object: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        preLeaveRoutine()
+        // Play gong
+        let endGong = userDefaults.integer(forKey: DefaultsKeys.endGong)
+        if endGong != 0 {
+            AudioHelper.shared.stop()
+            AudioHelper.shared.play(endGong)
         }
         // Actual preparation for segue
         guard let identifier = segue.identifier else { return }

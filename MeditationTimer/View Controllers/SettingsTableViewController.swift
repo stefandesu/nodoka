@@ -141,6 +141,7 @@ class SettingsTableViewController: ThemedTableViewController, HealthKitHelperDel
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        NotificationCenter.default.removeObserver(self, name: .UIApplicationDidBecomeActive, object: nil)
         guard let identifier = segue.identifier else { return }
         if identifier == PropertyKeys.settingsGongStartSegue {
             if let destination = segue.destination as? SettingsGongTableViewController {
