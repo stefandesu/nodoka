@@ -19,6 +19,8 @@ class MeditationViewController: ThemedViewController {
     
     var timer = Timer()
     var isOpenEnd = false
+    var isPausedByBackground = false
+    var isPausedByButton = false
 
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var pauseButton: UIButton!
@@ -33,36 +35,31 @@ class MeditationViewController: ThemedViewController {
             return
         }
 
-        // Set up and start the timer
-        startTimer()
+        // Set up
         updateLabel()
-        
-        // Disable system idle timer
-        UIApplication.shared.isIdleTimerDisabled = true
-        
-        // Screen brightness
-        if userDefaults.bool(forKey: DefaultsKeys.changedBrightness) {
-            previousBrightness = UIScreen.main.brightness
-            if previousBrightness > 0.1 {
-                UIScreen.main.setBrightness(0.1, animated: true)
-            }
-        }
-        
         infoLabel.text = ""
         
-        // Set up enter background and became active notifications
-        NotificationCenter.default.addObserver(self, selector: #selector(appDidEnterBackground), name: .UIApplicationDidEnterBackground, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(appDidBecomeActive), name: .UIApplicationDidBecomeActive, object: nil)
+        postLeaveRoutine()
+        addNotificationOberserver()
+        startingSound()
     }
     
     @objc func appDidEnterBackground() {
         print("appDidEnterBackground")
-        stopTimer()
+        if timer.isValid {
+            isPausedByBackground = true
+        }
+        preLeaveRoutine()
     }
     @objc func appDidBecomeActive() {
         print("appDidBecomeActive")
-        startTimer()
-        infoLabel.text = "The timer only works when the application is active."
+        // Save new screen brightness in case user changed it during background
+        previousBrightness = UIScreen.main.brightness
+        
+        if isPausedByBackground {
+            postLeaveRoutine()
+            infoLabel.text = "The timer only works when the application is active."
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,10 +68,25 @@ class MeditationViewController: ThemedViewController {
     }
     
     func startTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: #selector(self.timerTick), userInfo: nil, repeats: true)
+        if !timer.isValid {
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: #selector(self.timerTick), userInfo: nil, repeats: true)
+            isPausedByBackground = false
+            isPausedByButton = false
+        }
     }
     func stopTimer() {
         timer.invalidate()
+    }
+    
+    fileprivate func startingSound() {
+        if preparationTime == 0 {
+            // Play starting gong
+            let startGong = userDefaults.integer(forKey: DefaultsKeys.startGong)
+            if startGong != 0 {
+                AudioHelper.shared.stop()
+                AudioHelper.shared.play(startGong)
+            }
+        }
     }
     
     @objc func timerTick() {
@@ -82,14 +94,7 @@ class MeditationViewController: ThemedViewController {
         if preparationTime > 0 {
             // Preparing
             preparationTime = preparationTime - 1.0
-            if preparationTime == 0 {
-                // Play starting gong
-                let startGong = userDefaults.integer(forKey: DefaultsKeys.startGong)
-                if startGong != 0 {
-                    AudioHelper.shared.stop()
-                    AudioHelper.shared.play(startGong)
-                }
-            }
+            startingSound()
             updateLabel()
         } else {
             // Meditating
@@ -125,11 +130,12 @@ class MeditationViewController: ThemedViewController {
     @IBAction func pauseButtonTapped(_ sender: Any) {
         if timer.isValid {
             // Pause the timer
-            stopTimer()
+            preLeaveRoutine()
             pauseButton.setTitle("Continue", for: .normal)
+            isPausedByButton = true
         } else {
             // Continue the timer
-            startTimer()
+            postLeaveRoutine()
             pauseButton.setTitle("Pause", for: .normal)
         }
     }
@@ -139,7 +145,8 @@ class MeditationViewController: ThemedViewController {
         if identifier == PropertyKeys.endMeditationSegue && timeMeditated > 0.0  {
             return true
         } else {
-            preLeaveRoutine()            
+            preLeaveRoutine()
+            removeNoficationObserver()
             // Go back to main screen
             navigationController?.popViewController(animated: true)
             return false
@@ -156,13 +163,43 @@ class MeditationViewController: ThemedViewController {
         if userDefaults.bool(forKey: DefaultsKeys.changedBrightness) {
             UIScreen.main.setBrightness(previousBrightness, animated: true)
         }
+    }
+    
+    func postLeaveRoutine() {
+        print("postLeaveRoutine")
+        
+        // Start timer
+        startTimer()
+        
+        // Disable system idle timer
+        UIApplication.shared.isIdleTimerDisabled = true
+        
+        // Save screen brightness and dim
+        if userDefaults.bool(forKey: DefaultsKeys.changedBrightness) {
+            previousBrightness = UIScreen.main.brightness
+            if previousBrightness > 0.1 {
+                UIScreen.main.setBrightness(0.1, animated: true)
+            }
+        }
+    }
+    
+    func removeNoficationObserver() {
         // Remove notification observers
         NotificationCenter.default.removeObserver(self, name: .UIApplicationDidEnterBackground, object: nil)
         NotificationCenter.default.removeObserver(self, name: .UIApplicationDidBecomeActive, object: nil)
     }
     
+    func addNotificationOberserver() {
+        // Set up enter background and became active notifications
+        NotificationCenter.default.addObserver(self, selector: #selector(appDidEnterBackground), name: .UIApplicationDidEnterBackground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(appDidBecomeActive), name: .UIApplicationDidBecomeActive, object: nil)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         preLeaveRoutine()
+        
+        removeNoficationObserver()
+        
         // Play gong
         let endGong = userDefaults.integer(forKey: DefaultsKeys.endGong)
         if endGong != 0 {
