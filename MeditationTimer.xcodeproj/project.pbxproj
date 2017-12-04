@@ -28,6 +28,7 @@
 		F881AF641FD2BA4F00941850 /* SettingsDurationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881AF631FD2BA4F00941850 /* SettingsDurationTableViewController.swift */; };
 		F8867F571FCDAF8900A2C009 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8867F561FCDAF8900A2C009 /* Theme.swift */; };
 		F8867F591FCDB31D00A2C009 /* DefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8867F581FCDB31D00A2C009 /* DefaultsKeys.swift */; };
+		F88BCD791FD6025E00DB2C87 /* FontAwesome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F88BCD781FD6025E00DB2C87 /* FontAwesome.framework */; };
 		F8CE06B91FCDCB780000CEAA /* MeditationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CE06B81FCDCB780000CEAA /* MeditationViewController.swift */; };
 		F8CE06BB1FCDCBC60000CEAA /* PropertyKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CE06BA1FCDCBC60000CEAA /* PropertyKeys.swift */; };
 		F8CE06BD1FCDCDDA0000CEAA /* FinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CE06BC1FCDCDDA0000CEAA /* FinishViewController.swift */; };
@@ -64,6 +65,7 @@
 		F881AF631FD2BA4F00941850 /* SettingsDurationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDurationTableViewController.swift; sourceTree = "<group>"; };
 		F8867F561FCDAF8900A2C009 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		F8867F581FCDB31D00A2C009 /* DefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsKeys.swift; sourceTree = "<group>"; };
+		F88BCD781FD6025E00DB2C87 /* FontAwesome.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FontAwesome.framework; path = Carthage/Build/iOS/FontAwesome.framework; sourceTree = "<group>"; };
 		F8CE06B81FCDCB780000CEAA /* MeditationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationViewController.swift; sourceTree = "<group>"; };
 		F8CE06BA1FCDCBC60000CEAA /* PropertyKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyKeys.swift; sourceTree = "<group>"; };
 		F8CE06BC1FCDCDDA0000CEAA /* FinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8D7F4F71FCCAADD00FE786B /* HealthKit.framework in Frameworks */,
+				F88BCD791FD6025E00DB2C87 /* FontAwesome.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +189,7 @@
 		F8D7F4F51FCCAADD00FE786B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F88BCD781FD6025E00DB2C87 /* FontAwesome.framework */,
 				F8D7F4F61FCCAADD00FE786B /* HealthKit.framework */,
 			);
 			name = Frameworks;
@@ -202,6 +206,8 @@
 				F8D7F4DB1FCCAAB600FE786B /* Sources */,
 				F8D7F4DC1FCCAAB600FE786B /* Frameworks */,
 				F8D7F4DD1FCCAAB600FE786B /* Resources */,
+				F88BCD7A1FD6027A00DB2C87 /* Carthage Copy Frameworks */,
+				F88BCD7B1FD6030000DB2C87 /* Carthage Check Outdated */,
 			);
 			buildRules = (
 			);
@@ -280,6 +286,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+		};
+		F88BCD7A1FD6027A00DB2C87 /* Carthage Copy Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/FontAwesome.framework",
+			);
+			name = "Carthage Copy Frameworks";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/FontAwesome.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		F88BCD7B1FD6030000DB2C87 /* Carthage Check Outdated */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Carthage Check Outdated";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage outdated --xcode-warnings";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -454,6 +490,10 @@
 				CODE_SIGN_ENTITLEMENTS = MeditationTimer/MeditationTimer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5QKMCZ8YUJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MeditationTimer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -471,6 +511,10 @@
 				CODE_SIGN_ENTITLEMENTS = MeditationTimer/MeditationTimer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5QKMCZ8YUJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MeditationTimer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

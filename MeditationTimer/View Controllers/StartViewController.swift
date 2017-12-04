@@ -7,15 +7,35 @@
 //
 
 import UIKit
+import FontAwesome
 
 class StartViewController: ThemedViewController {
     
     let userDefaults = UserDefaults.standard
     
-    @IBOutlet weak var durationLabel: UILabel!
+    
+    @IBOutlet weak var preparationTimeLabel: UILabel!
+    @IBOutlet weak var durationTimeLabel: UILabel!
+    @IBOutlet weak var settingsButton: UIButton!
+    @IBOutlet weak var historyButton: UIButton!
+    @IBOutlet weak var changeDurationButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        var icon = NSMutableAttributedString(string: String.fontAwesomeIcon(name: .cog), attributes: [.font: UIFont.fontAwesome(ofSize: 17), .foregroundColor: Theme.currentTheme.accent])
+        var text = NSAttributedString(string: " Settings", attributes: [.font: UIFont.systemFont(ofSize: 17), .foregroundColor: Theme.currentTheme.accent])
+        icon.append(text)
+        settingsButton.setAttributedTitle(icon, for: .normal)
+        
+        icon = NSMutableAttributedString(string: String.fontAwesomeIcon(name: .history), attributes: [.font: UIFont.fontAwesome(ofSize: 17), .foregroundColor: Theme.currentTheme.accent])
+        text = NSAttributedString(string: " History", attributes: [.font: UIFont.systemFont(ofSize: 17), .foregroundColor: Theme.currentTheme.accent])
+        icon.append(text)
+        historyButton.setAttributedTitle(icon, for: .normal)
+        
+        icon = NSMutableAttributedString(string: String.fontAwesomeIcon(name: .pencil), attributes: [.font: UIFont.fontAwesome(ofSize: 20), .foregroundColor: Theme.currentTheme.accent])
+        changeDurationButton.setAttributedTitle(icon, for: .normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -25,7 +45,8 @@ class StartViewController: ThemedViewController {
         let preparationTime = userDefaults.integer(forKey: DefaultsKeys.preparation)
         let meditationTimeString = meditationTime == 0 ? "Open End" : "\(meditationTime) Minute" + (meditationTime == 1 ? "" : "s")
         let preparationTimeString = preparationTime == 0 ? "No Preparation" : "\(preparationTime) Second" + (preparationTime == 1 ? "" : "s")
-        durationLabel.text = "Preparation: \(preparationTimeString)\nMeditation: \(meditationTimeString)"
+        preparationTimeLabel.text = "\(preparationTimeString)"
+        durationTimeLabel.text = "\(meditationTimeString)"
         
         navigationController?.setNavigationBarHidden(true, animated: true)
     }

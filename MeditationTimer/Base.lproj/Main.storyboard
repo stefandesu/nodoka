@@ -89,29 +89,9 @@ Enjoy!
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WK7-d7-rl2">
-                                <rect key="frame" x="119" y="518" width="82" height="30"/>
-                                <state key="normal" title="⚙ Settings">
-                                    <color key="titleColor" red="0.92941176470588238" green="0.46274509803921571" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Uel-G7-3PU" kind="show" identifier="openSettings" id="342-Fj-GCC"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccQ-fy-kmI">
-                                <rect key="frame" x="71" y="40" width="179" height="42"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="W2e-xC-B4r"/>
-                                </constraints>
-                                <string key="text">Meditation: 10 Minutes
-Preparation: 5 Seconds</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.78823529411764703" green="0.792156862745098" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9z-5Z-BLe">
-                                <rect key="frame" x="111" y="249" width="98" height="70"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <rect key="frame" x="96.5" y="242" width="127" height="84"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="60"/>
                                 <state key="normal" title="Start">
                                     <color key="titleColor" red="0.92941176470588238" green="0.46274509803921571" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -119,39 +99,112 @@ Preparation: 5 Seconds</string>
                                     <segue destination="dnN-SW-0Ui" kind="showDetail" identifier="startMeditation" action="showViewController:sender:" id="FqH-KX-luv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8E7-HU-NIH">
-                                <rect key="frame" x="102" y="90" width="116" height="30"/>
-                                <state key="normal" title="Change Duration"/>
-                                <connections>
-                                    <segue destination="ccP-84-jI2" kind="show" id="Wez-ps-6Q9"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jCq-3n-csj">
+                                <rect key="frame" x="0.0" y="520" width="320" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0F5-K4-j7a">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="40"/>
+                                        <state key="normal" title="History"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WK7-d7-rl2">
+                                        <rect key="frame" x="160" y="0.0" width="160" height="40"/>
+                                        <state key="normal" title="⚙ Settings">
+                                            <color key="titleColor" red="0.92941176470588238" green="0.46274509803921571" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Uel-G7-3PU" kind="show" identifier="openSettings" id="342-Fj-GCC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="3ze-7h-70z"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="bfw-rB-T70">
+                                <rect key="frame" x="32" y="473" width="256" height="39"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="XdU-zL-bjj">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="39"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preparation:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1l-8s-Qfi">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meditation:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5r-iq-Z3Z">
+                                                <rect key="frame" x="0.0" y="21" width="120" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D9y-au-bzI">
+                                        <rect key="frame" x="136" y="0.0" width="120" height="39"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="lYQ-ka-EFE">
+                                                <rect key="frame" x="0.0" y="0.0" width="90" height="39"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 Seconds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeJ-3R-ffD">
+                                                        <rect key="frame" x="0.0" y="0.0" width="73" height="18"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 Minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWQ-FN-j1Q">
+                                                        <rect key="frame" x="0.0" y="21" width="74.5" height="18"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8E7-HU-NIH">
+                                                <rect key="frame" x="90" y="0.0" width="30" height="39"/>
+                                                <state key="normal" title="__"/>
+                                                <connections>
+                                                    <segue destination="ccP-84-jI2" kind="show" id="Wez-ps-6Q9"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="8E7-HU-NIH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DBF-vI-QkY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="WK7-d7-rl2" secondAttribute="bottom" constant="20" id="O9X-B1-e44"/>
-                            <constraint firstItem="G9z-5Z-BLe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Yv5-ZE-g8X"/>
-                            <constraint firstItem="ccQ-fy-kmI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cId-Ep-yuH"/>
-                            <constraint firstItem="G9z-5Z-BLe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="flJ-Fn-Glc"/>
-                            <constraint firstItem="ccQ-fy-kmI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="mTe-KW-Bc7"/>
-                            <constraint firstItem="WK7-d7-rl2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="u4N-oS-dRH"/>
-                            <constraint firstItem="8E7-HU-NIH" firstAttribute="top" secondItem="ccQ-fy-kmI" secondAttribute="bottom" constant="8" id="yaG-Ua-vPx"/>
+                            <constraint firstItem="bfw-rB-T70" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="0ay-Ba-ZH3"/>
+                            <constraint firstItem="G9z-5Z-BLe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="AUV-iR-sxj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jCq-3n-csj" secondAttribute="bottom" constant="8" id="GdW-6C-RkT"/>
+                            <constraint firstItem="jCq-3n-csj" firstAttribute="top" secondItem="bfw-rB-T70" secondAttribute="bottom" constant="8" id="I4b-NK-Ez2"/>
+                            <constraint firstItem="G9z-5Z-BLe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NVo-nF-4bd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bfw-rB-T70" secondAttribute="trailing" constant="32" id="idx-SG-LGA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jCq-3n-csj" secondAttribute="trailing" id="m2W-OX-apy"/>
+                            <constraint firstItem="jCq-3n-csj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nOs-Ez-95N"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="YHN-O0-vGh"/>
                     <connections>
-                        <outlet property="durationLabel" destination="ccQ-fy-kmI" id="gmo-EZ-DOk"/>
-                        <outletCollection property="themedButtons" destination="WK7-d7-rl2" collectionClass="NSMutableArray" id="RzE-cu-nwT"/>
-                        <outletCollection property="themedLabels" destination="ccQ-fy-kmI" collectionClass="NSMutableArray" id="W8x-nh-sGf"/>
+                        <outlet property="changeDurationButton" destination="8E7-HU-NIH" id="h9F-mw-3gu"/>
+                        <outlet property="durationTimeLabel" destination="mWQ-FN-j1Q" id="nfO-y5-cB5"/>
+                        <outlet property="historyButton" destination="0F5-K4-j7a" id="6Rg-OS-PDY"/>
+                        <outlet property="preparationTimeLabel" destination="SeJ-3R-ffD" id="w9c-xG-BMg"/>
+                        <outlet property="settingsButton" destination="WK7-d7-rl2" id="yW6-Qz-UzS"/>
                         <outletCollection property="themedButtons" destination="G9z-5Z-BLe" collectionClass="NSMutableArray" id="xWO-Mu-yLc"/>
+                        <outletCollection property="themedButtons" destination="WK7-d7-rl2" collectionClass="NSMutableArray" id="RzE-cu-nwT"/>
+                        <outletCollection property="themedButtons" destination="0F5-K4-j7a" collectionClass="NSMutableArray" id="OzU-qm-zEG"/>
                         <outletCollection property="themedButtons" destination="8E7-HU-NIH" collectionClass="NSMutableArray" id="GQr-w7-mEy"/>
+                        <outletCollection property="themedLabels" destination="J1l-8s-Qfi" collectionClass="NSMutableArray" id="Py5-kR-ckT"/>
+                        <outletCollection property="themedLabels" destination="H5r-iq-Z3Z" collectionClass="NSMutableArray" id="Y00-z4-bm7"/>
+                        <outletCollection property="themedLabels" destination="SeJ-3R-ffD" collectionClass="NSMutableArray" id="Ckb-fA-Usy"/>
+                        <outletCollection property="themedLabels" destination="mWQ-FN-j1Q" collectionClass="NSMutableArray" id="jlE-hC-yFH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-141" y="-274"/>
+            <point key="canvasLocation" x="-142.5" y="-274.64788732394368"/>
         </scene>
         <!--Meditation View Controller-->
         <scene sceneID="IwJ-zZ-uPU">
