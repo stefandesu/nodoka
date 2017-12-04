@@ -504,46 +504,10 @@ Preparation: 5 Seconds</string>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection footerTitle="If you encountered an error in the application, it would be helpful to include the log files." id="AO5-E6-EjQ">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="fNV-xB-knb">
-                                        <rect key="frame" x="0.0" y="135.5" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fNV-xB-knb" id="5Qe-6d-v0n">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nvc-t6-Tfo">
-                                                    <rect key="frame" x="16" y="6.5" width="288" height="31"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attach Log Files" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qsv-Qk-eu2">
-                                                            <rect key="frame" x="0.0" y="0.0" width="239" height="31"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vg2-5m-wxd">
-                                                            <rect key="frame" x="239" y="0.0" width="51" height="31"/>
-                                                            <connections>
-                                                                <action selector="logSwitchChanged:" destination="pgA-51-Iv8" eventType="valueChanged" id="MF7-Zz-1Rx"/>
-                                                            </connections>
-                                                        </switch>
-                                                    </subviews>
-                                                </stackView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="nvc-t6-Tfo" firstAttribute="leading" secondItem="5Qe-6d-v0n" secondAttribute="leading" constant="16" id="8r6-jk-9FQ"/>
-                                                <constraint firstItem="nvc-t6-Tfo" firstAttribute="centerY" secondItem="5Qe-6d-v0n" secondAttribute="centerY" id="ahL-aA-kBG"/>
-                                                <constraint firstAttribute="trailing" secondItem="nvc-t6-Tfo" secondAttribute="trailing" constant="16" id="jkP-uu-RGQ"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                             <tableViewSection headerTitle="Description" id="Pyq-nH-Hra">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="P6e-gz-v9l">
-                                        <rect key="frame" x="0.0" y="263.5" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="155.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P6e-gz-v9l" id="ZH8-yW-3mv">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -571,7 +535,7 @@ Preparation: 5 Seconds</string>
                             <tableViewSection headerTitle="Contact Information (Optional)" footerTitle="If you'd like me to contact you about the issue or credit you for a suggestion, please leave your info here." id="aj3-p0-jhV">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="bsk-Kl-Gs5">
-                                        <rect key="frame" x="0.0" y="371" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="263" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bsk-Kl-Gs5" id="hCv-gZ-eCB">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -601,7 +565,7 @@ Preparation: 5 Seconds</string>
                             <tableViewSection footerTitle="Info: Feedback submission currently not available." id="bc4-14-m6W">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="GoS-cx-3Nd">
-                                        <rect key="frame" x="0.0" y="495" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="387" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GoS-cx-3Nd" id="vBT-HZ-EaH">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -632,10 +596,8 @@ Preparation: 5 Seconds</string>
                     <connections>
                         <outlet property="contactTextField" destination="yVH-BL-KZI" id="mUO-kM-lUw"/>
                         <outlet property="descriptionTextView" destination="2nU-95-kP8" id="cpf-qT-oL6"/>
-                        <outlet property="logFileSwitch" destination="vg2-5m-wxd" id="gVj-kt-uaN"/>
                         <outlet property="selectedFeedbackType" destination="FCx-Yb-ppF" id="zoD-hj-JVI"/>
                         <outlet property="sendButton" destination="oUc-Ys-TMN" id="cg4-VY-NcH"/>
-                        <outletCollection property="themedSwitches" destination="vg2-5m-wxd" collectionClass="NSMutableArray" id="LqK-gg-v1e"/>
                         <outletCollection property="themedTextViews" destination="2nU-95-kP8" collectionClass="NSMutableArray" id="nBe-bd-psS"/>
                         <outletCollection property="themedButtons" destination="oUc-Ys-TMN" collectionClass="NSMutableArray" id="Pm2-ML-jrU"/>
                         <outletCollection property="themedTextFields" destination="yVH-BL-KZI" collectionClass="NSMutableArray" id="Let-RY-2Ud"/>
@@ -1089,6 +1051,6 @@ Preparation: 5 Seconds</string>
         <image name="empowered-owl-1-logo-trans" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Brk-N4-jZy"/>
+        <segue reference="Wez-ps-6Q9"/>
     </inferredMetricsTieBreakers>
 </document>

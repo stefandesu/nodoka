@@ -11,8 +11,9 @@ import UIKit
 class SettingsGongTableViewController: ThemedTableViewController, SetSoundTableViewCellDelegate {
     func useSystemSoundSwitchChanged(to: Bool) {
         useSystemSound = to
+        tableView.beginUpdates()
         UserDefaults.standard.set(to, forKey: DefaultsKeys.useSystemSound)
-        tableView.reloadData()
+        tableView.endUpdates()
     }
     
     func defaultSoundVolumeChanged(to: Float) {
@@ -129,7 +130,7 @@ class SettingsGongTableViewController: ThemedTableViewController, SetSoundTableV
         } else if section == 1 {
             return "End Sound"
         } else if section == 2 {
-            return "Use System Sound Volume"
+            // return "Use System Sound Volume"
         }
         return nil
     }

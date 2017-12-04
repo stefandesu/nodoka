@@ -78,5 +78,11 @@ class ThemedTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let header = view as? UITableViewHeaderFooterView else { return }
+        header.textLabel?.textColor = Theme.currentTheme.textLight
+        header.textLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+    }
 
 }

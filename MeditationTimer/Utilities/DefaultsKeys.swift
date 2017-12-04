@@ -28,5 +28,6 @@ struct DefaultsKeys {
     static let soundVolume = "soundVolume"
     // Application specific
     static let hasLaunchedApp = "hasLaunchedApp"
+    static let debugMenuEnabled = "debugMenuEnabled"
 }
 

@@ -17,6 +17,10 @@ class SettingsAdvancedTableViewController: ThemedTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         brightnessSwitch.isOn = userDefaults.bool(forKey: DefaultsKeys.changedBrightness)
+        // Recognize tap for secret debug menu
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tableTapped))
+        tap.numberOfTapsRequired = 4
+        tableView.addGestureRecognizer(tap)
     }
 
     @IBAction func brightnessSwitchChanged(_ sender: UISwitch) {
@@ -51,6 +55,26 @@ class SettingsAdvancedTableViewController: ThemedTableViewController {
         userDefaults.set(false, forKey: DefaultsKeys.hasLaunchedApp)
     }
     
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        if userDefaults.bool(forKey: DefaultsKeys.debugMenuEnabled) {
+            return 2
+        } else {
+            return 1
+        }
+    }
+    
+    @objc func tableTapped(tap:UITapGestureRecognizer) {
+        let location = tap.location(in: self.tableView)
+        let path = self.tableView.indexPathForRow(at: location)
+        if let indexPathForRow = path {
+            tableView(self.tableView, didSelectRowAt: indexPathForRow)
+        } else {
+            // Handle tap on empty space below existing rows
+            let newValue = !userDefaults.bool(forKey: DefaultsKeys.debugMenuEnabled)
+            userDefaults.set(newValue, forKey: DefaultsKeys.debugMenuEnabled)
+            tableView.reloadData()
+        }
+    }
     
 }
 

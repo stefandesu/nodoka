@@ -31,7 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             DefaultsKeys.feedbackNotSent: false,
             DefaultsKeys.useSystemSound: true,
             DefaultsKeys.soundVolume: 0.2,
-            DefaultsKeys.hasLaunchedApp: false
+            DefaultsKeys.hasLaunchedApp: false,
+            DefaultsKeys.debugMenuEnabled: false
         ]
         userDefaults.register(defaults: userDefaultsStandards)
         
