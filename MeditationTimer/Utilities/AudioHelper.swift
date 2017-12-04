@@ -49,7 +49,7 @@ class AudioHelper: NSObject, AVAudioPlayerDelegate {
         } else {
             print(AVAudioSession.sharedInstance().outputVolume)
             // TODO: Adjust formula
-            let volume = 0.7 * (userDefaults.float(forKey: DefaultsKeys.soundVolume) / AVAudioSession.sharedInstance().outputVolume)
+            let volume = 0.4 * (userDefaults.float(forKey: DefaultsKeys.soundVolume) / AVAudioSession.sharedInstance().outputVolume)
             sounds[bellNumber]??.volume = volume
             print(volume)
         }
