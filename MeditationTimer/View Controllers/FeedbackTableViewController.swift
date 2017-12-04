@@ -100,18 +100,30 @@ class FeedbackTableViewController: ThemedTableViewController, TelegramHelperDele
     }
     
     @IBAction func submitButtonTapped(_ sender: UIButton) {
-        currentSubmissionStatus = .sending
-        tableView.reloadData()
-        sender.isEnabled = false
-        // Put message together
-        var message = "New Message (\(Date()):\n"
-        message += "Type: \(selectedFeedbackType.selectedSegmentIndex)\n"
-        message += "Message Text:\n\(descriptionTextView.text ?? "")\n"
-        message += "Contact: \(contactTextField.text ?? "")"
-        
-        let feedbackQueue = DispatchQueue(label: "feedbackQueue", attributes: .concurrent)
-        feedbackQueue.async {
-            TelegramHelper.send(message: message, delegate: self)
+        if descriptionTextView.text ?? "" == "" {
+            let alertController = UIAlertController(title: "No Message", message: "Please provide some text about your feedback.", preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
+            alertController.addAction(cancelAction)
+            present(alertController, animated: true, completion: nil)
+        } else {
+            currentSubmissionStatus = .sending
+            tableView.reloadData()
+            sender.isEnabled = false
+            // Convert date
+            let now = Date()
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm"
+            let dateString = formatter.string(from: now)
+            // Put message together
+            var message = "New Message (\(dateString)):\n"
+            message += "Type: \(selectedFeedbackType.selectedSegmentIndex)\n"
+            message += "Message Text:\n\(descriptionTextView.text ?? "")\n"
+            message += "Contact: \(contactTextField.text ?? "")"
+            
+            let feedbackQueue = DispatchQueue(label: "feedbackQueue", attributes: .concurrent)
+            feedbackQueue.async {
+                TelegramHelper.send(message: message, delegate: self)
+            }
         }
     }
     

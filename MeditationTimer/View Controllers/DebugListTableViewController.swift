@@ -34,11 +34,19 @@ class DebugListTableViewController: ThemedTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PropertyKeys.debugListCell, for: indexPath)
 
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
         if let session = MeditationSession.getSession(identifier: indexArray[indexPath.row].key) {
-            cell.textLabel?.text = "Date: \(session.date)"
-            cell.detailTextLabel?.text = "Duration: \(session.duration) seconds."
+            let dateString = formatter.string(from: session.date)
+            cell.textLabel?.text = "Date: \(dateString)"
+            let minutes = Int(session.duration) / 60
+            let minuteString = minutes > 0 ? "\(minutes) min. " : ""
+            let seconds = Int(session.duration) % 60
+            let secondString = seconds > 0 ? "\(seconds) sec." : ""
+            cell.detailTextLabel?.text = "Duration: \(minuteString)\(secondString)"
         } else {
-            cell.textLabel?.text = "\(indexArray[indexPath.row].value)"
+            let dateString = formatter.string(from: indexArray[indexPath.row].value)
+            cell.textLabel?.text = "\(dateString)"
             cell.detailTextLabel?.text = "Could not load session."
         }
 
