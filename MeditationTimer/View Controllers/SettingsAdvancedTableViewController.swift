@@ -47,5 +47,10 @@ class SettingsAdvancedTableViewController: ThemedTableViewController {
         }
     }
     
+    @IBAction func resetIntroScreenTapped(_ sender: Any) {
+        userDefaults.set(false, forKey: DefaultsKeys.hasLaunchedApp)
+    }
+    
+    
 }
 

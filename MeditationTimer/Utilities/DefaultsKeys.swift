@@ -26,5 +26,7 @@ struct DefaultsKeys {
     // Sound volume
     static let useSystemSound = "useSystemSound"
     static let soundVolume = "soundVolume"
+    // Application specific
+    static let hasLaunchedApp = "hasLaunchedApp"
 }
 

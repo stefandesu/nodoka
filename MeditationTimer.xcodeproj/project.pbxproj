@@ -39,6 +39,7 @@
 		F8D7F4EA1FCCAAB600FE786B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8D7F4E91FCCAAB600FE786B /* Assets.xcassets */; };
 		F8D7F4ED1FCCAAB600FE786B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8D7F4EB1FCCAAB600FE786B /* LaunchScreen.storyboard */; };
 		F8D7F4F71FCCAADD00FE786B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D7F4F61FCCAADD00FE786B /* HealthKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F8D8B3BB1FD592CD00C6A9BF /* FirstLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D8B3BA1FD592CD00C6A9BF /* FirstLaunchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		F8D7F4EE1FCCAAB600FE786B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8D7F4F41FCCAADD00FE786B /* MeditationTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MeditationTimer.entitlements; sourceTree = "<group>"; };
 		F8D7F4F61FCCAADD00FE786B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		F8D8B3BA1FD592CD00C6A9BF /* FirstLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 		F881AF4C1FD0424000941850 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F8D8B3BA1FD592CD00C6A9BF /* FirstLaunchViewController.swift */,
 				F8362FDB1FD4197400783923 /* FeedbackTableViewController.swift */,
 				F881AF631FD2BA4F00941850 /* SettingsDurationTableViewController.swift */,
 				F881AF611FD1F97800941850 /* SettingsVersionViewController.swift */,
@@ -307,6 +310,7 @@
 				F8D7F4E31FCCAAB600FE786B /* AppDelegate.swift in Sources */,
 				F8362FDC1FD4197400783923 /* FeedbackTableViewController.swift in Sources */,
 				F881AF641FD2BA4F00941850 /* SettingsDurationTableViewController.swift in Sources */,
+				F8D8B3BB1FD592CD00C6A9BF /* FirstLaunchViewController.swift in Sources */,
 				F8CE06C31FCDD9F80000CEAA /* SettingsTableViewController.swift in Sources */,
 				F8269AB01FD4AB0900471A39 /* SetSound1TableViewCell.swift in Sources */,
 				F8269AAB1FD4734E00471A39 /* TelegramHelper.swift in Sources */,

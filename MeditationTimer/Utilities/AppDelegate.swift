@@ -30,9 +30,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             DefaultsKeys.durationPickerHidden: false,
             DefaultsKeys.feedbackNotSent: false,
             DefaultsKeys.useSystemSound: true,
-            DefaultsKeys.soundVolume: 0.2
+            DefaultsKeys.soundVolume: 0.2,
+            DefaultsKeys.hasLaunchedApp: false
         ]
         userDefaults.register(defaults: userDefaultsStandards)
+        
+        // Set initial storyboard
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboardID = userDefaults.bool(forKey: DefaultsKeys.hasLaunchedApp) ? PropertyKeys.defaultStoryboard : PropertyKeys.firstLaunchStoryboard
+        self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: storyboardID)
+        self.window?.makeKeyAndVisible()
         
         // Set status bar to white
         UIApplication.shared.statusBarStyle = Theme.currentTheme.statusBar

@@ -23,4 +23,7 @@ struct PropertyKeys {
     static let meditationPickerTag = 1
     static let setSound1TableViewCellIdentifier = "setSound1TableViewCell"
     static let setSound2TableViewCellIdentifier = "setSound2TableViewCell"
+    // Storyboards
+    static let firstLaunchStoryboard = "FirstLaunchStoryboard"
+    static let defaultStoryboard = "DefaultStoryboard"
 }

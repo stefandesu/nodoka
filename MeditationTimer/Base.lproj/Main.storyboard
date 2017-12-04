@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HuR-4K-hSC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -16,6 +16,71 @@
         </array>
     </customFonts>
     <scenes>
+        <!--First Launch View Controller-->
+        <scene sceneID="N7g-Mw-3oT">
+            <objects>
+                <viewController storyboardIdentifier="FirstLaunchStoryboard" id="H9E-Ty-Msr" customClass="FirstLaunchViewController" customModule="MeditationTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Urf-wg-x4O">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7L-cj-lzh">
+                                <rect key="frame" x="32" y="496" width="256" height="40"/>
+                                <color key="backgroundColor" red="0.92941176469999998" green="0.46274509800000002" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                                <state key="normal" title="Continue"/>
+                                <connections>
+                                    <segue destination="HuR-4K-hSC" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="3PW-hg-H7d"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEo-mH-Gxs">
+                                <rect key="frame" x="32" y="40" width="256" height="41"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnR-JR-O5G">
+                                <rect key="frame" x="32" y="97" width="256" height="344"/>
+                                <string key="text">This is a simple meditation timer. Everyone can use a few minutes of calm each day.
+
+Each meditation session is preceded by a short preparation time to settle and a longer meditation time.
+
+Instructions:
+Set your desired preparation and meditation times by tapping the Change Duration button.
+Tap the Start button and leave the app running during meditation.
+
+Enjoy!
+(to be edited)</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TTk-tB-mqe" firstAttribute="bottom" secondItem="F7L-cj-lzh" secondAttribute="bottom" constant="32" id="2G8-H6-wy4"/>
+                            <constraint firstItem="nnR-JR-O5G" firstAttribute="top" secondItem="cEo-mH-Gxs" secondAttribute="bottom" constant="16" id="6q1-iH-Fcn"/>
+                            <constraint firstItem="cEo-mH-Gxs" firstAttribute="leading" secondItem="TTk-tB-mqe" secondAttribute="leading" constant="32" id="Jyb-tR-tPf"/>
+                            <constraint firstItem="TTk-tB-mqe" firstAttribute="trailing" secondItem="nnR-JR-O5G" secondAttribute="trailing" constant="32" id="SpE-gw-7Tu"/>
+                            <constraint firstItem="cEo-mH-Gxs" firstAttribute="top" secondItem="TTk-tB-mqe" secondAttribute="top" constant="20" id="Z6a-JX-YbQ"/>
+                            <constraint firstItem="F7L-cj-lzh" firstAttribute="leading" secondItem="TTk-tB-mqe" secondAttribute="leading" constant="32" id="dr6-CJ-JVW"/>
+                            <constraint firstItem="nnR-JR-O5G" firstAttribute="leading" secondItem="TTk-tB-mqe" secondAttribute="leading" constant="32" id="iEX-Te-Iod"/>
+                            <constraint firstItem="TTk-tB-mqe" firstAttribute="trailing" secondItem="F7L-cj-lzh" secondAttribute="trailing" constant="32" id="pdr-mW-pXE"/>
+                            <constraint firstItem="TTk-tB-mqe" firstAttribute="trailing" secondItem="cEo-mH-Gxs" secondAttribute="trailing" constant="32" id="uK9-5b-HDj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TTk-tB-mqe"/>
+                    </view>
+                    <connections>
+                        <outlet property="continueButton" destination="F7L-cj-lzh" id="CPn-ql-DnW"/>
+                        <outletCollection property="themedLabels" destination="cEo-mH-Gxs" collectionClass="NSMutableArray" id="LkW-oW-iyN"/>
+                        <outletCollection property="themedLabels" destination="nnR-JR-O5G" collectionClass="NSMutableArray" id="XNp-7O-Vzg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5dn-rX-kLd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-953" y="-736"/>
+        </scene>
         <!--Start View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -627,7 +692,7 @@ Preparation: 5 Seconds</string>
                             </tableViewSection>
                             <tableViewSection headerTitle="Debug" id="ieJ-ha-nEh">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="nRC-yf-8qs">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="nRC-yf-8qs">
                                         <rect key="frame" x="0.0" y="163" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nRC-yf-8qs" id="uS0-CU-Azd">
@@ -635,7 +700,7 @@ Preparation: 5 Seconds</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNS-xe-tui">
-                                                    <rect key="frame" x="16" y="6" width="288" height="30"/>
+                                                    <rect key="frame" x="16" y="6" width="276" height="30"/>
                                                     <state key="normal" title="Delete locally saved meditation sessions"/>
                                                     <connections>
                                                         <action selector="debugDeleteSavedSessions:" destination="7kN-AY-XOd" eventType="touchUpInside" id="ENt-GP-dSt"/>
@@ -643,13 +708,13 @@ Preparation: 5 Seconds</string>
                                                 </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kNS-xe-tui" secondAttribute="trailing" constant="20" symbolic="YES" id="EE6-p1-0XQ"/>
                                                 <constraint firstItem="kNS-xe-tui" firstAttribute="centerY" secondItem="uS0-CU-Azd" secondAttribute="centerY" id="Hat-Uh-ZUF"/>
-                                                <constraint firstAttribute="trailing" secondItem="kNS-xe-tui" secondAttribute="trailing" constant="16" id="ng9-PT-zPl"/>
                                                 <constraint firstItem="kNS-xe-tui" firstAttribute="leading" secondItem="uS0-CU-Azd" secondAttribute="leading" constant="16" id="xTj-Bj-QDr"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="8W1-kE-Fkt">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="8W1-kE-Fkt">
                                         <rect key="frame" x="0.0" y="207" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8W1-kE-Fkt" id="VuI-Uo-gU3">
@@ -657,7 +722,7 @@ Preparation: 5 Seconds</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nst-Iv-xNF">
-                                                    <rect key="frame" x="16" y="6" width="288" height="30"/>
+                                                    <rect key="frame" x="16" y="6" width="174" height="30"/>
                                                     <state key="normal" title="Create 100 local sessions"/>
                                                     <connections>
                                                         <action selector="debugCreateLocalSessions:" destination="7kN-AY-XOd" eventType="touchUpInside" id="ELm-M2-HIu"/>
@@ -666,13 +731,35 @@ Preparation: 5 Seconds</string>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Nst-Iv-xNF" firstAttribute="leading" secondItem="VuI-Uo-gU3" secondAttribute="leading" constant="16" id="ABR-1Z-Rq0"/>
-                                                <constraint firstAttribute="trailing" secondItem="Nst-Iv-xNF" secondAttribute="trailing" constant="16" id="veG-3B-qsr"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Nst-Iv-xNF" secondAttribute="trailing" constant="20" symbolic="YES" id="o7p-0M-lrN"/>
                                                 <constraint firstItem="Nst-Iv-xNF" firstAttribute="centerY" secondItem="VuI-Uo-gU3" secondAttribute="centerY" id="y4a-rc-N6R"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="c8n-j7-E8k" style="IBUITableViewCellStyleDefault" id="PgQ-Nu-vgK">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="8c5-yf-ao0">
                                         <rect key="frame" x="0.0" y="251" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8c5-yf-ao0" id="VGQ-aP-hCQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pz-hg-7Ge">
+                                                    <rect key="frame" x="16" y="6" width="178" height="30"/>
+                                                    <state key="normal" title="Reset Introduction Screen"/>
+                                                    <connections>
+                                                        <action selector="resetIntroScreenTapped:" destination="7kN-AY-XOd" eventType="touchUpInside" id="Yk3-nz-OLT"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9pz-hg-7Ge" secondAttribute="trailing" constant="20" symbolic="YES" id="CDa-MA-m2e"/>
+                                                <constraint firstItem="9pz-hg-7Ge" firstAttribute="leading" secondItem="VGQ-aP-hCQ" secondAttribute="leading" constant="16" id="OUo-v1-BWa"/>
+                                                <constraint firstItem="9pz-hg-7Ge" firstAttribute="centerY" secondItem="VGQ-aP-hCQ" secondAttribute="centerY" id="eEn-ET-IVo"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="c8n-j7-E8k" style="IBUITableViewCellStyleDefault" id="PgQ-Nu-vgK">
+                                        <rect key="frame" x="0.0" y="295" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PgQ-Nu-vgK" id="FJo-0u-Lsi">
                                             <rect key="frame" x="0.0" y="0.0" width="286" height="43.5"/>
@@ -983,7 +1070,7 @@ Preparation: 5 Seconds</string>
         <!--Navigation Controller-->
         <scene sceneID="9Ad-tt-RYK">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="HuR-4K-hSC" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="DefaultStoryboard" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="HuR-4K-hSC" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eP3-ay-STA">
                         <autoresizingMask key="autoresizingMask"/>
