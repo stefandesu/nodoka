@@ -19,6 +19,9 @@ class DebugListTableViewController: ThemedTableViewController {
 
         let index = MeditationSession.index
         indexArray = index.sorted { $0.value > $1.value }
+        
+        navigationItem.title = "History"
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
 
     // MARK: - Table view data source
@@ -38,16 +41,16 @@ class DebugListTableViewController: ThemedTableViewController {
         formatter.dateFormat = "yyyy-MM-dd HH:mm"
         if let session = MeditationSession.getSession(identifier: indexArray[indexPath.row].key) {
             let dateString = formatter.string(from: session.date)
-            cell.textLabel?.text = "Date: \(dateString)"
+            cell.detailTextLabel?.text = "Date: \(dateString)"
             let minutes = Int(session.duration) / 60
-            let minuteString = minutes > 0 ? "\(minutes) min. " : ""
+            let minuteString = minutes > 0 ? "\(minutes) Minute" + (minutes > 1 ? "s " : " ") : ""
             let seconds = Int(session.duration) % 60
-            let secondString = seconds > 0 ? "\(seconds) sec." : ""
-            cell.detailTextLabel?.text = "Duration: \(minuteString)\(secondString)"
+            let secondString = seconds > 0 ? "\(seconds) Second" + (seconds > 1 ? "s" : "") : ""
+            cell.textLabel?.text = "\(minuteString)\(secondString)"
         } else {
             let dateString = formatter.string(from: indexArray[indexPath.row].value)
-            cell.textLabel?.text = "\(dateString)"
-            cell.detailTextLabel?.text = "Could not load session."
+            cell.detailTextLabel?.text = "Date: \(dateString)"
+            cell.textLabel?.text = "Error loading session."
         }
 
         return cell
