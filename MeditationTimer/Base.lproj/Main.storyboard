@@ -167,7 +167,7 @@ Label</string>
                                 <rect key="frame" x="32" y="530" width="50" height="30"/>
                                 <state key="normal" title="History"/>
                                 <connections>
-                                    <segue destination="ytU-sZ-IrO" kind="show" id="gb0-Zg-0vB"/>
+                                    <segue destination="xlM-gr-9zh" kind="show" id="gb0-Zg-0vB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WK7-d7-rl2">
@@ -182,13 +182,13 @@ Label</string>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="XdU-zL-bjj">
                                 <rect key="frame" x="30" y="479" width="83.5" height="39"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preparation:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1l-8s-Qfi">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preparation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1l-8s-Qfi">
                                         <rect key="frame" x="0.0" y="0.0" width="83.5" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meditation:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5r-iq-Z3Z">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 Seconds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeJ-3R-ffD">
                                         <rect key="frame" x="0.0" y="21" width="83.5" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
@@ -197,16 +197,16 @@ Label</string>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="lYQ-ka-EFE">
-                                <rect key="frame" x="213.5" y="479" width="74.5" height="39"/>
+                                <rect key="frame" x="211" y="479" width="77" height="39"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 Seconds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeJ-3R-ffD">
-                                        <rect key="frame" x="1.5" y="0.0" width="73" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meditation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5r-iq-Z3Z">
+                                        <rect key="frame" x="0.0" y="0.0" width="77" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 Minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWQ-FN-j1Q">
-                                        <rect key="frame" x="0.0" y="21" width="74.5" height="18"/>
+                                        <rect key="frame" x="2.5" y="21" width="74.5" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -230,7 +230,7 @@ Label</string>
                                         <rect key="frame" x="145" y="437" width="30" height="30"/>
                                         <state key="normal" title="__"/>
                                         <connections>
-                                            <segue destination="ccP-84-jI2" kind="show" id="Wez-ps-6Q9"/>
+                                            <segue destination="fMF-na-urY" kind="show" id="Wez-ps-6Q9"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -270,12 +270,12 @@ Label</string>
                         <outlet property="settingsButton" destination="WK7-d7-rl2" id="yW6-Qz-UzS"/>
                         <outletCollection property="themedButtons" destination="0F5-K4-j7a" collectionClass="NSMutableArray" id="OzU-qm-zEG"/>
                         <outletCollection property="themedButtons" destination="WK7-d7-rl2" collectionClass="NSMutableArray" id="RzE-cu-nwT"/>
-                        <outletCollection property="themedLabels" destination="H5r-iq-Z3Z" collectionClass="NSMutableArray" id="Y00-z4-bm7"/>
                         <outletCollection property="themedLabels" destination="J1l-8s-Qfi" collectionClass="NSMutableArray" id="Py5-kR-ckT"/>
                         <outletCollection property="themedButtons" destination="G9z-5Z-BLe" collectionClass="NSMutableArray" id="xWO-Mu-yLc"/>
                         <outletCollection property="themedLabels" destination="mWQ-FN-j1Q" collectionClass="NSMutableArray" id="jlE-hC-yFH"/>
-                        <outletCollection property="themedLabels" destination="SeJ-3R-ffD" collectionClass="NSMutableArray" id="Ckb-fA-Usy"/>
                         <outletCollection property="themedButtons" destination="8E7-HU-NIH" collectionClass="NSMutableArray" id="GQr-w7-mEy"/>
+                        <outletCollection property="themedLabels" destination="SeJ-3R-ffD" collectionClass="NSMutableArray" id="Ckb-fA-Usy"/>
+                        <outletCollection property="themedLabels" destination="H5r-iq-Z3Z" collectionClass="NSMutableArray" id="Y00-z4-bm7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -381,7 +381,7 @@ Label</string>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="ccP-84-jI2" kind="show" identifier="settingsDuration" id="Brk-N4-jZy"/>
+                                            <segue destination="ccP-84-jI2" kind="show" identifier="settingsDuration" id="m67-py-5JC"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="ZqM-Ap-fpM" style="IBUITableViewCellStyleDefault" id="GQg-Aq-T06">
@@ -849,26 +849,6 @@ Label</string>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="c8n-j7-E8k" style="IBUITableViewCellStyleDefault" id="PgQ-Nu-vgK">
-                                        <rect key="frame" x="0.0" y="295" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PgQ-Nu-vgK" id="FJo-0u-Lsi">
-                                            <rect key="frame" x="0.0" y="0.0" width="286" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="List of sessions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c8n-j7-E8k">
-                                                    <rect key="frame" x="16" y="0.0" width="269" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="ytU-sZ-IrO" kind="show" id="fnG-NY-gyl"/>
-                                        </connections>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -886,7 +866,7 @@ Label</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PzA-2b-efk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1095" y="1125"/>
+            <point key="canvasLocation" x="1095" y="1143"/>
         </scene>
         <!--List of Sessions-->
         <scene sceneID="kmL-d9-A6D">
@@ -927,10 +907,11 @@ Label</string>
                             <outlet property="delegate" destination="ytU-sZ-IrO" id="eky-as-3dD"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="251-wz-Kr5"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0uy-Jn-U0m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1159" y="399"/>
+            <point key="canvasLocation" x="2574" y="450"/>
         </scene>
         <!--Choose Theme-->
         <scene sceneID="4d6-rp-MOX">
@@ -1107,6 +1088,7 @@ https://thenounproject.com/term/owl/12773/</string>
                             <outlet property="delegate" destination="ccP-84-jI2" id="zZk-Z8-WF4"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="a1H-X3-Llx"/>
                     <connections>
                         <outlet property="meditationTimePicker" destination="ORy-6T-48N" id="h3B-iR-vXw"/>
                         <outlet property="preparationTimePicker" destination="CcS-Pi-K8J" id="r5A-WS-39f"/>
@@ -1114,7 +1096,7 @@ https://thenounproject.com/term/owl/12773/</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6vk-OU-qDt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="392" y="473"/>
+            <point key="canvasLocation" x="1074" y="450"/>
         </scene>
         <!--Finish View Controller-->
         <scene sceneID="avz-09-dCj">
@@ -1189,12 +1171,47 @@ https://thenounproject.com/term/owl/12773/</string>
             </objects>
             <point key="canvasLocation" x="-943" y="-1"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wcq-kX-NKv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fMF-na-urY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qA9-8b-PSf">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ccP-84-jI2" kind="relationship" relationship="rootViewController" id="iYV-Yz-JcD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tZW-YC-Q5H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="248" y="451"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9AY-A6-7cl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xlM-gr-9zh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wx3-xo-BbR">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ytU-sZ-IrO" kind="relationship" relationship="rootViewController" id="ZtG-DW-Kcc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OBj-YX-3ZO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1828" y="450"/>
+        </scene>
     </scenes>
     <resources>
         <image name="owl_grey" width="419" height="537"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Wez-ps-6Q9"/>
-        <segue reference="gb0-Zg-0vB"/>
+        <segue reference="iYV-Yz-JcD"/>
     </inferredMetricsTieBreakers>
 </document>

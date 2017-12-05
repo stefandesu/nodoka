@@ -156,6 +156,11 @@ class SettingsTableViewController: ThemedTableViewController, HealthKitHelperDel
                 destination.currentThemeName = theme
             }
         }
+        if identifier == PropertyKeys.settingsDurationSegue {
+            if let destination = segue.destination as? SettingsDurationTableViewController {
+                destination.showDoneButton = false
+            }
+        }
     }
     
     func setGong(_ gong: Int, for identifier: String) {
