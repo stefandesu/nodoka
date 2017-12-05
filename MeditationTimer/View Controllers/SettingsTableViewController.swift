@@ -17,12 +17,12 @@ class SettingsTableViewController: ThemedTableViewController, HealthKitHelperDel
         switch authorizationStatus {
         case .sharingAuthorized:
             if !enabled {
-                statusText = "HealthKit sharing authorized, but not enabled."
+                statusText = "Apple Health integration authorized, but not enabled."
             } else {
-                statusText = "HealthKit sharing authorized."
+                statusText = "Apple Health integration authorized and enabled."
             }
         case .sharingDenied:
-            statusText = "Sharing Denied. Please blablabla"
+            statusText = "Apple Health integration denied. Please go to Settings - Privacy - Health and allow this app to write mindfulness data."
             enabled = false
         case .notDetermined:
             statusText = "Enabling Apple Health integration will ask you for system permission."
@@ -40,11 +40,7 @@ class SettingsTableViewController: ThemedTableViewController, HealthKitHelperDel
     func healthKitAuthorizeComplete(status: Bool) {
         DispatchQueue.main.async {
             self.isCurrentlyAuthorizingHealthKit = false
-            if status {
-                self.setHealth(enabled: true, status: "Authorization successful!")
-            } else {
-                self.setHealth(enabled: false, status: "Authorization failed. :(")
-            }
+            self.checkHealthKitAndRefresh()
         }
         // Retrospectively write unwritten sessions
         if status {
@@ -97,9 +93,12 @@ class SettingsTableViewController: ThemedTableViewController, HealthKitHelperDel
         endGong = userDefaults.integer(forKey: DefaultsKeys.endGong)
         theme = userDefaults.string(forKey: DefaultsKeys.theme)!
         
+        checkHealthKitAndRefresh()
+    }
+    
+    func checkHealthKitAndRefresh() {
         if !isCurrentlyAuthorizingHealthKit {
             healthKitEnabled = userDefaults.bool(forKey: DefaultsKeys.healthKitEnabled)
-            healthKitStatus = "Checking Apple Health status..."
             HealthKitHelper.healthQueue.async {
                 _ = HealthKitHelper.shared.checkAuthorizationStatus(delegate: self)
             }
@@ -115,7 +114,8 @@ class SettingsTableViewController: ThemedTableViewController, HealthKitHelperDel
         if section == 0 {
             return healthKitStatus
         } else if section == 2 {
-            return "Recorded \(MeditationSession.index.count) meditation sessions."
+            return nil
+            // return "Recorded \(MeditationSession.index.count) meditation sessions."
         }
         return nil
     }
@@ -129,14 +129,14 @@ class SettingsTableViewController: ThemedTableViewController, HealthKitHelperDel
     
     @IBAction func healthSwitchChanged(_ sender: Any) {
         if healthSwitch.isOn {
-            healthKitStatus = "Authorizing..."
-            updateLabels()
+            setHealth(enabled: true, status: nil)
             isCurrentlyAuthorizingHealthKit = true
             HealthKitHelper.healthQueue.async {
                 _ = HealthKitHelper.shared.authorizeHealthKit(delegate: self)
             }
         } else {
-            setHealth(enabled: false, status: "Apple Health disabled.")
+            setHealth(enabled: false, status: nil)
+            checkHealthKitAndRefresh()
         }
     }
     
@@ -173,9 +173,9 @@ class SettingsTableViewController: ThemedTableViewController, HealthKitHelperDel
         updateLabels()
         UIApplication.shared.statusBarStyle = Theme.currentTheme.statusBar
     }
-    func setHealth(enabled: Bool, status: String) {
+    func setHealth(enabled: Bool, status: String?) {
         healthKitEnabled = enabled
-        healthKitStatus = status
+        healthKitStatus = status ?? healthKitStatus
         userDefaults.set(enabled, forKey: DefaultsKeys.healthKitEnabled)
         updateLabels()
         tableView.reloadData()

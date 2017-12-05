@@ -42,7 +42,7 @@ class SettingsAdvancedTableViewController: ThemedTableViewController {
         sender.setTitle("Creating...", for: .normal)
         debugQueue.async {
             for _ in 1...100 {
-                let session = MeditationSession(date: Date(), duration: 60)
+                let session = MeditationSession(date: self.generateRandomDate(daysBack: 1000), duration: Double(arc4random_uniform(20 * 60) + 1))
                 session.save()
             }
             DispatchQueue.main.async {
@@ -74,6 +74,25 @@ class SettingsAdvancedTableViewController: ThemedTableViewController {
             userDefaults.set(newValue, forKey: DefaultsKeys.debugMenuEnabled)
             tableView.reloadData()
         }
+    }
+    
+    // Adapted from: https://gist.github.com/edmund-h/2638e87bdcc26e3ce9fffc0aede4bdad
+    func generateRandomDate(daysBack: Int) -> Date {
+        let day = arc4random_uniform(UInt32(daysBack))+1
+        let hour = arc4random_uniform(23)
+        let minute = arc4random_uniform(59)
+        let second = arc4random_uniform(59)
+        
+        let today = Date(timeIntervalSinceNow: 0)
+        let gregorian  = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
+        var offsetComponents = DateComponents()
+        offsetComponents.day = -Int(day - 1)
+        offsetComponents.hour = Int(hour)
+        offsetComponents.minute = Int(minute)
+        offsetComponents.second = Int(second)
+        
+        let randomDate = gregorian?.date(byAdding: offsetComponents, to: today, options: .init(rawValue: 0) )
+        return randomDate ?? Date()
     }
     
 }

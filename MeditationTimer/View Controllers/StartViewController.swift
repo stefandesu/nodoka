@@ -34,7 +34,7 @@ class StartViewController: ThemedViewController {
         icon.append(text)
         historyButton.setAttributedTitle(icon, for: .normal)
         
-        icon = NSMutableAttributedString(string: String.fontAwesomeIcon(name: .pencil), attributes: [.font: UIFont.fontAwesome(ofSize: 20), .foregroundColor: Theme.currentTheme.accent])
+        icon = NSMutableAttributedString(string: String.fontAwesomeIcon(name: .pencilSquare), attributes: [.font: UIFont.fontAwesome(ofSize: 30), .foregroundColor: Theme.currentTheme.accent])
         changeDurationButton.setAttributedTitle(icon, for: .normal)
     }
     

@@ -164,14 +164,14 @@ Label</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0F5-K4-j7a">
-                                <rect key="frame" x="48" y="530" width="50" height="30"/>
+                                <rect key="frame" x="32" y="530" width="50" height="30"/>
                                 <state key="normal" title="History"/>
                                 <connections>
                                     <segue destination="ytU-sZ-IrO" kind="show" id="gb0-Zg-0vB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WK7-d7-rl2">
-                                <rect key="frame" x="190" y="530" width="82" height="30"/>
+                                <rect key="frame" x="206" y="530" width="82" height="30"/>
                                 <state key="normal" title="⚙ Settings">
                                     <color key="titleColor" red="0.92941176470588238" green="0.46274509803921571" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -180,7 +180,7 @@ Label</string>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="XdU-zL-bjj">
-                                <rect key="frame" x="46" y="483" width="83.5" height="39"/>
+                                <rect key="frame" x="30" y="479" width="83.5" height="39"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preparation:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1l-8s-Qfi">
                                         <rect key="frame" x="0.0" y="0.0" width="83.5" height="18"/>
@@ -197,7 +197,7 @@ Label</string>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="lYQ-ka-EFE">
-                                <rect key="frame" x="197.5" y="483" width="74.5" height="39"/>
+                                <rect key="frame" x="213.5" y="479" width="74.5" height="39"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 Seconds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeJ-3R-ffD">
                                         <rect key="frame" x="1.5" y="0.0" width="73" height="18"/>
@@ -214,10 +214,10 @@ Label</string>
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JO2-wF-87y">
-                                <rect key="frame" x="0.0" y="20" width="320" height="463"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="459"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9z-5Z-BLe">
-                                        <rect key="frame" x="96.5" y="189.5" width="127" height="84"/>
+                                        <rect key="frame" x="96.5" y="187.5" width="127" height="84"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="60"/>
                                         <state key="normal" title="Start">
                                             <color key="titleColor" red="0.92941176470588238" green="0.46274509803921571" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
@@ -226,38 +226,38 @@ Label</string>
                                             <segue destination="dnN-SW-0Ui" kind="showDetail" identifier="startMeditation" action="showViewController:sender:" id="FqH-KX-luv"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8E7-HU-NIH">
+                                        <rect key="frame" x="145" y="437" width="30" height="30"/>
+                                        <state key="normal" title="__"/>
+                                        <connections>
+                                            <segue destination="ccP-84-jI2" kind="show" id="Wez-ps-6Q9"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="8E7-HU-NIH" firstAttribute="centerX" secondItem="JO2-wF-87y" secondAttribute="centerX" id="38w-dn-6WU"/>
                                     <constraint firstItem="G9z-5Z-BLe" firstAttribute="centerX" secondItem="JO2-wF-87y" secondAttribute="centerX" id="Tum-Ig-m2B"/>
+                                    <constraint firstAttribute="bottom" secondItem="8E7-HU-NIH" secondAttribute="bottom" constant="-8" id="ey5-z3-YEV"/>
                                     <constraint firstItem="G9z-5Z-BLe" firstAttribute="centerY" secondItem="JO2-wF-87y" secondAttribute="centerY" id="zqS-G0-NRL"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8E7-HU-NIH">
-                                <rect key="frame" x="276" y="487.5" width="30" height="30"/>
-                                <state key="normal" title="__"/>
-                                <connections>
-                                    <segue destination="ccP-84-jI2" kind="show" id="Wez-ps-6Q9"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="WK7-d7-rl2" firstAttribute="trailing" secondItem="lYQ-ka-EFE" secondAttribute="trailing" id="08t-2i-4xi"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0F5-K4-j7a" secondAttribute="trailing" constant="20" symbolic="YES" id="0cA-qN-Jaq"/>
                             <constraint firstItem="JO2-wF-87y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2UV-c8-Z6y"/>
-                            <constraint firstItem="0F5-K4-j7a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="48" id="CZF-VI-Hk6"/>
-                            <constraint firstItem="0F5-K4-j7a" firstAttribute="top" secondItem="XdU-zL-bjj" secondAttribute="bottom" constant="8" id="Ezk-L1-hgg"/>
+                            <constraint firstItem="0F5-K4-j7a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="CZF-VI-Hk6"/>
+                            <constraint firstItem="0F5-K4-j7a" firstAttribute="top" secondItem="XdU-zL-bjj" secondAttribute="bottom" constant="12" id="Ezk-L1-hgg"/>
                             <constraint firstItem="WK7-d7-rl2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="V4I-3T-HF6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="WK7-d7-rl2" secondAttribute="bottom" constant="8" id="Y07-nx-m93"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WK7-d7-rl2" secondAttribute="trailing" constant="48" id="ZBg-ri-ykN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WK7-d7-rl2" secondAttribute="trailing" constant="32" id="ZBg-ri-ykN"/>
                             <constraint firstItem="lYQ-ka-EFE" firstAttribute="centerY" secondItem="XdU-zL-bjj" secondAttribute="centerY" id="bSp-hq-Fef"/>
-                            <constraint firstItem="8E7-HU-NIH" firstAttribute="leading" secondItem="lYQ-ka-EFE" secondAttribute="trailing" constant="4" id="lQX-Ua-F6p"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0F5-K4-j7a" secondAttribute="bottom" constant="8" id="ldZ-iR-gWM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JO2-wF-87y" secondAttribute="trailing" id="se3-l7-lPc"/>
                             <constraint firstItem="XdU-zL-bjj" firstAttribute="top" secondItem="JO2-wF-87y" secondAttribute="bottom" id="tXk-Bn-ed8"/>
                             <constraint firstItem="JO2-wF-87y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xQl-Zb-pOM"/>
                             <constraint firstItem="0F5-K4-j7a" firstAttribute="leading" secondItem="XdU-zL-bjj" secondAttribute="leading" constant="2" id="yHf-bz-bmG"/>
-                            <constraint firstItem="8E7-HU-NIH" firstAttribute="centerY" secondItem="lYQ-ka-EFE" secondAttribute="centerY" id="yuK-7R-KYR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -557,10 +557,10 @@ Label</string>
             </objects>
             <point key="canvasLocation" x="248" y="1125"/>
         </scene>
-        <!--Choose Gong Sound-->
+        <!--Choose Sound-->
         <scene sceneID="e9f-Yw-8Xc">
             <objects>
-                <tableViewController title="Choose Gong Sound" id="WQv-0j-bGU" customClass="SettingsGongTableViewController" customModule="MeditationTimer" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Choose Sound" id="WQv-0j-bGU" customClass="SettingsGongTableViewController" customModule="MeditationTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="kTu-Kd-Awf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

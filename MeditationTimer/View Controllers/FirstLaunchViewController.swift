@@ -26,7 +26,7 @@ class FirstLaunchViewController: ThemedViewController {
         continueButton.backgroundColor = Theme.currentTheme.accent
         continueButton.layer.cornerRadius = 10
         
-        editInstructionIcon.text = String.fontAwesomeIcon(name: .pencil) + " "
+        editInstructionIcon.text = String.fontAwesomeIcon(name: .pencilSquare) + " "
         editInstructionIcon.font = UIFont.fontAwesome(ofSize: 36)
         editInstructionLabel.text = "Adjust the durations to your liking."
         editInstructionLabel.numberOfLines = 0
