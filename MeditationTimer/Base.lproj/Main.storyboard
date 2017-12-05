@@ -977,40 +977,54 @@ Label</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empowered-owl-1-logo-trans" translatesAutoresizingMaskIntoConstraints="NO" id="ztE-rN-vHw">
-                                <rect key="frame" x="40" y="72" width="240" height="100"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="owl_grey" translatesAutoresizingMaskIntoConstraints="NO" id="ztE-rN-vHw">
+                                <rect key="frame" x="40" y="104" width="240" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="s33-QS-x6D"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meditation Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6r-lN-3jf">
-                                <rect key="frame" x="8" y="188" width="304" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Owl Meditation Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6r-lN-3jf">
+                                <rect key="frame" x="8" y="220" width="304" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version ..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beA-DY-mfK">
-                                <rect key="frame" x="8" y="220" width="304" height="17"/>
+                                <rect key="frame" x="8" y="252" width="304" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Qvl-Qh-C8n">
+                                <rect key="frame" x="40" y="285" width="240" height="267"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Owl by Ana Pas from the Noun Project
+https://thenounproject.com/term/owl/12773/</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="beA-DY-mfK" firstAttribute="top" secondItem="b6r-lN-3jf" secondAttribute="bottom" constant="8" id="4hc-bw-34F"/>
                             <constraint firstItem="0ll-RG-hra" firstAttribute="trailing" secondItem="ztE-rN-vHw" secondAttribute="trailing" constant="40" id="8Au-9X-OZA"/>
                             <constraint firstItem="0ll-RG-hra" firstAttribute="trailing" secondItem="beA-DY-mfK" secondAttribute="trailing" constant="8" id="Bb7-2j-Aor"/>
+                            <constraint firstItem="Qvl-Qh-C8n" firstAttribute="leading" secondItem="0ll-RG-hra" secondAttribute="leading" constant="40" id="QDt-bl-P24"/>
                             <constraint firstItem="beA-DY-mfK" firstAttribute="leading" secondItem="0ll-RG-hra" secondAttribute="leading" constant="8" id="Rlt-7w-Ppd"/>
-                            <constraint firstItem="ztE-rN-vHw" firstAttribute="top" secondItem="0ll-RG-hra" secondAttribute="top" constant="8" id="Vll-69-JUW"/>
+                            <constraint firstItem="Qvl-Qh-C8n" firstAttribute="top" secondItem="beA-DY-mfK" secondAttribute="bottom" constant="16" id="VYd-Ay-MX0"/>
+                            <constraint firstItem="ztE-rN-vHw" firstAttribute="top" secondItem="0ll-RG-hra" secondAttribute="top" constant="40" id="Vll-69-JUW"/>
                             <constraint firstItem="ztE-rN-vHw" firstAttribute="leading" secondItem="0ll-RG-hra" secondAttribute="leading" constant="40" id="Zdo-6b-uOj"/>
                             <constraint firstItem="0ll-RG-hra" firstAttribute="trailing" secondItem="b6r-lN-3jf" secondAttribute="trailing" constant="8" id="qLf-Z6-6lg"/>
+                            <constraint firstItem="0ll-RG-hra" firstAttribute="bottom" secondItem="Qvl-Qh-C8n" secondAttribute="bottom" constant="16" id="rh2-Ou-Co2"/>
                             <constraint firstItem="b6r-lN-3jf" firstAttribute="leading" secondItem="0ll-RG-hra" secondAttribute="leading" constant="8" id="s0C-s9-smR"/>
+                            <constraint firstItem="0ll-RG-hra" firstAttribute="trailing" secondItem="Qvl-Qh-C8n" secondAttribute="trailing" constant="40" id="tce-35-2xX"/>
                             <constraint firstItem="b6r-lN-3jf" firstAttribute="top" secondItem="ztE-rN-vHw" secondAttribute="bottom" constant="16" id="wQy-ED-b7c"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0ll-RG-hra"/>
                     </view>
                     <connections>
+                        <outlet property="aboutTextView" destination="Qvl-Qh-C8n" id="9XW-7b-Pp4"/>
+                        <outlet property="logoImageView" destination="ztE-rN-vHw" id="ftC-O9-QqS"/>
                         <outlet property="versionLabel" destination="beA-DY-mfK" id="0na-MQ-FAM"/>
                         <outletCollection property="themedLabels" destination="b6r-lN-3jf" collectionClass="NSMutableArray" id="r2H-be-8fH"/>
                         <outletCollection property="themedLabels" destination="beA-DY-mfK" collectionClass="NSMutableArray" id="AO1-hx-kVz"/>
@@ -1100,7 +1114,7 @@ Label</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6vk-OU-qDt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="347" y="400"/>
+            <point key="canvasLocation" x="392" y="473"/>
         </scene>
         <!--Finish View Controller-->
         <scene sceneID="avz-09-dCj">
@@ -1177,7 +1191,7 @@ Label</string>
         </scene>
     </scenes>
     <resources>
-        <image name="empowered-owl-1-logo-trans" width="512" height="512"/>
+        <image name="owl_grey" width="419" height="537"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Wez-ps-6Q9"/>

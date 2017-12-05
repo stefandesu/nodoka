@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,16 +18,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empowered-owl-1-logo-trans" translatesAutoresizingMaskIntoConstraints="NO" id="JE3-Wa-Zqn">
-                                <rect key="frame" x="32" y="52" width="311" height="583"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="owl_grey" translatesAutoresizingMaskIntoConstraints="NO" id="JE3-Wa-Zqn">
+                                <rect key="frame" x="112.5" y="65" width="150" height="537"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="dfq-zF-XYU"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.1333333333" green="0.14117647059999999" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="JE3-Wa-Zqn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="Rc9-jB-TBB"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JE3-Wa-Zqn" secondAttribute="trailing" constant="32" id="d3N-f1-ND6"/>
-                            <constraint firstItem="JE3-Wa-Zqn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="dRT-0n-gb8"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JE3-Wa-Zqn" secondAttribute="bottom" constant="32" id="oE1-dI-XSK"/>
+                            <constraint firstItem="JE3-Wa-Zqn" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="0wc-8m-Tcu"/>
+                            <constraint firstItem="JE3-Wa-Zqn" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="3XM-ch-eOw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -37,6 +39,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="empowered-owl-1-logo-trans" width="512" height="512"/>
+        <image name="owl_grey" width="419" height="537"/>
     </resources>
 </document>

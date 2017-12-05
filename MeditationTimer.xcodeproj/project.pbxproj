@@ -18,6 +18,7 @@
 		F84E7F661FCF3A1500BF9320 /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E7F651FCF3A1500BF9320 /* ThemeHelper.swift */; };
 		F84E7F681FCF59E600BF9320 /* ThemedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E7F671FCF59E600BF9320 /* ThemedTableViewController.swift */; };
 		F84E7F6A1FCF5C2D00BF9320 /* ThemedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84E7F691FCF5C2D00BF9320 /* ThemedViewController.swift */; };
+		F84EFB521FD74A6F00535611 /* 2017-12-05_own-icon.txt in Resources */ = {isa = PBXBuildFile; fileRef = F84EFB511FD74A6E00535611 /* 2017-12-05_own-icon.txt */; };
 		F881AF511FD0522100941850 /* SettingsThemeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881AF501FD0522100941850 /* SettingsThemeTableViewController.swift */; };
 		F881AF551FD06C6400941850 /* HealthKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881AF541FD06C6400941850 /* HealthKitHelper.swift */; };
 		F881AF571FD0AB0C00941850 /* UIScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F881AF561FD0AB0C00941850 /* UIScreenExtension.swift */; };
@@ -55,6 +56,7 @@
 		F84E7F651FCF3A1500BF9320 /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 		F84E7F671FCF59E600BF9320 /* ThemedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedTableViewController.swift; sourceTree = "<group>"; };
 		F84E7F691FCF5C2D00BF9320 /* ThemedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedViewController.swift; sourceTree = "<group>"; };
+		F84EFB511FD74A6E00535611 /* 2017-12-05_own-icon.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "2017-12-05_own-icon.txt"; sourceTree = "<group>"; };
 		F881AF501FD0522100941850 /* SettingsThemeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsThemeTableViewController.swift; sourceTree = "<group>"; };
 		F881AF541FD06C6400941850 /* HealthKitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitHelper.swift; sourceTree = "<group>"; };
 		F881AF561FD0AB0C00941850 /* UIScreenExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreenExtension.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			children = (
 				F8D7F4F41FCCAADD00FE786B /* MeditationTimer.entitlements */,
 				F8D7F4EE1FCCAAB600FE786B /* Info.plist */,
+				F84EFB511FD74A6E00535611 /* 2017-12-05_own-icon.txt */,
 				F8D7F4E91FCCAAB600FE786B /* Assets.xcassets */,
 				F8D7F4E61FCCAAB600FE786B /* Main.storyboard */,
 				F8D7F4EB1FCCAAB600FE786B /* LaunchScreen.storyboard */,
@@ -266,6 +269,7 @@
 				F8269AB61FD4B42F00471A39 /* SetSound2TableViewCell.xib in Resources */,
 				F8D7F4ED1FCCAAB600FE786B /* LaunchScreen.storyboard in Resources */,
 				F8D7F4EA1FCCAAB600FE786B /* Assets.xcassets in Resources */,
+				F84EFB521FD74A6F00535611 /* 2017-12-05_own-icon.txt in Resources */,
 				F8D7F4E81FCCAAB600FE786B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

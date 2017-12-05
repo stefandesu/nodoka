@@ -22,7 +22,8 @@ struct Theme {
                       cell: UIColor(red:0.20, green:0.21, blue:0.22, alpha:1.0),
                       cellSelected: UIColor(red:0.30, green:0.31, blue:0.52, alpha:1.0),
                       nagivationBar: UIColor(red:0.03, green:0.04, blue:0.05, alpha:1.0),
-                      statusBar: UIStatusBarStyle.lightContent),
+                      statusBar: UIStatusBarStyle.lightContent,
+                      logo: UIImage.init(named: "owl_grey")),
         "Black": Theme(background: UIColor.black,
                       text: UIColor(hex: "c9cacc"),
                       textLight: UIColor(hex: "cccccc"),
@@ -31,7 +32,8 @@ struct Theme {
                       cell: UIColor(red:0.06, green:0.07, blue:0.08, alpha:1.0),
                       cellSelected: UIColor(red:0.30, green:0.31, blue:0.52, alpha:1.0),
                       nagivationBar: UIColor(red:0.02, green:0.03, blue:0.04, alpha:1.0),
-                      statusBar: UIStatusBarStyle.lightContent),
+                      statusBar: UIStatusBarStyle.lightContent,
+                      logo: UIImage.init(named: "owl_grey")),
         "Light": Theme(background: UIColor(hex: "eeeeee"),
                       text: UIColor.darkGray,
                       textLight: UIColor.gray,
@@ -40,7 +42,8 @@ struct Theme {
                       cell: UIColor.white,
                       cellSelected: UIColor.lightGray,
                       nagivationBar: UIColor.white,
-                      statusBar: UIStatusBarStyle.default)
+                      statusBar: UIStatusBarStyle.default,
+                      logo: UIImage.init(named: "owl_dark"))
     ]
     static var currentTheme: Theme {
         return Theme.themes[UserDefaults.standard.string(forKey: DefaultsKeys.theme) ?? Theme.themes.keys.first!] ?? Theme.themes.first!.value
@@ -55,6 +58,7 @@ struct Theme {
     let cellSelected: UIColor
     let nagivationBar: UIColor
     let statusBar: UIStatusBarStyle
+    let logo: UIImage?
 }
 
 
