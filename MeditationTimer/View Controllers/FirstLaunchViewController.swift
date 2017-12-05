@@ -11,6 +11,12 @@ import UIKit
 class FirstLaunchViewController: ThemedViewController {
 
     @IBOutlet weak var continueButton: UIButton!
+    @IBOutlet weak var editInstructionLabel: UILabel!
+    @IBOutlet weak var editInstructionIcon: UILabel!
+    @IBOutlet weak var settingsInstructionIcon: UILabel!
+    @IBOutlet weak var settingsInstructionLabel: UILabel!
+    @IBOutlet weak var historyInstructionIcon: UILabel!
+    @IBOutlet weak var historyInstructionLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +25,21 @@ class FirstLaunchViewController: ThemedViewController {
         continueButton.tintColor = UIColor.white
         continueButton.backgroundColor = Theme.currentTheme.accent
         continueButton.layer.cornerRadius = 10
+        
+        editInstructionIcon.text = String.fontAwesomeIcon(name: .pencil) + " "
+        editInstructionIcon.font = UIFont.fontAwesome(ofSize: 36)
+        editInstructionLabel.text = "Adjust the durations to your liking."
+        editInstructionLabel.numberOfLines = 0
+        
+        settingsInstructionIcon.text = String.fontAwesomeIcon(name: .cog) + " "
+        settingsInstructionIcon.font = UIFont.fontAwesome(ofSize: 36)
+        settingsInstructionLabel.text = "Customize the experience further in Settings."
+        settingsInstructionLabel.numberOfLines = 0
+        
+        historyInstructionIcon.text = String.fontAwesomeIcon(name: .history) + " "
+        historyInstructionIcon.font = UIFont.fontAwesome(ofSize: 36)
+        historyInstructionLabel.text = "See how much you have meditated in the past."
+        historyInstructionLabel.numberOfLines = 0
         
         for label in themedLabels {
             label.sizeToFit()
