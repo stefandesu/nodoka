@@ -23,19 +23,11 @@ class StartViewController: ThemedViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        var icon = NSMutableAttributedString(string: String.fontAwesomeIcon(name: .cog), attributes: [.font: UIFont.fontAwesome(ofSize: 17), .foregroundColor: Theme.currentTheme.accent])
-        var text = NSAttributedString(string: " Settings", attributes: [.font: UIFont.systemFont(ofSize: 17), .foregroundColor: Theme.currentTheme.accent])
-        icon.append(text)
-        settingsButton.setAttributedTitle(icon, for: .normal)
-        
-        icon = NSMutableAttributedString(string: String.fontAwesomeIcon(name: .history), attributes: [.font: UIFont.fontAwesome(ofSize: 17), .foregroundColor: Theme.currentTheme.accent])
-        text = NSAttributedString(string: " History", attributes: [.font: UIFont.systemFont(ofSize: 17), .foregroundColor: Theme.currentTheme.accent])
-        icon.append(text)
-        historyButton.setAttributedTitle(icon, for: .normal)
-        
-        icon = NSMutableAttributedString(string: String.fontAwesomeIcon(name: .pencilSquare), attributes: [.font: UIFont.fontAwesome(ofSize: 30), .foregroundColor: Theme.currentTheme.accent])
-        changeDurationButton.setAttributedTitle(icon, for: .normal)
+        settingsButton.setAttributedTitle(FontHelper.generate(icon: String.fontAwesomeIcon(name: .cog), withText: " Settings", ofSize: 17, andTextColor: Theme.currentTheme.accent), for: .normal)
+
+        historyButton.setAttributedTitle(FontHelper.generate(icon: String.fontAwesomeIcon(name: .history), withText: " History", ofSize: 17, andTextColor: Theme.currentTheme.accent), for: .normal)
+
+        changeDurationButton.setAttributedTitle(FontHelper.generate(icon: String.fontAwesomeIcon(name: .pencilSquare), withText: "", ofSize: 30, andTextColor: Theme.currentTheme.accent), for: .normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {

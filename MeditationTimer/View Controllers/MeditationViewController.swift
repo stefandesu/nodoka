@@ -22,9 +22,15 @@ class MeditationViewController: ThemedViewController {
     var isPausedByBackground = false
     var isPausedByButton = false
 
+    @IBOutlet weak var owlImage: UIImageView!
+    
+    @IBOutlet weak var pausedLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var stopButton: UIButton!
+    let pauseAttributedTitle = FontHelper.generate(icon: String.fontAwesomeIcon(name: .pause), withText: "", ofSize: 48, andTextColor: Theme.currentTheme.accent)
+    let continueAttributedTitle = FontHelper.generate(icon: String.fontAwesomeIcon(name: .play), withText: "", ofSize: 48, andTextColor: Theme.currentTheme.accent)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +48,13 @@ class MeditationViewController: ThemedViewController {
         postLeaveRoutine()
         addNotificationOberserver()
         startingSound()
+        
+        // Set up button titles
+        pauseButton.setAttributedTitle(pauseAttributedTitle, for: .normal)
+        stopButton.setAttributedTitle(FontHelper.generate(icon: "", withText: "Stop", ofSize: 15, andTextColor: Theme.currentTheme.accent), for: .normal)
+        
+        // Set up logo image
+        owlImage.image = Theme.currentTheme.logo
     }
     
     @objc func appDidEnterBackground() {
@@ -73,9 +86,11 @@ class MeditationViewController: ThemedViewController {
             isPausedByBackground = false
             isPausedByButton = false
         }
+        pausedLabel.text = ""
     }
     func stopTimer() {
         timer.invalidate()
+        pausedLabel.text = "Paused"
     }
     
     fileprivate func startingSound() {
@@ -131,12 +146,12 @@ class MeditationViewController: ThemedViewController {
         if timer.isValid {
             // Pause the timer
             preLeaveRoutine()
-            pauseButton.setTitle("Continue", for: .normal)
+            pauseButton.setAttributedTitle(continueAttributedTitle, for: .normal)
             isPausedByButton = true
         } else {
             // Continue the timer
             postLeaveRoutine()
-            pauseButton.setTitle("Pause", for: .normal)
+            pauseButton.setAttributedTitle(pauseAttributedTitle, for: .normal)
         }
     }
 

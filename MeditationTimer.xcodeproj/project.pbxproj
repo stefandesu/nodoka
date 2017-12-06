@@ -42,6 +42,7 @@
 		F8D7F4ED1FCCAAB600FE786B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8D7F4EB1FCCAAB600FE786B /* LaunchScreen.storyboard */; };
 		F8D7F4F71FCCAADD00FE786B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D7F4F61FCCAADD00FE786B /* HealthKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F8D8B3BB1FD592CD00C6A9BF /* FirstLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D8B3BA1FD592CD00C6A9BF /* FirstLaunchViewController.swift */; };
+		F8F19E761FD80E2000E60CC2 /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F19E751FD80E2000E60CC2 /* FontHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,7 @@
 		F8D7F4F41FCCAADD00FE786B /* MeditationTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MeditationTimer.entitlements; sourceTree = "<group>"; };
 		F8D7F4F61FCCAADD00FE786B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		F8D8B3BA1FD592CD00C6A9BF /* FirstLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchViewController.swift; sourceTree = "<group>"; };
+		F8F19E751FD80E2000E60CC2 /* FontHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				F8269AAC1FD479C000471A39 /* FeedbackTableView.swift */,
+				F8F19E751FD80E2000E60CC2 /* FontHelper.swift */,
 				F881AF5A1FD0ADB900941850 /* MeditationSession.swift */,
 				F8269AAA1FD4734E00471A39 /* TelegramHelper.swift */,
 				F881AF561FD0AB0C00941850 /* UIScreenExtension.swift */,
@@ -354,6 +357,7 @@
 				F8CE06C31FCDD9F80000CEAA /* SettingsTableViewController.swift in Sources */,
 				F8269AB01FD4AB0900471A39 /* SetSound1TableViewCell.swift in Sources */,
 				F8269AAB1FD4734E00471A39 /* TelegramHelper.swift in Sources */,
+				F8F19E761FD80E2000E60CC2 /* FontHelper.swift in Sources */,
 				F84E7F6A1FCF5C2D00BF9320 /* ThemedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

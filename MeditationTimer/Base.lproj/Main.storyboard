@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -291,13 +291,13 @@ Label</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04:43" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcJ-wZ-NKh">
-                                <rect key="frame" x="63.5" y="247.5" width="193" height="73"/>
+                                <rect key="frame" x="63.5" y="162.5" width="193" height="73"/>
                                 <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="64"/>
                                 <color key="textColor" red="0.78823529411764703" green="0.792156862745098" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MiG-9i-unI">
-                                <rect key="frame" x="98" y="416" width="124" height="70"/>
+                                <rect key="frame" x="98" y="440" width="124" height="70"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                 <state key="normal" title="Pause">
                                     <color key="titleColor" red="0.92941176469999998" green="0.46274509800000002" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
@@ -324,29 +324,62 @@ Label</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qxb-LI-9Uw">
+                                <rect key="frame" x="0.0" y="235.5" width="320" height="204.5"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="owl_dark" translatesAutoresizingMaskIntoConstraints="NO" id="sQk-ax-9Dn">
+                                        <rect key="frame" x="0.0" y="52" width="320" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="2Nu-3D-s7q"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="sQk-ax-9Dn" firstAttribute="leading" secondItem="Qxb-LI-9Uw" secondAttribute="leading" id="BUW-vF-LTS"/>
+                                    <constraint firstItem="sQk-ax-9Dn" firstAttribute="centerX" secondItem="Qxb-LI-9Uw" secondAttribute="centerX" id="jEW-hW-jcf"/>
+                                    <constraint firstItem="sQk-ax-9Dn" firstAttribute="centerY" secondItem="Qxb-LI-9Uw" secondAttribute="centerY" id="q6S-gF-Phm"/>
+                                    <constraint firstAttribute="trailing" secondItem="sQk-ax-9Dn" secondAttribute="trailing" id="tfk-tC-97x"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aq4-o0-lw2">
+                                <rect key="frame" x="139" y="141.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="MiG-9i-unI" firstAttribute="centerX" secondItem="f5e-pI-2qR" secondAttribute="centerX" id="18O-aw-rQ0"/>
                             <constraint firstItem="xOX-C9-aoH" firstAttribute="top" secondItem="zPr-Qh-vhP" secondAttribute="top" constant="8" id="3er-Q1-C29"/>
-                            <constraint firstItem="S0B-4u-s6G" firstAttribute="top" secondItem="MiG-9i-unI" secondAttribute="bottom" constant="32" id="7ep-1U-Oae"/>
+                            <constraint firstItem="S0B-4u-s6G" firstAttribute="top" secondItem="MiG-9i-unI" secondAttribute="bottom" constant="8" id="7ep-1U-Oae"/>
                             <constraint firstItem="zPr-Qh-vhP" firstAttribute="bottom" secondItem="S0B-4u-s6G" secondAttribute="bottom" constant="20" id="8Oa-Et-eD5"/>
                             <constraint firstItem="xOX-C9-aoH" firstAttribute="leading" secondItem="zPr-Qh-vhP" secondAttribute="leading" constant="16" id="BwN-VQ-O7l"/>
                             <constraint firstItem="zcJ-wZ-NKh" firstAttribute="centerX" secondItem="f5e-pI-2qR" secondAttribute="centerX" id="CPp-l5-ZdX"/>
+                            <constraint firstItem="aq4-o0-lw2" firstAttribute="centerX" secondItem="f5e-pI-2qR" secondAttribute="centerX" id="DjH-qV-7YH"/>
+                            <constraint firstItem="Qxb-LI-9Uw" firstAttribute="top" secondItem="zcJ-wZ-NKh" secondAttribute="bottom" id="EsL-7h-gAL"/>
+                            <constraint firstItem="MiG-9i-unI" firstAttribute="top" secondItem="Qxb-LI-9Uw" secondAttribute="bottom" id="Kem-Zx-Jcc"/>
                             <constraint firstItem="S0B-4u-s6G" firstAttribute="centerX" secondItem="f5e-pI-2qR" secondAttribute="centerX" id="Ts0-Tc-hRN"/>
+                            <constraint firstItem="zcJ-wZ-NKh" firstAttribute="top" secondItem="aq4-o0-lw2" secondAttribute="bottom" id="VvA-vD-wrc"/>
                             <constraint firstItem="zPr-Qh-vhP" firstAttribute="trailing" secondItem="xOX-C9-aoH" secondAttribute="trailing" constant="16" id="X4m-jZ-zdO"/>
-                            <constraint firstItem="zcJ-wZ-NKh" firstAttribute="centerY" secondItem="f5e-pI-2qR" secondAttribute="centerY" id="qX7-D2-lTa"/>
+                            <constraint firstItem="zcJ-wZ-NKh" firstAttribute="centerY" secondItem="f5e-pI-2qR" secondAttribute="centerY" multiplier="0.7" id="qX7-D2-lTa"/>
+                            <constraint firstItem="zPr-Qh-vhP" firstAttribute="trailing" secondItem="Qxb-LI-9Uw" secondAttribute="trailing" id="uor-sp-Qpq"/>
+                            <constraint firstItem="Qxb-LI-9Uw" firstAttribute="leading" secondItem="zPr-Qh-vhP" secondAttribute="leading" id="wu1-Dd-CQg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zPr-Qh-vhP"/>
                     </view>
                     <connections>
                         <outlet property="durationLabel" destination="zcJ-wZ-NKh" id="fCU-O8-Rg2"/>
                         <outlet property="infoLabel" destination="xOX-C9-aoH" id="FWx-mm-g5j"/>
+                        <outlet property="owlImage" destination="sQk-ax-9Dn" id="8ny-Hl-Z8U"/>
                         <outlet property="pauseButton" destination="MiG-9i-unI" id="azS-aV-4mA"/>
+                        <outlet property="pausedLabel" destination="aq4-o0-lw2" id="I5c-3B-deR"/>
+                        <outlet property="stopButton" destination="S0B-4u-s6G" id="gqQ-oV-LtI"/>
                         <outletCollection property="themedButtons" destination="MiG-9i-unI" collectionClass="NSMutableArray" id="p1z-VS-Fwd"/>
                         <outletCollection property="themedButtons" destination="S0B-4u-s6G" collectionClass="NSMutableArray" id="ET5-oV-yZb"/>
                         <outletCollection property="themedLabels" destination="zcJ-wZ-NKh" collectionClass="NSMutableArray" id="79C-Az-hfd"/>
                         <outletCollection property="themedLabels" destination="xOX-C9-aoH" collectionClass="NSMutableArray" id="90l-An-RdO"/>
+                        <outletCollection property="themedLabels" destination="aq4-o0-lw2" collectionClass="NSMutableArray" id="5o5-q7-42U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NzS-O4-0oX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1214,6 +1247,7 @@ https://thenounproject.com/term/owl/12773/</string>
         </scene>
     </scenes>
     <resources>
+        <image name="owl_dark" width="419" height="537"/>
         <image name="owl_grey" width="419" height="537"/>
     </resources>
     <inferredMetricsTieBreakers>
