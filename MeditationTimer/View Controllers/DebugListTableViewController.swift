@@ -132,6 +132,7 @@ class DebugListTableViewController: ThemedTableViewController {
             MeditationSession.removeSession(identifier: session.identifier)
             tableView.endUpdates()
             if reloadSection {
+                // Delay this to avoid animation glitches
                 DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(800)) {
                     self.tableView.reloadSections([indexPath.section], with: .none)
                 }

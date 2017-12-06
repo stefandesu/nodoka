@@ -701,7 +701,7 @@ Label</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUc-Ys-TMN">
-                                                    <rect key="frame" x="135.5" y="6" width="49" height="30"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                                     <state key="normal" title="Submit"/>
                                                     <connections>
                                                         <action selector="submitButtonTapped:" destination="pgA-51-Iv8" eventType="touchUpInside" id="rpd-nM-OXb"/>
@@ -709,8 +709,10 @@ Label</string>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="oUc-Ys-TMN" firstAttribute="centerY" secondItem="vBT-HZ-EaH" secondAttribute="centerY" id="1CF-LX-Fjd"/>
-                                                <constraint firstItem="oUc-Ys-TMN" firstAttribute="centerX" secondItem="vBT-HZ-EaH" secondAttribute="centerX" id="4vI-Md-6OR"/>
+                                                <constraint firstAttribute="bottom" secondItem="oUc-Ys-TMN" secondAttribute="bottom" id="Fa8-va-yQI"/>
+                                                <constraint firstAttribute="trailing" secondItem="oUc-Ys-TMN" secondAttribute="trailing" id="TTW-Gm-odr"/>
+                                                <constraint firstItem="oUc-Ys-TMN" firstAttribute="leading" secondItem="vBT-HZ-EaH" secondAttribute="leading" id="gq1-gh-c0v"/>
+                                                <constraint firstItem="oUc-Ys-TMN" firstAttribute="top" secondItem="vBT-HZ-EaH" secondAttribute="top" id="wSL-hH-hrt"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -791,7 +793,7 @@ Label</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNS-xe-tui">
-                                                    <rect key="frame" x="16" y="6" width="276" height="30"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                                     <state key="normal" title="Delete locally saved meditation sessions"/>
                                                     <connections>
                                                         <action selector="debugDeleteSavedSessions:" destination="7kN-AY-XOd" eventType="touchUpInside" id="ENt-GP-dSt"/>
@@ -799,9 +801,10 @@ Label</string>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kNS-xe-tui" secondAttribute="trailing" constant="20" symbolic="YES" id="EE6-p1-0XQ"/>
-                                                <constraint firstItem="kNS-xe-tui" firstAttribute="centerY" secondItem="uS0-CU-Azd" secondAttribute="centerY" id="Hat-Uh-ZUF"/>
-                                                <constraint firstItem="kNS-xe-tui" firstAttribute="leading" secondItem="uS0-CU-Azd" secondAttribute="leading" constant="16" id="xTj-Bj-QDr"/>
+                                                <constraint firstAttribute="trailing" secondItem="kNS-xe-tui" secondAttribute="trailing" id="2AY-fW-kIG"/>
+                                                <constraint firstItem="kNS-xe-tui" firstAttribute="top" secondItem="uS0-CU-Azd" secondAttribute="top" id="AGW-RP-ei1"/>
+                                                <constraint firstAttribute="bottom" secondItem="kNS-xe-tui" secondAttribute="bottom" id="Kc3-Ld-Jx1"/>
+                                                <constraint firstItem="kNS-xe-tui" firstAttribute="leading" secondItem="uS0-CU-Azd" secondAttribute="leading" id="sHs-Rt-evz"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -813,7 +816,7 @@ Label</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nst-Iv-xNF">
-                                                    <rect key="frame" x="16" y="6" width="174" height="30"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                                     <state key="normal" title="Create 100 local sessions"/>
                                                     <connections>
                                                         <action selector="debugCreateLocalSessions:" destination="7kN-AY-XOd" eventType="touchUpInside" id="ELm-M2-HIu"/>
@@ -821,9 +824,10 @@ Label</string>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Nst-Iv-xNF" firstAttribute="leading" secondItem="VuI-Uo-gU3" secondAttribute="leading" constant="16" id="ABR-1Z-Rq0"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Nst-Iv-xNF" secondAttribute="trailing" constant="20" symbolic="YES" id="o7p-0M-lrN"/>
-                                                <constraint firstItem="Nst-Iv-xNF" firstAttribute="centerY" secondItem="VuI-Uo-gU3" secondAttribute="centerY" id="y4a-rc-N6R"/>
+                                                <constraint firstAttribute="trailing" secondItem="Nst-Iv-xNF" secondAttribute="trailing" id="bIx-LO-DBA"/>
+                                                <constraint firstItem="Nst-Iv-xNF" firstAttribute="top" secondItem="VuI-Uo-gU3" secondAttribute="top" id="bhn-br-jer"/>
+                                                <constraint firstAttribute="bottom" secondItem="Nst-Iv-xNF" secondAttribute="bottom" id="wRg-pE-b6d"/>
+                                                <constraint firstItem="Nst-Iv-xNF" firstAttribute="leading" secondItem="VuI-Uo-gU3" secondAttribute="leading" id="x9B-Xz-c8G"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -835,7 +839,7 @@ Label</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pz-hg-7Ge">
-                                                    <rect key="frame" x="16" y="6" width="178" height="30"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                                     <state key="normal" title="Reset Introduction Screen"/>
                                                     <connections>
                                                         <action selector="resetIntroScreenTapped:" destination="7kN-AY-XOd" eventType="touchUpInside" id="Yk3-nz-OLT"/>
@@ -843,9 +847,10 @@ Label</string>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9pz-hg-7Ge" secondAttribute="trailing" constant="20" symbolic="YES" id="CDa-MA-m2e"/>
-                                                <constraint firstItem="9pz-hg-7Ge" firstAttribute="leading" secondItem="VGQ-aP-hCQ" secondAttribute="leading" constant="16" id="OUo-v1-BWa"/>
-                                                <constraint firstItem="9pz-hg-7Ge" firstAttribute="centerY" secondItem="VGQ-aP-hCQ" secondAttribute="centerY" id="eEn-ET-IVo"/>
+                                                <constraint firstAttribute="bottom" secondItem="9pz-hg-7Ge" secondAttribute="bottom" id="0SM-np-css"/>
+                                                <constraint firstItem="9pz-hg-7Ge" firstAttribute="top" secondItem="VGQ-aP-hCQ" secondAttribute="top" id="F9L-l8-Uo8"/>
+                                                <constraint firstItem="9pz-hg-7Ge" firstAttribute="leading" secondItem="VGQ-aP-hCQ" secondAttribute="leading" id="ia0-iQ-OGQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="9pz-hg-7Ge" secondAttribute="trailing" id="x6J-QC-WJJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
