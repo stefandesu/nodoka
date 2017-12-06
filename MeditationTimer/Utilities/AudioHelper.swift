@@ -12,7 +12,12 @@ import AVFoundation
 class AudioHelper: NSObject, AVAudioPlayerDelegate {
     
     static let shared = AudioHelper()
-    static let availableSounds = [1]
+    static let availableSounds = [0: "None",
+                                  1: "Default",
+                                  2: "Zen Bell",
+                                  3: "Soft",
+                                  4: "Metal",
+                                  5: "Strong"]
     static let audioQueue = DispatchQueue(label: "audioQueue", attributes: .concurrent)
     
     var sounds: [Int: AVAudioPlayer?] = [:]
@@ -38,32 +43,32 @@ class AudioHelper: NSObject, AVAudioPlayerDelegate {
     
     override init() {
         super.init()
-        for sound in AudioHelper.availableSounds {
+        for (sound, _) in AudioHelper.availableSounds {
             configureAudioPlayer(with: sound)
         }
     }
     func play(_ bellNumber: Int) {
         // Set sound volume
         if userDefaults.bool(forKey: DefaultsKeys.useSystemSound) {
-            sounds[bellNumber]??.volume = 0.3
+            sounds[bellNumber]??.volume = 1.0
         } else {
             print(AVAudioSession.sharedInstance().outputVolume)
             // TODO: Adjust formula
             let outputVolume = AVAudioSession.sharedInstance().outputVolume
-            let volume = 0.4 * (userDefaults.float(forKey: DefaultsKeys.soundVolume) / outputVolume) * (1.4 - outputVolume)
+            let volume = (userDefaults.float(forKey: DefaultsKeys.soundVolume) / outputVolume) * (1.4 - outputVolume)
             sounds[bellNumber]??.volume = volume
             print(volume)
         }
         // Play async in separate queue
-        AudioHelper.audioQueue.async {
+        AudioHelper.audioQueue.sync {
             AudioHelper.setAudioSession(to: true)
             self.sounds[bellNumber]??.play()
         }
     }
     
     func stop() {
-        AudioHelper.audioQueue.async {
-            for sound in AudioHelper.availableSounds {
+        AudioHelper.audioQueue.sync {
+            for (sound, _) in AudioHelper.availableSounds {
                 self.sounds[sound]??.stop()
                 self.sounds[sound]??.currentTime = 0
             }

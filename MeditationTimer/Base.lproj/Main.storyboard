@@ -373,13 +373,11 @@ Label</string>
                         <outlet property="infoLabel" destination="xOX-C9-aoH" id="FWx-mm-g5j"/>
                         <outlet property="owlImage" destination="sQk-ax-9Dn" id="8ny-Hl-Z8U"/>
                         <outlet property="pauseButton" destination="MiG-9i-unI" id="azS-aV-4mA"/>
-                        <outlet property="pausedLabel" destination="aq4-o0-lw2" id="I5c-3B-deR"/>
                         <outlet property="stopButton" destination="S0B-4u-s6G" id="gqQ-oV-LtI"/>
                         <outletCollection property="themedButtons" destination="MiG-9i-unI" collectionClass="NSMutableArray" id="p1z-VS-Fwd"/>
                         <outletCollection property="themedButtons" destination="S0B-4u-s6G" collectionClass="NSMutableArray" id="ET5-oV-yZb"/>
                         <outletCollection property="themedLabels" destination="zcJ-wZ-NKh" collectionClass="NSMutableArray" id="79C-Az-hfd"/>
                         <outletCollection property="themedLabels" destination="xOX-C9-aoH" collectionClass="NSMutableArray" id="90l-An-RdO"/>
-                        <outletCollection property="themedLabels" destination="aq4-o0-lw2" collectionClass="NSMutableArray" id="5o5-q7-42U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NzS-O4-0oX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1018,7 +1016,17 @@ Label</string>
                                 <rect key="frame" x="40" y="285" width="240" height="267"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Owl by Ana Pas from the Noun Project
-https://thenounproject.com/term/owl/12773/</string>
+https://thenounproject.com/term/owl/12773/
+
+Default, Soft, Strong Sounds:
+Gong Strike Samples by Omachronic
+https://freesound.org/people/Omachronic/packs/8156/
+
+Zen Bell Sound by Mike Koenig
+http://soundbible.com/1491-Zen-Buddhist-Temple-Bell.html
+
+Metal Gong Sound by Mike Koenig
+http://soundbible.com/128-Metal-Gong.html</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>

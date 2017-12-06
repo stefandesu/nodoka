@@ -13,6 +13,9 @@ class SettingsGongTableViewController: ThemedTableViewController, SetSoundTableV
         useSystemSound = to
         UserDefaults.standard.set(to, forKey: DefaultsKeys.useSystemSound)
         tableView.reloadData()
+        if !useSystemSound {
+            self.tableView.scrollToRow(at: IndexPath(row: 1, section: 2), at: .bottom, animated: true)
+        }
     }
     
     func defaultSoundVolumeChanged(to: Float) {
@@ -29,10 +32,7 @@ class SettingsGongTableViewController: ThemedTableViewController, SetSoundTableV
     var currentStartGong: Int?
     var currentEndGong: Int?
     var delegate: SettingsTableViewController?
-    let gongs = [
-        0: "None",
-        1: "Gong 1"
-    ]
+    let gongs: [Int: String] = AudioHelper.availableSounds
     var useSystemSound = UserDefaults.standard.bool(forKey: DefaultsKeys.useSystemSound)
 
     override func viewDidLoad() {
@@ -135,7 +135,7 @@ class SettingsGongTableViewController: ThemedTableViewController, SetSoundTableV
     }
     
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        if section == 2 {
+        if section == 2 && !useSystemSound {
             return "Note: Due to system limitations, an exact volume level independent of the system volume can't be guaranteed. This is only an approximation."
         }
         return nil
