@@ -56,6 +56,9 @@ class FeedbackTableViewController: ThemedTableViewController, TelegramHelperDele
         if let tableView = tableView as? FeedbackTableView {
             tableView.viewController = self
         }
+        // Keyboard theme
+        descriptionTextView.keyboardAppearance = Theme.currentTheme.keyboard
+        contactTextField.keyboardAppearance = Theme.currentTheme.keyboard
         
         // Prepare if there's unsent feedback
         if userDefaults.bool(forKey: DefaultsKeys.feedbackNotSent) {

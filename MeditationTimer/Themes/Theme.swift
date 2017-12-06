@@ -23,6 +23,7 @@ struct Theme {
                       cellSelected: UIColor(red:0.30, green:0.31, blue:0.52, alpha:1.0),
                       nagivationBar: UIColor(red:0.03, green:0.04, blue:0.05, alpha:1.0),
                       statusBar: UIStatusBarStyle.lightContent,
+                      keyboard: UIKeyboardAppearance.dark,
                       logo: UIImage.init(named: "owl_grey")),
         "Black": Theme(background: UIColor.black,
                       text: UIColor(hex: "c9cacc"),
@@ -33,6 +34,7 @@ struct Theme {
                       cellSelected: UIColor(red:0.30, green:0.31, blue:0.52, alpha:1.0),
                       nagivationBar: UIColor(red:0.02, green:0.03, blue:0.04, alpha:1.0),
                       statusBar: UIStatusBarStyle.lightContent,
+                      keyboard: UIKeyboardAppearance.dark,
                       logo: UIImage.init(named: "owl_grey")),
         "Light": Theme(background: UIColor(hex: "eeeeee"),
                       text: UIColor.darkGray,
@@ -43,6 +45,7 @@ struct Theme {
                       cellSelected: UIColor.lightGray,
                       nagivationBar: UIColor.white,
                       statusBar: UIStatusBarStyle.default,
+                      keyboard: UIKeyboardAppearance.light,
                       logo: UIImage.init(named: "owl_dark"))
     ]
     static var currentTheme: Theme {
@@ -58,6 +61,7 @@ struct Theme {
     let cellSelected: UIColor
     let nagivationBar: UIColor
     let statusBar: UIStatusBarStyle
+    let keyboard: UIKeyboardAppearance
     let logo: UIImage?
 }
 
