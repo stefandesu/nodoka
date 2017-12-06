@@ -22,12 +22,6 @@ class StartViewController: ThemedViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        settingsButton.setAttributedTitle(FontHelper.generate(icon: String.fontAwesomeIcon(name: .cog), withText: " Settings", ofSize: 17, andTextColor: Theme.currentTheme.accent), for: .normal)
-
-        historyButton.setAttributedTitle(FontHelper.generate(icon: String.fontAwesomeIcon(name: .history), withText: " History", ofSize: 17, andTextColor: Theme.currentTheme.accent), for: .normal)
-
-        changeDurationButton.setAttributedTitle(FontHelper.generate(icon: String.fontAwesomeIcon(name: .pencilSquare), withText: "", ofSize: 30, andTextColor: Theme.currentTheme.accent), for: .normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,6 +33,11 @@ class StartViewController: ThemedViewController {
         let preparationTimeString = preparationTime == 0 ? "No Preparation" : "\(preparationTime) Second" + (preparationTime == 1 ? "" : "s")
         preparationTimeLabel.text = "\(preparationTimeString)"
         durationTimeLabel.text = "\(meditationTimeString)"
+        
+        // Set button labels
+        settingsButton.setAttributedTitle(FontHelper.generate(icon: String.fontAwesomeIcon(name: .cog), withText: " Settings", ofSize: 17, andTextColor: Theme.currentTheme.accent), for: .normal)
+        historyButton.setAttributedTitle(FontHelper.generate(icon: String.fontAwesomeIcon(name: .history), withText: " History", ofSize: 17, andTextColor: Theme.currentTheme.accent), for: .normal)
+        changeDurationButton.setAttributedTitle(FontHelper.generate(icon: String.fontAwesomeIcon(name: .pencilSquare), withText: "", ofSize: 30, andTextColor: Theme.currentTheme.accent), for: .normal)
         
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
