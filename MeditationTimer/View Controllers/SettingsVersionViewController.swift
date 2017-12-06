@@ -29,11 +29,15 @@ class SettingsVersionViewController: ThemedViewController {
         aboutTextView.backgroundColor = UIColor.clear
         aboutTextView.textColor = Theme.currentTheme.text
         aboutTextView.linkTextAttributes = [ NSAttributedStringKey.foregroundColor.rawValue: Theme.currentTheme.accent ]
+        aboutTextView.isHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         aboutTextView.dataDetectorTypes = .link
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
+            self.aboutTextView.isHidden = false
+        }
     }
 
 }

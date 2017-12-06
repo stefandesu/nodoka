@@ -373,11 +373,13 @@ Label</string>
                         <outlet property="infoLabel" destination="xOX-C9-aoH" id="FWx-mm-g5j"/>
                         <outlet property="owlImage" destination="sQk-ax-9Dn" id="8ny-Hl-Z8U"/>
                         <outlet property="pauseButton" destination="MiG-9i-unI" id="azS-aV-4mA"/>
+                        <outlet property="pausedLabel" destination="aq4-o0-lw2" id="jx6-5e-1e6"/>
                         <outlet property="stopButton" destination="S0B-4u-s6G" id="gqQ-oV-LtI"/>
                         <outletCollection property="themedButtons" destination="MiG-9i-unI" collectionClass="NSMutableArray" id="p1z-VS-Fwd"/>
                         <outletCollection property="themedButtons" destination="S0B-4u-s6G" collectionClass="NSMutableArray" id="ET5-oV-yZb"/>
                         <outletCollection property="themedLabels" destination="zcJ-wZ-NKh" collectionClass="NSMutableArray" id="79C-Az-hfd"/>
                         <outletCollection property="themedLabels" destination="xOX-C9-aoH" collectionClass="NSMutableArray" id="90l-An-RdO"/>
+                        <outletCollection property="themedLabels" destination="aq4-o0-lw2" collectionClass="NSMutableArray" id="LYq-1V-ezc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NzS-O4-0oX" userLabel="First Responder" sceneMemberID="firstResponder"/>

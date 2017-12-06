@@ -86,11 +86,11 @@ class MeditationViewController: ThemedViewController {
             isPausedByBackground = false
             isPausedByButton = false
         }
-        pausedLabel.text = ""
+        pausedLabel?.text = ""
     }
     func stopTimer() {
         timer.invalidate()
-        pausedLabel.text = "Paused"
+        pausedLabel?.text = "Paused"
     }
     
     fileprivate func startingSound() {
