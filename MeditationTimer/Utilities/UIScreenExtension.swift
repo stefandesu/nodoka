@@ -6,6 +6,8 @@
 //  Copyright © 2017 Stefan Peters. All rights reserved.
 //
 
+// https://stackoverflow.com/questions/15840979/how-to-set-screen-brightness-with-fade-animations
+
 import Foundation
 
 import UIKit

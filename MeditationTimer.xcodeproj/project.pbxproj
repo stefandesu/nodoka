@@ -30,6 +30,7 @@
 		F8867F571FCDAF8900A2C009 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8867F561FCDAF8900A2C009 /* Theme.swift */; };
 		F8867F591FCDB31D00A2C009 /* DefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8867F581FCDB31D00A2C009 /* DefaultsKeys.swift */; };
 		F88BCD791FD6025E00DB2C87 /* FontAwesome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F88BCD781FD6025E00DB2C87 /* FontAwesome.framework */; };
+		F8BDC6811FD9B9E800E4541E /* Haring.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8BDC6801FD9B9E800E4541E /* Haring.framework */; };
 		F8CE06B91FCDCB780000CEAA /* MeditationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CE06B81FCDCB780000CEAA /* MeditationViewController.swift */; };
 		F8CE06BB1FCDCBC60000CEAA /* PropertyKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CE06BA1FCDCBC60000CEAA /* PropertyKeys.swift */; };
 		F8CE06BD1FCDCDDA0000CEAA /* FinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CE06BC1FCDCDDA0000CEAA /* FinishViewController.swift */; };
@@ -69,6 +70,7 @@
 		F8867F561FCDAF8900A2C009 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		F8867F581FCDB31D00A2C009 /* DefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsKeys.swift; sourceTree = "<group>"; };
 		F88BCD781FD6025E00DB2C87 /* FontAwesome.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FontAwesome.framework; path = Carthage/Build/iOS/FontAwesome.framework; sourceTree = "<group>"; };
+		F8BDC6801FD9B9E800E4541E /* Haring.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Haring.framework; path = Carthage/Build/iOS/Haring.framework; sourceTree = "<group>"; };
 		F8CE06B81FCDCB780000CEAA /* MeditationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationViewController.swift; sourceTree = "<group>"; };
 		F8CE06BA1FCDCBC60000CEAA /* PropertyKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyKeys.swift; sourceTree = "<group>"; };
 		F8CE06BC1FCDCDDA0000CEAA /* FinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			files = (
 				F8D7F4F71FCCAADD00FE786B /* HealthKit.framework in Frameworks */,
 				F88BCD791FD6025E00DB2C87 /* FontAwesome.framework in Frameworks */,
+				F8BDC6811FD9B9E800E4541E /* Haring.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +198,7 @@
 		F8D7F4F51FCCAADD00FE786B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F8BDC6801FD9B9E800E4541E /* Haring.framework */,
 				F88BCD781FD6025E00DB2C87 /* FontAwesome.framework */,
 				F8D7F4F61FCCAADD00FE786B /* HealthKit.framework */,
 			);
@@ -301,10 +305,12 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/FontAwesome.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Haring.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/FontAwesome.framework",
+				"$(DERIVED_FILE_DIR)/Haring.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
