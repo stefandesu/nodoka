@@ -42,7 +42,7 @@ class SettingsAdvancedTableViewController: ThemedTableViewController {
         sender.setTitle("Creating...", for: .normal)
         debugQueue.async {
             for _ in 1...100 {
-                let session = MeditationSession(date: self.generateRandomDate(daysBack: 1000), duration: Double(arc4random_uniform(20 * 60) + 1))
+                let session = MeditationSession(date: self.generateRandomDate(daysBack: 100), duration: Double(arc4random_uniform(15 * 60) + 1))
                 session.save()
             }
             DispatchQueue.main.async {

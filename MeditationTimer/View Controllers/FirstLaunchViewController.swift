@@ -28,12 +28,12 @@ class FirstLaunchViewController: ThemedViewController {
         
         editInstructionIcon.text = String.fontAwesomeIcon(name: .pencilSquare) + " "
         editInstructionIcon.font = UIFont.fontAwesome(ofSize: 36)
-        editInstructionLabel.text = "Adjust the durations to your liking."
+        editInstructionLabel.text = "Adjust the durations to your preferences."
         editInstructionLabel.numberOfLines = 0
         
         settingsInstructionIcon.text = String.fontAwesomeIcon(name: .cog) + " "
         settingsInstructionIcon.font = UIFont.fontAwesome(ofSize: 36)
-        settingsInstructionLabel.text = "Customize the experience further in Settings."
+        settingsInstructionLabel.text = "Customize the experience further in the Settings."
         settingsInstructionLabel.numberOfLines = 0
         
         historyInstructionIcon.text = String.fontAwesomeIcon(name: .history) + " "

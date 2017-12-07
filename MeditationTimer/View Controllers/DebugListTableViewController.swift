@@ -75,11 +75,13 @@ class DebugListTableViewController: ThemedTableViewController {
         let session = data[indexPath.section][indexPath.row]
         let dateString = dateFormatter.string(from: session.date)
         cell.detailTextLabel?.text = "\(dateString)"
-        let minutes = Int(session.duration) / 60
+        let hours = Int(session.duration) / 3600
+        let hourString = hours > 0 ? "\(hours) Hour" + (hours > 1 ? "s " : " ") : ""
+        let minutes = (Int(session.duration) - hours*3600) / 60
         let minuteString = minutes > 0 ? "\(minutes) Minute" + (minutes > 1 ? "s " : " ") : ""
         let seconds = Int(session.duration) % 60
         let secondString = seconds > 0 ? "\(seconds) Second" + (seconds > 1 ? "s" : "") : ""
-        cell.textLabel?.text = "\(minuteString)\(secondString)"
+        cell.textLabel?.text = "\(hourString)\(minuteString)\(secondString)"
 
         return cell
     }
@@ -94,11 +96,13 @@ class DebugListTableViewController: ThemedTableViewController {
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         if data.count > 0 {
             let duration = durationSums[section]
-            let minutes = Int(duration) / 60
+            let hours = Int(duration) / 3600
+            let hourString = hours > 0 ? "\(hours) Hour" + (hours > 1 ? "s " : " ") : ""
+            let minutes = (Int(duration) - hours*3600) / 60
             let minuteString = minutes > 0 ? "\(minutes) Minute" + (minutes > 1 ? "s " : " ") : ""
             let seconds = Int(duration) % 60
             let secondString = seconds > 0 ? "\(seconds) Second" + (seconds > 1 ? "s" : "") : ""
-            return "Total: \(minuteString)\(secondString)"
+            return "Total: \(hourString)\(minuteString)\(secondString)"
         }
         return nil
     }
