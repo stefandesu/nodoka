@@ -213,11 +213,11 @@
 			buildConfigurationList = F8D7F4F11FCCAAB600FE786B /* Build configuration list for PBXNativeTarget "MeditationTimer" */;
 			buildPhases = (
 				F881AF601FD1F81600941850 /* Increment Build Number */,
+				F88BCD7B1FD6030000DB2C87 /* Carthage Check Outdated */,
+				F88BCD7A1FD6027A00DB2C87 /* Carthage Copy Frameworks */,
 				F8D7F4DB1FCCAAB600FE786B /* Sources */,
 				F8D7F4DC1FCCAAB600FE786B /* Frameworks */,
 				F8D7F4DD1FCCAAB600FE786B /* Resources */,
-				F88BCD7A1FD6027A00DB2C87 /* Carthage Copy Frameworks */,
-				F88BCD7B1FD6030000DB2C87 /* Carthage Check Outdated */,
 			);
 			buildRules = (
 			);
@@ -249,7 +249,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F8D7F4DA1FCCAAB600FE786B /* Build configuration list for PBXProject "MeditationTimer" */;
+			buildConfigurationList = F8D7F4DA1FCCAAB600FE786B /* Build configuration list for PBXProject "Nodoka Meditation Timer" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -542,7 +542,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F8D7F4DA1FCCAAB600FE786B /* Build configuration list for PBXProject "MeditationTimer" */ = {
+		F8D7F4DA1FCCAAB600FE786B /* Build configuration list for PBXProject "Nodoka Meditation Timer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F8D7F4EF1FCCAAB600FE786B /* Debug */,
