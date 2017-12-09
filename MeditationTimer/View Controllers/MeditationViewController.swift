@@ -21,8 +21,6 @@ class MeditationViewController: ThemedViewController {
     var isOpenEnd = false
     var isPausedByBackground = false
     var isPausedByButton = false
-
-    @IBOutlet weak var owlImage: UIImageView!
     
     @IBOutlet weak var pausedLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
@@ -52,9 +50,6 @@ class MeditationViewController: ThemedViewController {
         // Set up button titles
         pauseButton.setAttributedTitle(pauseAttributedTitle, for: .normal)
         stopButton.setAttributedTitle(FontHelper.generate(icon: "", withText: "Stop", ofSize: 15, andTextColor: Theme.currentTheme.accent), for: .normal)
-        
-        // Set up logo image
-        owlImage.image = Theme.currentTheme.logo
     }
     
     @objc func appDidEnterBackground() {
