@@ -49,15 +49,24 @@ class StartViewController: ThemedViewController {
     @IBAction func unwindFromEndscreen(segue: UIStoryboardSegue) {
         
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let identifier = segue.identifier else { return }
-        if identifier == PropertyKeys.startMeditationSegue, let destination = segue.destination as? MeditationViewController {
+    
+    @IBAction func startButtonTapped(_ sender: Any) {
+        if let destination = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: PropertyKeys.meditationStoryboard) as? MeditationViewController {
+            // Prepare destination view controller
             let meditationMinutes = userDefaults.integer(forKey: DefaultsKeys.duration)
             let preparationSeconds = userDefaults.integer(forKey: DefaultsKeys.preparation)
             destination.remainingTime = Double(meditationMinutes*60)
             destination.isOpenEnd = meditationMinutes == 0 ? true : false
             destination.preparationTime = Double(preparationSeconds)
+            // Prepare transition animation
+            let transition = CATransition.init()
+            transition.duration = 0.5
+            transition.type = kCATransitionFade
+            // Push view controller
+            navigationController?.view.layer.add(transition, forKey: kCATransition)
+            navigationController?.pushViewController(destination, animated: false)
         }
     }
+    
 }
 

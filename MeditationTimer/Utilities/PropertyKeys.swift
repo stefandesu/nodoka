@@ -26,4 +26,6 @@ struct PropertyKeys {
     // Storyboards
     static let firstLaunchStoryboard = "FirstLaunchStoryboard"
     static let defaultStoryboard = "DefaultStoryboard"
+    static let meditationStoryboard = "meditationStoryboard"
+    static let finishedStoryboard = "finishedStoryboard"
 }

@@ -223,7 +223,7 @@ Label</string>
                                             <color key="titleColor" red="0.92941176470588238" green="0.46274509803921571" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="dnN-SW-0Ui" kind="showDetail" identifier="startMeditation" action="showViewController:sender:" id="FqH-KX-luv"/>
+                                            <action selector="startButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gyZ-Qk-hBT"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8E7-HU-NIH">
@@ -285,7 +285,7 @@ Label</string>
         <!--Meditation View Controller-->
         <scene sceneID="IwJ-zZ-uPU">
             <objects>
-                <viewController id="dnN-SW-0Ui" customClass="MeditationViewController" customModule="MeditationTimer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="meditationStoryboard" id="dnN-SW-0Ui" customClass="MeditationViewController" customModule="MeditationTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f5e-pI-2qR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -312,7 +312,7 @@ Label</string>
                                     <color key="titleColor" red="0.92941176469999998" green="0.46274509800000002" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="LD4-wj-dxg" kind="showDetail" identifier="endMeditation" action="showViewController:sender:" id="Zad-gW-XKa"/>
+                                    <action selector="stopButtonTapped:" destination="dnN-SW-0Ui" eventType="touchUpInside" id="MlH-j7-nia"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOX-C9-aoH">
@@ -384,7 +384,7 @@ Label</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NzS-O4-0oX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="906" y="-324"/>
+            <point key="canvasLocation" x="754" y="-322"/>
         </scene>
         <!--Settings-->
         <scene sceneID="1HN-Fw-NnI">
@@ -1149,7 +1149,7 @@ http://soundbible.com/128-Metal-Gong.html</string>
         <!--Finish View Controller-->
         <scene sceneID="avz-09-dCj">
             <objects>
-                <viewController id="LD4-wj-dxg" customClass="FinishViewController" customModule="MeditationTimer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="finishedStoryboard" id="LD4-wj-dxg" customClass="FinishViewController" customModule="MeditationTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tpa-aA-UbQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -123,7 +123,8 @@ class MeditationViewController: ThemedViewController {
                 
                 if remainingTime <= 0.0 {
                     // Segue to end screen
-                    performSegue(withIdentifier: PropertyKeys.endMeditationSegue, sender: self)
+                    // performSegue(withIdentifier: PropertyKeys.endMeditationSegue, sender: self)
+                    stop()
                 }
             }
         }
@@ -227,5 +228,37 @@ class MeditationViewController: ThemedViewController {
             destination.finalTimeMeditated = timeMeditated
         }
     }
+    
+    @IBAction func stopButtonTapped(_ sender: UIButton) {
+        stop()
+    }
+    
+    func stop() {
+        preLeaveRoutine()
+        removeNoficationObserver()
+        guard timeMeditated > 0.0 else {
+            // Go back to main screen
+            navigationController?.popViewController(animated: true)
+            return
+        }
+        if let destination = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: PropertyKeys.finishedStoryboard) as? FinishViewController {
+            // Play gong
+            let endGong = userDefaults.integer(forKey: DefaultsKeys.endGong)
+            if endGong != 0 {
+                AudioHelper.shared.stop()
+                AudioHelper.shared.play(endGong)
+            }
+            // Prepare destination view controller
+            destination.finalTimeMeditated = timeMeditated
+            // Prepare transition animation
+            let transition = CATransition.init()
+            transition.duration = 0.5
+            transition.type = kCATransitionFade
+            // Push view controller
+            navigationController?.view.layer.add(transition, forKey: kCATransition)
+            navigationController?.pushViewController(destination, animated: false)
+        }
+    }
+    
 
 }
