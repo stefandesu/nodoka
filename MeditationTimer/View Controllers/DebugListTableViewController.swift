@@ -12,6 +12,8 @@ class DebugListTableViewController: ThemedTableViewController {
 
     var data: [[MeditationSession]] = []
     var titles: [String] = []
+//    var sectionIndexTitles: [String] = []
+//    var sectionIndexSections: [Int] = []
     var durationSums: [TimeInterval] = []
     
     override func viewDidLoad() {
@@ -25,25 +27,49 @@ class DebugListTableViewController: ThemedTableViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_GB")
         dateFormatter.setLocalizedDateFormatFromTemplate("MMMM yyyy")
+//        let shortDateFormatter = DateFormatter()
+//        shortDateFormatter.locale = Locale(identifier: "en_GB")
+//        shortDateFormatter.setLocalizedDateFormatFromTemplate("MM yyyy")
+//        let yearFormatter = DateFormatter()
+//        yearFormatter.locale = Locale(identifier: "en_GB")
+//        yearFormatter.setLocalizedDateFormatFromTemplate("yyyy")
         var currentMonth = ""
+//        var currentYear = ""
+//        var sectionIndexTitlesYear: [String] = []
+//        var sectionIndexSectionsYear: [Int] = []
         var currentDurationSum: TimeInterval = 0
         for array in indexArray {
             if let session = MeditationSession.getSession(identifier: array.key) {
                 let month = dateFormatter.string(from: session.date)
+//                let year = yearFormatter.string(from: session.date)
                 if currentMonth != month {
                     titles.append(month)
+//                    sectionIndexTitles.append(shortDateFormatter.string(from: session.date))
                     data.append([MeditationSession]())
                     if !currentMonth.isEmpty {
                         durationSums.append(currentDurationSum)
                         currentDurationSum = 0
                     }
                     currentMonth = month
+//                    if currentYear != year {
+//                        sectionIndexTitlesYear.append(year)
+//                        sectionIndexSectionsYear.append(sectionIndexTitles.count-1)
+//                        currentYear = year
+//                    }
                 }
                 data[data.endIndex-1].append(session)
                 currentDurationSum += session.duration
             }
         }
         durationSums.append(currentDurationSum)
+        
+        // Section indexes
+//        if sectionIndexTitles.count <= 24 {
+//            sectionIndexSections = (0..<sectionIndexTitles.count).map { $0 }
+//        } else {
+//            sectionIndexTitles = sectionIndexTitlesYear
+//            sectionIndexSections = sectionIndexSectionsYear
+//        }
         
         navigationItem.title = "History"
         navigationController?.setNavigationBarHidden(false, animated: true)
@@ -82,6 +108,7 @@ class DebugListTableViewController: ThemedTableViewController {
         let seconds = Int(session.duration) % 60
         let secondString = seconds > 0 ? "\(seconds) Second" + (seconds > 1 ? "s" : "") : ""
         cell.textLabel?.text = "\(hourString)\(minuteString)\(secondString)"
+        cell.selectionStyle = .none
 
         return cell
     }
@@ -113,7 +140,7 @@ class DebugListTableViewController: ThemedTableViewController {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -145,6 +172,14 @@ class DebugListTableViewController: ThemedTableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
+    
+//    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+//        return sectionIndexTitles
+//    }
+//
+//    override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+//        return sectionIndexSections[index]
+//    }
 
     /*
     // Override to support rearranging the table view.
