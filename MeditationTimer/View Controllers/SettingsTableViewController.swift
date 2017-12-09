@@ -22,7 +22,7 @@ class SettingsTableViewController: ThemedTableViewController, HealthKitHelperDel
                 statusText = "Apple Health integration authorized and enabled."
             }
         case .sharingDenied:
-            statusText = "Apple Health integration denied. Please go to Settings - Privacy - Health and allow this app to write mindfulness data."
+            statusText = "To allow this app to write health data, please go to the privacy section of your iPhone settings."
             enabled = false
         case .notDetermined:
             statusText = "Enabling Apple Health integration will ask you for system permission."

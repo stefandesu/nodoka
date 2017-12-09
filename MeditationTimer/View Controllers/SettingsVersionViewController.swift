@@ -48,6 +48,7 @@ class SettingsVersionViewController: ThemedViewController {
         """
         let markdownParser = MarkdownParser(font: UIFont.systemFont(ofSize: 15), color: Theme.currentTheme.text)
         markdownParser.link.color = Theme.currentTheme.accent
+        aboutTextView.linkTextAttributes = [ NSAttributedStringKey.foregroundColor.rawValue: Theme.currentTheme.accent ]
         aboutTextView.attributedText = markdownParser.parse(markdown)
         aboutTextView.backgroundColor = UIColor.clear
     }

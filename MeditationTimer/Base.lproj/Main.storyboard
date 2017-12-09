@@ -34,20 +34,14 @@
                                     <segue destination="HuR-4K-hSC" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="3PW-hg-H7d"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEo-mH-Gxs">
-                                <rect key="frame" x="32" y="60" width="256" height="41"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="34"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a simple meditation timer. Everyone can use a few minutes of calm each day." lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnR-JR-O5G">
-                                <rect key="frame" x="32" y="117" width="256" height="57.5"/>
+                                <rect key="frame" x="32" y="139.5" width="256" height="57.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="_" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3OO-kF-GYq">
-                                <rect key="frame" x="32" y="206.5" width="159.5" height="51.5"/>
+                                <rect key="frame" x="32" y="221" width="159.5" height="51.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="AFR-7m-shS"/>
                                 </constraints>
@@ -56,7 +50,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHU-BM-vOP">
-                                <rect key="frame" x="199.5" y="212" width="88.5" height="41"/>
+                                <rect key="frame" x="199.5" y="226.5" width="88.5" height="41"/>
                                 <string key="text">Label af asf
 Label</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -64,13 +58,13 @@ Label</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="_" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SvV-Il-DYu">
-                                <rect key="frame" x="32" y="290" width="159.5" height="51.5"/>
+                                <rect key="frame" x="32" y="296.5" width="159.5" height="51.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qeV-gu-g45">
-                                <rect key="frame" x="199.5" y="295.5" width="88.5" height="41"/>
+                                <rect key="frame" x="199.5" y="302" width="88.5" height="41"/>
                                 <string key="text">Label af asf
 Label</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -78,13 +72,13 @@ Label</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="_" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JS3-KJ-EyW">
-                                <rect key="frame" x="32" y="373.5" width="159.5" height="51.5"/>
+                                <rect key="frame" x="32" y="372" width="159.5" height="51.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hmi-en-dNY">
-                                <rect key="frame" x="199.5" y="379" width="88.5" height="41"/>
+                                <rect key="frame" x="199.5" y="377.5" width="88.5" height="41"/>
                                 <string key="text">Label af asf
 Label</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -92,8 +86,20 @@ Label</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When you are ready to meditate, just tap Start on the main screen." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAf-ji-7p6">
-                                <rect key="frame" x="32" y="457" width="256" height="21"/>
+                                <rect key="frame" x="32" y="447.5" width="256" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tranquil; calm; quiet (Japanese)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmN-QX-yQi">
+                                <rect key="frame" x="32" y="106.5" width="256" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="のどか・Nodoka" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEo-mH-Gxs">
+                                <rect key="frame" x="32" y="68" width="256" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -102,23 +108,25 @@ Label</string>
                         <constraints>
                             <constraint firstItem="qeV-gu-g45" firstAttribute="trailing" secondItem="jHU-BM-vOP" secondAttribute="trailing" id="1Qv-5L-SUT"/>
                             <constraint firstItem="TTk-tB-mqe" firstAttribute="bottom" secondItem="F7L-cj-lzh" secondAttribute="bottom" constant="32" id="2G8-H6-wy4"/>
-                            <constraint firstItem="nnR-JR-O5G" firstAttribute="top" secondItem="cEo-mH-Gxs" secondAttribute="bottom" constant="16" id="6q1-iH-Fcn"/>
                             <constraint firstItem="JS3-KJ-EyW" firstAttribute="trailing" secondItem="SvV-Il-DYu" secondAttribute="trailing" id="6vj-Si-YR5"/>
                             <constraint firstItem="qeV-gu-g45" firstAttribute="leading" secondItem="jHU-BM-vOP" secondAttribute="leading" id="9MP-AV-O8T"/>
                             <constraint firstItem="Hmi-en-dNY" firstAttribute="centerY" secondItem="JS3-KJ-EyW" secondAttribute="centerY" id="9se-Be-soc"/>
                             <constraint firstItem="SvV-Il-DYu" firstAttribute="leading" secondItem="3OO-kF-GYq" secondAttribute="leading" id="AhL-O7-ebY"/>
-                            <constraint firstItem="oAf-ji-7p6" firstAttribute="top" secondItem="JS3-KJ-EyW" secondAttribute="bottom" constant="32" id="Bex-K2-ogp"/>
-                            <constraint firstItem="JS3-KJ-EyW" firstAttribute="top" secondItem="SvV-Il-DYu" secondAttribute="bottom" constant="32" id="FKj-Rx-Kfd"/>
-                            <constraint firstItem="3OO-kF-GYq" firstAttribute="top" secondItem="nnR-JR-O5G" secondAttribute="bottom" constant="32" id="GB1-mz-8Jl"/>
+                            <constraint firstItem="tmN-QX-yQi" firstAttribute="leading" secondItem="TTk-tB-mqe" secondAttribute="leading" constant="32" id="Avy-yE-lcM"/>
+                            <constraint firstItem="oAf-ji-7p6" firstAttribute="top" secondItem="JS3-KJ-EyW" secondAttribute="bottom" constant="24" id="Bex-K2-ogp"/>
+                            <constraint firstItem="JS3-KJ-EyW" firstAttribute="top" secondItem="SvV-Il-DYu" secondAttribute="bottom" constant="24" id="FKj-Rx-Kfd"/>
+                            <constraint firstItem="3OO-kF-GYq" firstAttribute="top" secondItem="nnR-JR-O5G" secondAttribute="bottom" constant="24" id="GB1-mz-8Jl"/>
                             <constraint firstItem="jHU-BM-vOP" firstAttribute="leading" secondItem="3OO-kF-GYq" secondAttribute="trailing" constant="8" id="Ham-Uj-5tb"/>
                             <constraint firstItem="cEo-mH-Gxs" firstAttribute="leading" secondItem="TTk-tB-mqe" secondAttribute="leading" constant="32" id="Jyb-tR-tPf"/>
+                            <constraint firstItem="nnR-JR-O5G" firstAttribute="top" secondItem="tmN-QX-yQi" secondAttribute="bottom" constant="16" id="Lnf-jg-04J"/>
+                            <constraint firstItem="cEo-mH-Gxs" firstAttribute="top" secondItem="TTk-tB-mqe" secondAttribute="top" constant="48" id="PQR-PX-POW"/>
                             <constraint firstItem="TTk-tB-mqe" firstAttribute="trailing" secondItem="nnR-JR-O5G" secondAttribute="trailing" constant="32" id="SpE-gw-7Tu"/>
                             <constraint firstItem="jHU-BM-vOP" firstAttribute="centerY" secondItem="3OO-kF-GYq" secondAttribute="centerY" id="Tsy-w4-426"/>
                             <constraint firstItem="Hmi-en-dNY" firstAttribute="leading" secondItem="jHU-BM-vOP" secondAttribute="leading" id="XeX-nS-tUZ"/>
-                            <constraint firstItem="cEo-mH-Gxs" firstAttribute="top" secondItem="TTk-tB-mqe" secondAttribute="top" constant="40" id="Z6a-JX-YbQ"/>
+                            <constraint firstItem="TTk-tB-mqe" firstAttribute="trailing" secondItem="tmN-QX-yQi" secondAttribute="trailing" constant="32" id="Z5o-fb-2Cj"/>
                             <constraint firstItem="Hmi-en-dNY" firstAttribute="trailing" secondItem="jHU-BM-vOP" secondAttribute="trailing" id="dfv-cx-NTW"/>
                             <constraint firstItem="F7L-cj-lzh" firstAttribute="leading" secondItem="TTk-tB-mqe" secondAttribute="leading" constant="32" id="dr6-CJ-JVW"/>
-                            <constraint firstItem="SvV-Il-DYu" firstAttribute="top" secondItem="3OO-kF-GYq" secondAttribute="bottom" constant="32" id="f5w-w9-rTa"/>
+                            <constraint firstItem="SvV-Il-DYu" firstAttribute="top" secondItem="3OO-kF-GYq" secondAttribute="bottom" constant="24" id="f5w-w9-rTa"/>
                             <constraint firstItem="oAf-ji-7p6" firstAttribute="trailing" secondItem="nnR-JR-O5G" secondAttribute="trailing" id="hfL-iy-3K7"/>
                             <constraint firstItem="nnR-JR-O5G" firstAttribute="leading" secondItem="TTk-tB-mqe" secondAttribute="leading" constant="32" id="iEX-Te-Iod"/>
                             <constraint firstItem="SvV-Il-DYu" firstAttribute="trailing" secondItem="3OO-kF-GYq" secondAttribute="trailing" id="iRG-7A-XEx"/>
@@ -129,6 +137,7 @@ Label</string>
                             <constraint firstItem="TTk-tB-mqe" firstAttribute="trailing" secondItem="F7L-cj-lzh" secondAttribute="trailing" constant="32" id="pdr-mW-pXE"/>
                             <constraint firstItem="TTk-tB-mqe" firstAttribute="trailing" secondItem="cEo-mH-Gxs" secondAttribute="trailing" constant="32" id="uK9-5b-HDj"/>
                             <constraint firstItem="oAf-ji-7p6" firstAttribute="leading" secondItem="nnR-JR-O5G" secondAttribute="leading" id="uNC-Ao-TLM"/>
+                            <constraint firstItem="tmN-QX-yQi" firstAttribute="top" secondItem="cEo-mH-Gxs" secondAttribute="bottom" id="zeP-I7-MY8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TTk-tB-mqe"/>
                     </view>
@@ -149,6 +158,7 @@ Label</string>
                         <outletCollection property="themedLabels" destination="JS3-KJ-EyW" collectionClass="NSMutableArray" id="guK-C2-rsO"/>
                         <outletCollection property="themedLabels" destination="Hmi-en-dNY" collectionClass="NSMutableArray" id="lbR-zn-kl4"/>
                         <outletCollection property="themedLabels" destination="oAf-ji-7p6" collectionClass="NSMutableArray" id="u4O-zA-0Ig"/>
+                        <outletCollection property="themedLabels" destination="tmN-QX-yQi" collectionClass="NSMutableArray" id="FYr-Ny-Pmd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5dn-rX-kLd" userLabel="First Responder" sceneMemberID="firstResponder"/>
