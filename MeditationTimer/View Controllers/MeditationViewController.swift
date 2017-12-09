@@ -16,6 +16,7 @@ class MeditationViewController: ThemedViewController {
     var preparationTime: TimeInterval!
     var timeMeditated: TimeInterval = 0
     var previousBrightness = CGFloat(0.5)
+    var timeUntilInfoFade: TimeInterval = 0.0
     
     var timer = Timer()
     var isOpenEnd = false
@@ -67,6 +68,7 @@ class MeditationViewController: ThemedViewController {
         if isPausedByBackground {
             postLeaveRoutine()
             infoLabel.text = "The timer only works when the application is active."
+            timeUntilInfoFade = 5.0
         }
     }
 
@@ -101,6 +103,20 @@ class MeditationViewController: ThemedViewController {
     
     @objc func timerTick() {
         print("Timer Tick (\(preparationTime), \(remainingTime), \(timeMeditated))")
+        
+        // Fade info label after a while
+        if timeUntilInfoFade >= 1 {
+            timeUntilInfoFade -= 1.0
+            if timeUntilInfoFade == 0.0 {
+                UIView.animate(withDuration: 1.0, animations: {
+                    self.infoLabel.alpha = 0.0
+                }, completion: { (_) in
+                    self.infoLabel.text = ""
+                    self.infoLabel.alpha = 1.0
+                })
+            }
+        }
+        
         if preparationTime > 0 {
             // Preparing
             preparationTime = preparationTime - 1.0
