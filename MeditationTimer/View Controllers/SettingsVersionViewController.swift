@@ -31,8 +31,7 @@ class SettingsVersionViewController: ThemedViewController {
         - [Telegram](http://t.me/stefandesu)
 
         **Credits**
-        
-        - Owl by [Ana Pas from the Noun Project](https://thenounproject.com/term/owl/12773/)
+        - Owl by [Ana Pas from the Noun Project](https://thenounproject.com/term/owl/12773/), modified by my friend Salo and me
         - Sounds (Default, Soft, Strong) by [Omachronic on Freesound.org](https://freesound.org/people/Omachronic/packs/8156/)
         - Sound (Zen) by [Mike Koenig](http://soundbible.com/1491-Zen-Buddhist-Temple-Bell.html)
         - Sound (Metal) by [Mike Koenig](http://soundbible.com/128-Metal-Gong.html)

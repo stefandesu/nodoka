@@ -20,7 +20,7 @@ class AudioHelper: NSObject, AVAudioPlayerDelegate {
                                   5: "Strong"]
     static let audioQueue = DispatchQueue(label: "audioQueue", attributes: .concurrent)
     
-    var sounds: [Int: AVAudioPlayer?] = [:]
+    var sounds: [Int: AVAudioPlayer?] = [0: nil]
     let userDefaults = UserDefaults.standard
     
     static func setAudioSession(to status: Bool) {
@@ -48,25 +48,33 @@ class AudioHelper: NSObject, AVAudioPlayerDelegate {
         }
     }
     func play(_ bellNumber: Int) {
-        // Set sound volume
-        if userDefaults.bool(forKey: DefaultsKeys.useSystemSound) {
-            sounds[bellNumber]??.volume = 1.0
-        } else {
-            print(AVAudioSession.sharedInstance().outputVolume)
-            // TODO: Adjust formula
-            let outputVolume = AVAudioSession.sharedInstance().outputVolume
-            let volume = (userDefaults.float(forKey: DefaultsKeys.soundVolume) / outputVolume) * (1.4 - outputVolume)
-            sounds[bellNumber]??.volume = volume
-            print(volume)
+        // If not yet prepared, prepare
+        if bellNumber > 0 && sounds[bellNumber] == nil {
+            configureAudioPlayer(with: bellNumber)
+            print("Audio: Reconfigured sound \(bellNumber)")
         }
-        // Play async in separate queue
-        AudioHelper.audioQueue.sync {
-            AudioHelper.setAudioSession(to: true)
-            self.sounds[bellNumber]??.play()
+        if let s = sounds[bellNumber], let sound = s {
+            // Set sound volume
+            if userDefaults.bool(forKey: DefaultsKeys.useSystemSound) {
+                sound.volume = 1.0
+            } else {
+                print(AVAudioSession.sharedInstance().outputVolume)
+                // TODO: Adjust formula
+                let outputVolume = AVAudioSession.sharedInstance().outputVolume
+                let volume = (userDefaults.float(forKey: DefaultsKeys.soundVolume) / outputVolume) * (1.4 - outputVolume)
+                sound.volume = volume
+                print(volume)
+            }
+            // Play async in separate queue
+            AudioHelper.audioQueue.sync {
+                AudioHelper.setAudioSession(to: true)
+                sound.play()
+            }
         }
     }
     
     func stop() {
+        // Stop in separate queue
         AudioHelper.audioQueue.sync {
             for (sound, _) in AudioHelper.availableSounds {
                 self.sounds[sound]??.stop()
