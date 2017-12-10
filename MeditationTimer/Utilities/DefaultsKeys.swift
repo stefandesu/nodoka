@@ -18,7 +18,7 @@ struct DefaultsKeys {
     static let changedBrightness = "changedBrightness"
     static let durationPickerHidden = "durationPickerHidden"
     // For Feedback Form
-    static let feedbackNotSent = "feedbackNotSent"
+    static let feedbackStatus = "feedbackStatus"
     static let feedbackType = "feedbackType"
     static let feedbackLog = "feedbackLog"
     static let feedbackDescription = "feedbackDescription"

@@ -28,11 +28,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             DefaultsKeys.healthKitEnabled: false,
             DefaultsKeys.changedBrightness: true,
             DefaultsKeys.durationPickerHidden: false,
-            DefaultsKeys.feedbackNotSent: false,
+            DefaultsKeys.feedbackStatus: FeedbackStatus.notSubmitted.rawValue,
             DefaultsKeys.useSystemSound: true,
             DefaultsKeys.soundVolume: 0.2,
             DefaultsKeys.hasLaunchedApp: false,
             DefaultsKeys.debugMenuEnabled: false
+            
         ]
         userDefaults.register(defaults: userDefaultsStandards)
         
@@ -55,6 +56,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let archivePath = documentsDirectory.appendingPathComponent("sessions").path
         if !FileManager.default.fileExists(atPath: archivePath, isDirectory: &isDir) {
             try? FileManager.default.createDirectory(atPath: archivePath, withIntermediateDirectories: false, attributes: nil)
+        }
+        
+        // Check if feedback should be currently sending or failed last time, if yes then start sending
+        let currentFeedbackStatus = userDefaults.integer(forKey: DefaultsKeys.feedbackStatus)
+        if currentFeedbackStatus == FeedbackStatus.submitting.rawValue || currentFeedbackStatus == FeedbackStatus.submitFailed.rawValue {
+            FeedbackHelper.shared.send()
         }
         
         return true

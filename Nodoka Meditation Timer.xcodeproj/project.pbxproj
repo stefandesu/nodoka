@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F8269AAB1FD4734E00471A39 /* TelegramHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8269AAA1FD4734E00471A39 /* TelegramHelper.swift */; };
+		F8269AAB1FD4734E00471A39 /* FeedbackHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8269AAA1FD4734E00471A39 /* FeedbackHelper.swift */; };
 		F8269AAD1FD479C000471A39 /* FeedbackTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8269AAC1FD479C000471A39 /* FeedbackTableView.swift */; };
 		F8269AB01FD4AB0900471A39 /* SetSound1TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8269AAE1FD4AB0900471A39 /* SetSound1TableViewCell.swift */; };
 		F8269AB11FD4AB0900471A39 /* SetSound1TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8269AAF1FD4AB0900471A39 /* SetSound1TableViewCell.xib */; };
@@ -48,7 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F8269AAA1FD4734E00471A39 /* TelegramHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelegramHelper.swift; sourceTree = "<group>"; };
+		F8269AAA1FD4734E00471A39 /* FeedbackHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackHelper.swift; sourceTree = "<group>"; };
 		F8269AAC1FD479C000471A39 /* FeedbackTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackTableView.swift; sourceTree = "<group>"; };
 		F8269AAE1FD4AB0900471A39 /* SetSound1TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSound1TableViewCell.swift; sourceTree = "<group>"; };
 		F8269AAF1FD4AB0900471A39 /* SetSound1TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetSound1TableViewCell.xib; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 				F8BDC6841FDD848900E4541E /* ImageHelper.swift */,
 				F8F19E751FD80E2000E60CC2 /* FontHelper.swift */,
 				F881AF5A1FD0ADB900941850 /* MeditationSession.swift */,
-				F8269AAA1FD4734E00471A39 /* TelegramHelper.swift */,
+				F8269AAA1FD4734E00471A39 /* FeedbackHelper.swift */,
 				F881AF561FD0AB0C00941850 /* UIScreenExtension.swift */,
 				F8D7F4E21FCCAAB600FE786B /* AppDelegate.swift */,
 				F8867F581FCDB31D00A2C009 /* DefaultsKeys.swift */,
@@ -366,7 +366,7 @@
 				F8CE06C31FCDD9F80000CEAA /* SettingsTableViewController.swift in Sources */,
 				F8269AB01FD4AB0900471A39 /* SetSound1TableViewCell.swift in Sources */,
 				F8BDC6851FDD848A00E4541E /* ImageHelper.swift in Sources */,
-				F8269AAB1FD4734E00471A39 /* TelegramHelper.swift in Sources */,
+				F8269AAB1FD4734E00471A39 /* FeedbackHelper.swift in Sources */,
 				F8F19E761FD80E2000E60CC2 /* FontHelper.swift in Sources */,
 				F84E7F6A1FCF5C2D00BF9320 /* ThemedViewController.swift in Sources */,
 			);

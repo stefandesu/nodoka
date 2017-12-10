@@ -8,9 +8,64 @@
 
 import Foundation
 
+enum FeedbackStatus: Int {
+    case notSubmitted, submitting, submitSuccessful, submitFailed
+}
+
 protocol TelegramHelperDelegate {
     func telegramResponse(success: Bool)
 }
+
+class FeedbackHelper: TelegramHelperDelegate {
+    static let shared = FeedbackHelper()
+    let userDefaults = UserDefaults.standard
+    var delegate: TelegramHelperDelegate?
+    let feedbackQueue = DispatchQueue(label: "feedbackQueue", attributes: .concurrent)
+    var currentlySending = false
+    
+    init() {
+        
+    }
+    
+    func send() {
+        userDefaults.set(FeedbackStatus.submitting.rawValue, forKey: DefaultsKeys.feedbackStatus)
+        currentlySending = true
+        // Construct message out of user defaults
+        let now = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        let dateString = formatter.string(from: now)
+        // Put message together
+        var message = "New Message (\(dateString)):\n"
+        message += "Type: \(userDefaults.integer(forKey: DefaultsKeys.feedbackType))\n"
+        message += "Message Text:\n\(userDefaults.string(forKey: DefaultsKeys.feedbackDescription) ?? "")\n"
+        message += "Contact: \(userDefaults.string(forKey: DefaultsKeys.feedbackAuthor) ?? "")"
+        
+        feedbackQueue.async {
+            sleep(5)
+            TelegramHelper.send(message: message, delegate: self)
+        }
+    }
+    
+    func telegramResponse(success: Bool) {
+        currentlySending = false
+        // Set feedback status in user defaults
+        userDefaults.set(success ? FeedbackStatus.submitSuccessful.rawValue : FeedbackStatus.submitFailed.rawValue, forKey: DefaultsKeys.feedbackStatus)
+        if success {
+            resetDefaults()
+        }
+        // Forward response to current delegate
+        delegate?.telegramResponse(success: success)
+    }
+    
+    func resetDefaults() {
+        userDefaults.set(0, forKey: DefaultsKeys.feedbackType)
+        userDefaults.set(false, forKey: DefaultsKeys.feedbackLog)
+        userDefaults.set("", forKey: DefaultsKeys.feedbackDescription)
+        userDefaults.set("", forKey: DefaultsKeys.feedbackAuthor)
+    }
+}
+//userDefaults.set(true, forKey: DefaultsKeys.feedbackNotSent)
 
 class TelegramHelper {
     static let endpointURL = URL(string: "https://api.telegram.org/bot***REMOVED***/sendMessage")
