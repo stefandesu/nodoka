@@ -31,12 +31,15 @@ class MeditationViewController: ThemedViewController {
     let pauseAttributedTitle = FontHelper.generate(icon: String.fontAwesomeIcon(name: .pause), withText: "", ofSize: 48, andTextColor: Theme.currentTheme.accent)
     let continueAttributedTitle = FontHelper.generate(icon: String.fontAwesomeIcon(name: .play), withText: "", ofSize: 48, andTextColor: Theme.currentTheme.accent)
     
+    override var owlImageVariant: ImageVariant { return preparationTime > 0 ? .half : .closed }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Check if remainingTime was set properly, otherwise abort
         guard remainingTime != nil, preparationTime != nil else {
-            navigationController?.popViewController(animated: true)
+            prepareTransition()
+            navigationController?.popViewController(animated: false)
             return
         }
 
@@ -98,6 +101,8 @@ class MeditationViewController: ThemedViewController {
                 AudioHelper.shared.stop()
                 AudioHelper.shared.play(startGong)
             }
+            // Change owl image
+            setUpTheme()
         }
     }
     
@@ -249,7 +254,8 @@ class MeditationViewController: ThemedViewController {
         removeNoficationObserver()
         guard timeMeditated > 0.0 else {
             // Go back to main screen
-            navigationController?.popViewController(animated: true)
+            prepareTransition()
+            navigationController?.popViewController(animated: false)
             return
         }
         if let destination = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: PropertyKeys.finishedStoryboard) as? FinishViewController {
@@ -262,13 +268,18 @@ class MeditationViewController: ThemedViewController {
             // Prepare destination view controller
             destination.finalTimeMeditated = timeMeditated
             // Prepare transition animation
-            let transition = CATransition.init()
-            transition.duration = 0.5
-            transition.type = kCATransitionFade
-            // Push view controller
-            navigationController?.view.layer.add(transition, forKey: kCATransition)
+            prepareTransition()
             navigationController?.pushViewController(destination, animated: false)
         }
+    }
+    
+    func prepareTransition() {
+        // Prepare transition animation
+        let transition = CATransition.init()
+        transition.duration = 0.5
+        transition.type = kCATransitionFade
+        // Push view controller
+        navigationController?.view.layer.add(transition, forKey: kCATransition)
     }
     
 

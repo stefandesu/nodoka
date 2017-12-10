@@ -20,6 +20,8 @@ class StartViewController: ThemedViewController {
     @IBOutlet weak var historyButton: UIButton!
     @IBOutlet weak var changeDurationButton: UIButton!
     
+    override var owlImageVariant: ImageVariant { return .open }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

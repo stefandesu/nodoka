@@ -168,7 +168,7 @@ Label</string>
         <!--Start View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="StartViewController" customModule="MeditationTimer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="startStoryboard" id="BYZ-38-t0r" customClass="StartViewController" customModule="MeditationTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -255,8 +255,8 @@ Label</string>
                                             <action selector="startButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gyZ-Qk-hBT"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="owl_dark" translatesAutoresizingMaskIntoConstraints="NO" id="Peg-X6-OEJ">
-                                        <rect key="frame" x="-49.5" y="256" width="419" height="100"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="owl_image_open_dark" translatesAutoresizingMaskIntoConstraints="NO" id="Peg-X6-OEJ">
+                                        <rect key="frame" x="32" y="256" width="256" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="iBp-NG-KSM"/>
                                         </constraints>
@@ -343,8 +343,8 @@ Label</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qxb-LI-9Uw">
                                 <rect key="frame" x="0.0" y="20" width="320" height="437"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="owl_dark" translatesAutoresizingMaskIntoConstraints="NO" id="sQk-ax-9Dn">
-                                        <rect key="frame" x="-49.5" y="256" width="419" height="100"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="owl_image_half_dark" translatesAutoresizingMaskIntoConstraints="NO" id="sQk-ax-9Dn">
+                                        <rect key="frame" x="32" y="256" width="256" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="2Nu-3D-s7q"/>
                                         </constraints>
@@ -1028,7 +1028,7 @@ Label</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="owl_grey" translatesAutoresizingMaskIntoConstraints="NO" id="ztE-rN-vHw">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="owl_image_closed_dark" translatesAutoresizingMaskIntoConstraints="NO" id="ztE-rN-vHw">
                                 <rect key="frame" x="40" y="104" width="240" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="s33-QS-x6D"/>
@@ -1085,7 +1085,7 @@ http://soundbible.com/128-Metal-Gong.html</string>
                     </view>
                     <connections>
                         <outlet property="aboutTextView" destination="Qvl-Qh-C8n" id="9XW-7b-Pp4"/>
-                        <outlet property="logoImageView" destination="ztE-rN-vHw" id="ftC-O9-QqS"/>
+                        <outlet property="owlImage" destination="ztE-rN-vHw" id="vHc-34-hrr"/>
                         <outlet property="versionLabel" destination="beA-DY-mfK" id="0na-MQ-FAM"/>
                         <outletCollection property="themedLabels" destination="b6r-lN-3jf" collectionClass="NSMutableArray" id="r2H-be-8fH"/>
                         <outletCollection property="themedLabels" destination="beA-DY-mfK" collectionClass="NSMutableArray" id="AO1-hx-kVz"/>
@@ -1192,7 +1192,7 @@ http://soundbible.com/128-Metal-Gong.html</string>
                                     <color key="titleColor" red="0.92941176469999998" green="0.46274509800000002" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="PXi-tH-eih" kind="unwind" unwindAction="unwindFromEndscreenWithSegue:" id="i9C-20-fgd"/>
+                                    <action selector="goBackButtonTapped:" destination="LD4-wj-dxg" eventType="touchUpInside" id="LHm-Fc-bGe"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vGL-ZR-QA6">
@@ -1207,8 +1207,8 @@ http://soundbible.com/128-Metal-Gong.html</string>
                                         <color key="textColor" red="0.78823529410000004" green="0.79215686269999996" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="owl_dark" translatesAutoresizingMaskIntoConstraints="NO" id="DsV-dS-khG">
-                                        <rect key="frame" x="-50" y="256" width="419" height="100"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="owl_image_open_yay_dark" translatesAutoresizingMaskIntoConstraints="NO" id="DsV-dS-khG">
+                                        <rect key="frame" x="31.5" y="256" width="256" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="gql-Mg-jkc"/>
                                         </constraints>
@@ -1254,7 +1254,6 @@ http://soundbible.com/128-Metal-Gong.html</string>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yra-zb-qbI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="PXi-tH-eih" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1689.375" y="-341.19718309859155"/>
         </scene>
@@ -1313,8 +1312,10 @@ http://soundbible.com/128-Metal-Gong.html</string>
         </scene>
     </scenes>
     <resources>
-        <image name="owl_dark" width="419" height="537"/>
-        <image name="owl_grey" width="419" height="537"/>
+        <image name="owl_image_closed_dark" width="256" height="256"/>
+        <image name="owl_image_half_dark" width="256" height="256"/>
+        <image name="owl_image_open_dark" width="256" height="256"/>
+        <image name="owl_image_open_yay_dark" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="iYV-Yz-JcD"/>

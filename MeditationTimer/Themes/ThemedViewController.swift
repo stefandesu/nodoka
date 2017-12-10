@@ -15,6 +15,7 @@ class ThemedViewController: UIViewController {
     @IBOutlet var themedSwitches: [UISwitch] = []
     
     @IBOutlet weak var owlImage: UIImageView?
+    var owlImageVariant: ImageVariant { return .closed }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,7 @@ class ThemedViewController: UIViewController {
         // Set table view theme
         
         // Set up logo image
-        owlImage?.image = Theme.currentTheme.logo
+        owlImage?.image = ImageHelper.getImage(variant: owlImageVariant)
         
         // Table background color
         view.backgroundColor = Theme.currentTheme.background

@@ -18,10 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="owl_light" translatesAutoresizingMaskIntoConstraints="NO" id="JE3-Wa-Zqn">
-                                <rect key="frame" x="112.5" y="65" width="150" height="537"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="owl_image_closed_light" translatesAutoresizingMaskIntoConstraints="NO" id="JE3-Wa-Zqn">
+                                <rect key="frame" x="87.5" y="205.5" width="200" height="256"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="dfq-zF-XYU"/>
+                                    <constraint firstAttribute="width" constant="200" id="dfq-zF-XYU"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -39,6 +39,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="owl_light" width="419" height="537"/>
+        <image name="owl_image_closed_light" width="256" height="256"/>
     </resources>
 </document>

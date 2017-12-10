@@ -24,7 +24,7 @@ struct Theme {
                       nagivationBar: UIColor(red:0.03, green:0.04, blue:0.05, alpha:1.0),
                       statusBar: UIStatusBarStyle.lightContent,
                       keyboard: UIKeyboardAppearance.dark,
-                      logo: UIImage.init(named: "owl_light")),
+                      imageTheme: .light),
         "Black": Theme(background: UIColor.black,
                       text: UIColor(hex: "c9cacc"),
                       textLight: UIColor(hex: "cccccc"),
@@ -35,7 +35,7 @@ struct Theme {
                       nagivationBar: UIColor(red:0.02, green:0.03, blue:0.04, alpha:1.0),
                       statusBar: UIStatusBarStyle.lightContent,
                       keyboard: UIKeyboardAppearance.dark,
-                      logo: UIImage.init(named: "owl_light")),
+                      imageTheme: .light),
         "Light": Theme(background: UIColor(hex: "efeff4"),
                       text: UIColor.darkGray,
                       textLight: UIColor.gray,
@@ -46,7 +46,7 @@ struct Theme {
                       nagivationBar: UIColor(hex: "f7f7f8"),
                       statusBar: UIStatusBarStyle.default,
                       keyboard: UIKeyboardAppearance.light,
-                      logo: UIImage.init(named: "owl_dark")),
+                      imageTheme: .dark),
         "Blue": Theme(background: UIColor(hex: "2F3F73"),
                        text: UIColor.darkGray,
                        textLight: UIColor.gray,
@@ -57,7 +57,7 @@ struct Theme {
                        nagivationBar: UIColor(hex: "000001"),
                        statusBar: UIStatusBarStyle.lightContent,
                        keyboard: UIKeyboardAppearance.dark,
-                       logo: UIImage.init(named: "owl_light"))
+                       imageTheme: .light)
     ]
     static var currentTheme: Theme {
         return Theme.themes[UserDefaults.standard.string(forKey: DefaultsKeys.theme) ?? Theme.themes.keys.first!] ?? Theme.themes.first!.value
@@ -73,7 +73,7 @@ struct Theme {
     let nagivationBar: UIColor
     let statusBar: UIStatusBarStyle
     let keyboard: UIKeyboardAppearance
-    let logo: UIImage?
+    let imageTheme: ImageTheme
 }
 
 

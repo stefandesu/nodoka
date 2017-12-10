@@ -15,6 +15,8 @@ class FinishViewController: ThemedViewController {
     
     var finalTimeMeditated: TimeInterval?
     
+    override var owlImageVariant: ImageVariant { return .open_yay }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,11 +50,15 @@ class FinishViewController: ThemedViewController {
             finalTimeLabel.text = "Something went wrong."
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func goBackButtonTapped(_ sender: UIButton) {
+        // Prepare transition animation
+        let transition = CATransition.init()
+        transition.duration = 0.5
+        transition.type = kCATransitionFade
+        // Push view controller
+        navigationController?.view.layer.add(transition, forKey: kCATransition)
+        navigationController?.popToRootViewController(animated: false)
     }
     
-
 }

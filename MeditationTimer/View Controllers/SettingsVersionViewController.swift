@@ -11,7 +11,6 @@ import Haring
 
 class SettingsVersionViewController: ThemedViewController {
 
-    @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var versionLabel: UILabel!
     @IBOutlet weak var aboutTextView: UITextView!
     
@@ -22,9 +21,6 @@ class SettingsVersionViewController: ThemedViewController {
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] ?? "?"
         let build = Bundle.main.infoDictionary?["CFBundleVersion"] ?? "?"
         versionLabel.text = "Version \(version) (\(build))"
-        
-        // Set up logo image
-        logoImageView.image = Theme.currentTheme.logo
         
         // Set up text view
         let markdown = """

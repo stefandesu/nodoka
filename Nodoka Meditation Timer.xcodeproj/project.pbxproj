@@ -31,6 +31,7 @@
 		F8867F591FCDB31D00A2C009 /* DefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8867F581FCDB31D00A2C009 /* DefaultsKeys.swift */; };
 		F88BCD791FD6025E00DB2C87 /* FontAwesome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F88BCD781FD6025E00DB2C87 /* FontAwesome.framework */; };
 		F8BDC6811FD9B9E800E4541E /* Haring.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8BDC6801FD9B9E800E4541E /* Haring.framework */; };
+		F8BDC6851FDD848A00E4541E /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BDC6841FDD848900E4541E /* ImageHelper.swift */; };
 		F8CE06B91FCDCB780000CEAA /* MeditationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CE06B81FCDCB780000CEAA /* MeditationViewController.swift */; };
 		F8CE06BB1FCDCBC60000CEAA /* PropertyKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CE06BA1FCDCBC60000CEAA /* PropertyKeys.swift */; };
 		F8CE06BD1FCDCDDA0000CEAA /* FinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CE06BC1FCDCDDA0000CEAA /* FinishViewController.swift */; };
@@ -71,6 +72,7 @@
 		F8867F581FCDB31D00A2C009 /* DefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsKeys.swift; sourceTree = "<group>"; };
 		F88BCD781FD6025E00DB2C87 /* FontAwesome.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FontAwesome.framework; path = Carthage/Build/iOS/FontAwesome.framework; sourceTree = "<group>"; };
 		F8BDC6801FD9B9E800E4541E /* Haring.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Haring.framework; path = Carthage/Build/iOS/Haring.framework; sourceTree = "<group>"; };
+		F8BDC6841FDD848900E4541E /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		F8CE06B81FCDCB780000CEAA /* MeditationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationViewController.swift; sourceTree = "<group>"; };
 		F8CE06BA1FCDCBC60000CEAA /* PropertyKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyKeys.swift; sourceTree = "<group>"; };
 		F8CE06BC1FCDCDDA0000CEAA /* FinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				F8269AAC1FD479C000471A39 /* FeedbackTableView.swift */,
+				F8BDC6841FDD848900E4541E /* ImageHelper.swift */,
 				F8F19E751FD80E2000E60CC2 /* FontHelper.swift */,
 				F881AF5A1FD0ADB900941850 /* MeditationSession.swift */,
 				F8269AAA1FD4734E00471A39 /* TelegramHelper.swift */,
@@ -362,6 +365,7 @@
 				F8D8B3BB1FD592CD00C6A9BF /* FirstLaunchViewController.swift in Sources */,
 				F8CE06C31FCDD9F80000CEAA /* SettingsTableViewController.swift in Sources */,
 				F8269AB01FD4AB0900471A39 /* SetSound1TableViewCell.swift in Sources */,
+				F8BDC6851FDD848A00E4541E /* ImageHelper.swift in Sources */,
 				F8269AAB1FD4734E00471A39 /* TelegramHelper.swift in Sources */,
 				F8F19E761FD80E2000E60CC2 /* FontHelper.swift in Sources */,
 				F84E7F6A1FCF5C2D00BF9320 /* ThemedViewController.swift in Sources */,
