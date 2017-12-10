@@ -31,7 +31,7 @@ class MeditationViewController: ThemedViewController {
     let pauseAttributedTitle = FontHelper.generate(icon: String.fontAwesomeIcon(name: .pause), withText: "", ofSize: 48, andTextColor: Theme.currentTheme.accent)
     let continueAttributedTitle = FontHelper.generate(icon: String.fontAwesomeIcon(name: .play), withText: "", ofSize: 48, andTextColor: Theme.currentTheme.accent)
     
-    override var owlImageVariant: ImageVariant { return preparationTime > 0 ? .half : .closed }
+    override var owlImageVariant: ImageVariant { return preparationTime > 0 || !timer.isValid ? .half : .closed }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -170,6 +170,7 @@ class MeditationViewController: ThemedViewController {
             postLeaveRoutine()
             pauseButton.setAttributedTitle(pauseAttributedTitle, for: .normal)
         }
+        setUpTheme()
     }
 
     // MARK: - Navigation
