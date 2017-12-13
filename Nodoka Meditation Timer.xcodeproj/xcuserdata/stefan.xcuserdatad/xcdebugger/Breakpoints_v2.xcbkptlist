@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MeditationTimer/View Controllers/MeditationViewController.swift"
-            timestampString = "534878276.941498"
+            timestampString = "534879579.399328"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "241"
-            endingLineNumber = "241"
+            startingLineNumber = "259"
+            endingLineNumber = "259"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>

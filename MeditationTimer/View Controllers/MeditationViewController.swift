@@ -31,7 +31,15 @@ class MeditationViewController: ThemedViewController {
     let pauseAttributedTitle = FontHelper.generate(icon: String.fontAwesomeIcon(name: .pause), withText: "", ofSize: 48, andTextColor: Theme.currentTheme.accent)
     let continueAttributedTitle = FontHelper.generate(icon: String.fontAwesomeIcon(name: .play), withText: "", ofSize: 48, andTextColor: Theme.currentTheme.accent)
     
-    override var owlImageVariant: ImageVariant { return preparationTime > 0 || !timer.isValid ? .half : .closed }
+    override var owlImageVariant: ImageVariant {
+        if preparationTime > 0 && !timer.isValid {
+            return .open
+        } else if preparationTime > 0 || !timer.isValid {
+            return .half
+        } else {
+            return .closed
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +62,12 @@ class MeditationViewController: ThemedViewController {
         // Set up button titles
         pauseButton.setAttributedTitle(pauseAttributedTitle, for: .normal)
         stopButton.setAttributedTitle(FontHelper.generate(icon: "", withText: "Stop", ofSize: 15, andTextColor: Theme.currentTheme.accent), for: .normal)
+        
+        // Put tab gesture recognizer on owl
+        owlImage?.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(pause))
+        tapGesture.numberOfTapsRequired = 1
+        owlImage?.addGestureRecognizer(tapGesture)
     }
     
     @objc func appDidEnterBackground() {
@@ -157,7 +171,7 @@ class MeditationViewController: ThemedViewController {
         }
     }
     
-    @IBAction func pauseButtonTapped(_ sender: Any) {
+    @objc func pause() {
         if timer.isValid {
             // Pause the timer
             preLeaveRoutine()
@@ -169,6 +183,10 @@ class MeditationViewController: ThemedViewController {
             pauseButton.setAttributedTitle(pauseAttributedTitle, for: .normal)
         }
         setUpTheme()
+    }
+    
+    @IBAction func pauseButtonTapped(_ sender: Any) {
+        pause()
     }
 
     // MARK: - Navigation

@@ -42,6 +42,12 @@ class StartViewController: ThemedViewController {
         changeDurationButton.setAttributedTitle(FontHelper.generate(icon: String.fontAwesomeIcon(name: .pencilSquare), withText: "", ofSize: 30, andTextColor: Theme.currentTheme.accent), for: .normal)
         
         navigationController?.setNavigationBarHidden(true, animated: true)
+        
+        // Put tab gesture recognizer on owl
+        owlImage?.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(start))
+        tapGesture.numberOfTapsRequired = 1
+        owlImage?.addGestureRecognizer(tapGesture)
     }
     
     // MARK: - Navigation
@@ -52,7 +58,7 @@ class StartViewController: ThemedViewController {
         
     }
     
-    @IBAction func startButtonTapped(_ sender: Any) {
+    @objc func start() {
         if let destination = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: PropertyKeys.meditationStoryboard) as? MeditationViewController {
             // Prepare destination view controller
             let meditationMinutes = userDefaults.integer(forKey: DefaultsKeys.duration)
@@ -68,6 +74,10 @@ class StartViewController: ThemedViewController {
             navigationController?.view.layer.add(transition, forKey: kCATransition)
             navigationController?.pushViewController(destination, animated: false)
         }
+    }
+    
+    @IBAction func startButtonTapped(_ sender: Any) {
+        start()
     }
     
 }
