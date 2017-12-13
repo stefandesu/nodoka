@@ -42,7 +42,6 @@ class FeedbackHelper: TelegramHelperDelegate {
         message += "Contact: \(userDefaults.string(forKey: DefaultsKeys.feedbackAuthor) ?? "")"
         
         feedbackQueue.async {
-            sleep(5)
             TelegramHelper.send(message: message, delegate: self)
         }
     }
