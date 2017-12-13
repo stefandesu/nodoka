@@ -23,7 +23,7 @@ extension UIScreen {
                 unowned let _unownedOperation = blockOperation
                 blockOperation.addExecutionBlock({
                     if !_unownedOperation.isCancelled {
-                        Thread.sleep(forTimeInterval: 5 / 60.0)
+                        Thread.sleep(forTimeInterval: 1 / 60.0)
                         self?.brightness = value
                     }
                 })
