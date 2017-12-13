@@ -47,7 +47,7 @@ class MeditationViewController: ThemedViewController {
         updateLabel()
         infoLabel.text = ""
         
-        postLeaveRoutine()
+        postLeaveRoutine(saveBrightness: true)
         addNotificationOberserver()
         startingSound()
         
@@ -61,15 +61,13 @@ class MeditationViewController: ThemedViewController {
         if timer.isValid {
             isPausedByBackground = true
         }
-        preLeaveRoutine()
+        preLeaveRoutine(animated: false)
     }
     @objc func appDidBecomeActive() {
         print("appDidBecomeActive")
-        // Save new screen brightness in case user changed it during background
-        previousBrightness = UIScreen.main.brightness
         
         if isPausedByBackground {
-            postLeaveRoutine()
+            postLeaveRoutine(saveBrightness: true)
             infoLabel.text = "The timer only works when the application is active."
             timeUntilInfoFade = 5.0
         }
@@ -186,7 +184,7 @@ class MeditationViewController: ThemedViewController {
         }
     }
     
-    func preLeaveRoutine() {
+    func preLeaveRoutine(animated: Bool = true) {
         print("preLeaveRoutine")
         // Stop timer
         stopTimer()
@@ -194,11 +192,11 @@ class MeditationViewController: ThemedViewController {
         UIApplication.shared.isIdleTimerDisabled = false
         // Readjust screen brightness
         if userDefaults.bool(forKey: DefaultsKeys.changedBrightness) {
-            UIScreen.main.setBrightness(previousBrightness, animated: true)
+            UIScreen.main.setBrightness(previousBrightness, animated: animated)
         }
     }
     
-    func postLeaveRoutine() {
+    func postLeaveRoutine(saveBrightness: Bool = false) {
         print("postLeaveRoutine")
         
         // Start timer
@@ -209,7 +207,9 @@ class MeditationViewController: ThemedViewController {
         
         // Save screen brightness and dim
         if userDefaults.bool(forKey: DefaultsKeys.changedBrightness) {
-            previousBrightness = UIScreen.main.brightness
+            if saveBrightness {
+                previousBrightness = UIScreen.main.brightness
+            }
             if previousBrightness > 0.1 {
                 UIScreen.main.setBrightness(0.1, animated: true)
             }
@@ -218,13 +218,14 @@ class MeditationViewController: ThemedViewController {
     
     func removeNoficationObserver() {
         // Remove notification observers
-        NotificationCenter.default.removeObserver(self, name: .UIApplicationDidEnterBackground, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .UIApplicationWillResignActive, object: nil)
         NotificationCenter.default.removeObserver(self, name: .UIApplicationDidBecomeActive, object: nil)
+        
     }
     
     func addNotificationOberserver() {
         // Set up enter background and became active notifications
-        NotificationCenter.default.addObserver(self, selector: #selector(appDidEnterBackground), name: .UIApplicationDidEnterBackground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(appDidEnterBackground), name: .UIApplicationWillResignActive, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(appDidBecomeActive), name: .UIApplicationDidBecomeActive, object: nil)
     }
     
