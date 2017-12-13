@@ -56,7 +56,8 @@ class FirstLaunchViewController: ThemedViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        UserDefaults.standard.set(true, forKey: DefaultsKeys.hasLaunchedApp)
+        // UserDefaults.standard.set(true, forKey: DefaultsKeys.hasLaunchedApp)
+        // commented out because will be set in StartViewController now
     }
 
 }

@@ -8,11 +8,13 @@
 
 import UIKit
 import FontAwesome
+import EasyTipView
 
 class StartViewController: ThemedViewController {
     
     let userDefaults = UserDefaults.standard
     
+    var durationTipView: EasyTipView?
     
     @IBOutlet weak var preparationTimeLabel: UILabel!
     @IBOutlet weak var durationTimeLabel: UILabel!
@@ -48,6 +50,27 @@ class StartViewController: ThemedViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(start))
         tapGesture.numberOfTapsRequired = 1
         owlImage?.addGestureRecognizer(tapGesture)
+        
+        if !userDefaults.bool(forKey: DefaultsKeys.hasLaunchedApp) {
+            // Set up tooltips
+            var preferences = EasyTipView.Preferences()
+            preferences.drawing.font = UIFont.systemFont(ofSize: 13)
+            preferences.drawing.foregroundColor = Theme.currentTheme.textLight
+            preferences.drawing.backgroundColor = Theme.currentTheme.cell
+            preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.bottom
+            EasyTipView.globalPreferences = preferences
+            
+            // TODO: Delay by ~500ms
+            // TODO: Remove when tapping anything
+            // Prepare tooltip
+            durationTipView = EasyTipView(text: "Tap this button to change preparation and meditation durations.")
+            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
+                self.durationTipView?.show(forView: self.changeDurationButton)
+            }
+            
+            userDefaults.set(true, forKey: DefaultsKeys.hasLaunchedApp)
+        }
+        
     }
     
     // MARK: - Navigation
@@ -59,6 +82,7 @@ class StartViewController: ThemedViewController {
     }
     
     @objc func start() {
+        durationTipView?.dismiss()
         if let destination = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: PropertyKeys.meditationStoryboard) as? MeditationViewController {
             // Prepare destination view controller
             let meditationMinutes = userDefaults.integer(forKey: DefaultsKeys.duration)
@@ -78,6 +102,11 @@ class StartViewController: ThemedViewController {
     
     @IBAction func startButtonTapped(_ sender: Any) {
         start()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("Prepare for segue")
+        durationTipView?.dismiss()
     }
     
 }

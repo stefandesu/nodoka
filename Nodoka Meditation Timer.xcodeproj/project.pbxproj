@@ -37,6 +37,7 @@
 		F8CE06BD1FCDCDDA0000CEAA /* FinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CE06BC1FCDCDDA0000CEAA /* FinishViewController.swift */; };
 		F8CE06C11FCDD5900000CEAA /* AudioHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CE06C01FCDD5900000CEAA /* AudioHelper.swift */; };
 		F8CE06C31FCDD9F80000CEAA /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CE06C21FCDD9F80000CEAA /* SettingsTableViewController.swift */; };
+		F8D3B4B41FE1A1ED007E0DF1 /* EasyTipView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D3B4B31FE1A1ED007E0DF1 /* EasyTipView.framework */; };
 		F8D7F4E31FCCAAB600FE786B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D7F4E21FCCAAB600FE786B /* AppDelegate.swift */; };
 		F8D7F4E51FCCAAB600FE786B /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D7F4E41FCCAAB600FE786B /* StartViewController.swift */; };
 		F8D7F4E81FCCAAB600FE786B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8D7F4E61FCCAAB600FE786B /* Main.storyboard */; };
@@ -78,6 +79,7 @@
 		F8CE06BC1FCDCDDA0000CEAA /* FinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishViewController.swift; sourceTree = "<group>"; };
 		F8CE06C01FCDD5900000CEAA /* AudioHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioHelper.swift; sourceTree = "<group>"; };
 		F8CE06C21FCDD9F80000CEAA /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		F8D3B4B31FE1A1ED007E0DF1 /* EasyTipView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EasyTipView.framework; path = Carthage/Build/iOS/EasyTipView.framework; sourceTree = "<group>"; };
 		F8D7F4DF1FCCAAB600FE786B /* MeditationTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeditationTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D7F4E21FCCAAB600FE786B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8D7F4E41FCCAAB600FE786B /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				F8D7F4F71FCCAADD00FE786B /* HealthKit.framework in Frameworks */,
 				F88BCD791FD6025E00DB2C87 /* FontAwesome.framework in Frameworks */,
 				F8BDC6811FD9B9E800E4541E /* Haring.framework in Frameworks */,
+				F8D3B4B41FE1A1ED007E0DF1 /* EasyTipView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +204,7 @@
 		F8D7F4F51FCCAADD00FE786B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F8D3B4B31FE1A1ED007E0DF1 /* EasyTipView.framework */,
 				F8BDC6801FD9B9E800E4541E /* Haring.framework */,
 				F88BCD781FD6025E00DB2C87 /* FontAwesome.framework */,
 				F8D7F4F61FCCAADD00FE786B /* HealthKit.framework */,
@@ -309,11 +313,13 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/FontAwesome.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Haring.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/EasyTipView.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/FontAwesome.framework",
 				"$(DERIVED_FILE_DIR)/Haring.framework",
+				"$(DERIVED_FILE_DIR)/EasyTipView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
