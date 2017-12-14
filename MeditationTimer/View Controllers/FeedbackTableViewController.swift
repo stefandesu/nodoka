@@ -16,13 +16,14 @@ class FeedbackTableViewController: ThemedTableViewController, TelegramHelperDele
     }
     
     let userDefaults = UserDefaults.standard
+    var isCurrentlySending = false
     
     func telegramResponse(success: Bool) {
         DispatchQueue.main.async {
             // Refresh table
             self.tableView.reloadData()
             // Reset user interaction
-            self.tableView.isUserInteractionEnabled = true
+            self.setUserInteraction(to: true)
             // Reset fields to default
             if success {
                 self.fillFormFromDefaults()
@@ -54,9 +55,6 @@ class FeedbackTableViewController: ThemedTableViewController, TelegramHelperDele
         if let tableView = tableView as? FeedbackTableView {
             tableView.viewController = self
         }
-        // Keyboard theme
-        descriptionTextView.keyboardAppearance = Theme.currentTheme.keyboard
-        contactTextField.keyboardAppearance = Theme.currentTheme.keyboard
         
         // Prepare if there's unsent feedback
         if userDefaults.integer(forKey: DefaultsKeys.feedbackStatus) != FeedbackStatus.notSubmitted.rawValue {
@@ -68,7 +66,7 @@ class FeedbackTableViewController: ThemedTableViewController, TelegramHelperDele
         
         if userDefaults.integer(forKey: DefaultsKeys.feedbackStatus) == FeedbackStatus.submitting.rawValue {
             // Stop all interaction with table view
-            tableView.isUserInteractionEnabled = false
+            setUserInteraction(to: false)
         }
         
         // Prepare delegate for text view
@@ -83,6 +81,16 @@ class FeedbackTableViewController: ThemedTableViewController, TelegramHelperDele
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         FeedbackHelper.shared.delegate = nil
+    }
+    
+    override func setUpTheme() {
+        super.setUpTheme()
+        // Keyboard theme
+        descriptionTextView.keyboardAppearance = Theme.currentTheme.keyboard
+        contactTextField.keyboardAppearance = Theme.currentTheme.keyboard
+        let accent = !isCurrentlySending ? Theme.currentTheme.accent : Theme.currentTheme.text
+        sendButton.setTitleColor(accent, for: .normal)
+        selectedFeedbackType.tintColor = accent
     }
     
     func fillFormFromDefaults() {
@@ -123,6 +131,16 @@ class FeedbackTableViewController: ThemedTableViewController, TelegramHelperDele
         return nil
     }
     
+    fileprivate func setUserInteraction(to: Bool) {
+        // tableView.isUserInteractionEnabled = false
+        selectedFeedbackType.isUserInteractionEnabled = to
+        descriptionTextView.isUserInteractionEnabled = to
+        contactTextField.isUserInteractionEnabled = to
+        sendButton.isUserInteractionEnabled = to
+        isCurrentlySending = !to
+        setUpTheme()
+    }
+    
     @IBAction func submitButtonTapped(_ sender: UIButton) {
         if descriptionTextView.text ?? "" == "" {
             let alertController = UIAlertController(title: "No Message", message: "Please provide some text about your feedback.", preferredStyle: .alert)
@@ -130,8 +148,11 @@ class FeedbackTableViewController: ThemedTableViewController, TelegramHelperDele
             alertController.addAction(cancelAction)
             present(alertController, animated: true, completion: nil)
         } else {
-            // Stop all interaction with table view
-            tableView.isUserInteractionEnabled = false
+            // Close keyboard
+            closeKeyboards()
+            
+            // Stop all interaction with elements in table view
+            setUserInteraction(to: false)
             
             // Send feedback in background
             FeedbackHelper.shared.send()
