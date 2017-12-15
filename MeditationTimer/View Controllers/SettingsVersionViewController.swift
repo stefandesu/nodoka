@@ -36,7 +36,9 @@ class SettingsVersionViewController: ThemedViewController {
 
         [Privacy Policy](https://exo.pm/nodoka-privacy/)
 
-        **Credits**
+
+        **Acknowledgments**
+
         - Owl by [Ana Pas from the Noun Project](https://thenounproject.com/term/owl/12773/), modified by my friend Salo and me
         - Sounds (Default, Soft, Strong) by [Omachronic on Freesound.org](https://freesound.org/people/Omachronic/packs/8156/)
         - Sound (Zen) by [Mike Koenig](http://soundbible.com/1491-Zen-Buddhist-Temple-Bell.html)
@@ -47,6 +49,37 @@ class SettingsVersionViewController: ThemedViewController {
         - UIScreen extension for animated brightness change by [khaullen on StackOverflow](https://stackoverflow.com/questions/15840979/how-to-set-screen-brightness-with-fade-animations)
         - UIColor hex extension: [crunchybagel.com](https://crunchybagel.com/working-with-hex-colors-in-swift-3/)
         - Thanks for Igor, Salo, Matze, and Birte for beta testing!
+
+
+        **Third-Party Licenses**
+
+        FontAwesome.swift is available under the MIT license (MIT)
+
+        Copyright (c) 2014-present FontAwesome.swift contributors
+
+        Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+        The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+        Haring is available under the MIT license (MIT)
+
+        Copyright (c) 2016 Ivan Bruel
+
+        Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+        EasyTipView is available under the MIT license (MIT)
+        
+        Copyright (c) 2015 Teodor Patraş
+
+        Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+        The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         """
         let markdownParser = MarkdownParser(font: UIFont.systemFont(ofSize: 15), color: Theme.currentTheme.text)
         markdownParser.link.color = Theme.currentTheme.accent
