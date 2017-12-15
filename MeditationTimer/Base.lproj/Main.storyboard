@@ -1121,7 +1121,7 @@ http://soundbible.com/128-Metal-Gong.html</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="Preperation Time" id="wrO-NL-ATr">
+                            <tableViewSection headerTitle="Preparation Time" id="wrO-NL-ATr">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="CMw-r6-v0H">
                                         <rect key="frame" x="0.0" y="55.5" width="320" height="44"/>
