@@ -17,15 +17,15 @@ class SettingsTableViewController: ThemedTableViewController, HealthKitHelperDel
         switch authorizationStatus {
         case .sharingAuthorized:
             if !enabled {
-                statusText = "Apple Health integration authorized, but not enabled."
+                statusText = "Health app integration authorized, but not enabled."
             } else {
-                statusText = "Apple Health integration authorized and enabled."
+                statusText = "Health app integration enabled."
             }
         case .sharingDenied:
-            statusText = "To allow this app to write health data, please go to the privacy section of your iPhone settings."
+            statusText = "To allow this app to write mindfulness data to the Health app, please go to the privacy section of your iPhone settings."
             enabled = false
         case .notDetermined:
-            statusText = "Enabling Apple Health integration will ask you for system permission."
+            statusText = "Nodoka can write mindfulness data to the Health app. Enabling Health app integration will ask you for system permission."
             enabled = false
         }
         DispatchQueue.main.async {
