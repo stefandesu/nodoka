@@ -346,7 +346,7 @@ Label</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MiG-9i-unI">
-                                <rect key="frame" x="98" y="440" width="124" height="70"/>
+                                <rect key="frame" x="98" y="442" width="124" height="70"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                 <state key="normal" title="Pause">
                                     <color key="titleColor" red="0.92941176469999998" green="0.46274509800000002" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
@@ -356,7 +356,11 @@ Label</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0B-4u-s6G">
-                                <rect key="frame" x="144" y="518" width="32" height="30"/>
+                                <rect key="frame" x="60" y="520" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="n2K-WT-8bA"/>
+                                    <constraint firstAttribute="height" constant="40" id="wdk-aG-1jC"/>
+                                </constraints>
                                 <state key="normal" title="Stop">
                                     <color key="titleColor" red="0.92941176469999998" green="0.46274509800000002" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -415,7 +419,7 @@ Label</string>
                         <constraints>
                             <constraint firstItem="MiG-9i-unI" firstAttribute="centerX" secondItem="f5e-pI-2qR" secondAttribute="centerX" id="18O-aw-rQ0"/>
                             <constraint firstItem="S0B-4u-s6G" firstAttribute="top" secondItem="MiG-9i-unI" secondAttribute="bottom" constant="8" id="7ep-1U-Oae"/>
-                            <constraint firstItem="zPr-Qh-vhP" firstAttribute="bottom" secondItem="S0B-4u-s6G" secondAttribute="bottom" constant="20" id="8Oa-Et-eD5"/>
+                            <constraint firstItem="zPr-Qh-vhP" firstAttribute="bottom" secondItem="S0B-4u-s6G" secondAttribute="bottom" constant="8" id="8Oa-Et-eD5"/>
                             <constraint firstItem="S0B-4u-s6G" firstAttribute="centerX" secondItem="f5e-pI-2qR" secondAttribute="centerX" id="Ts0-Tc-hRN"/>
                             <constraint firstAttribute="bottom" secondItem="Qxb-LI-9Uw" secondAttribute="bottom" constant="111" id="Wut-ee-as0"/>
                             <constraint firstItem="Qxb-LI-9Uw" firstAttribute="leading" secondItem="zPr-Qh-vhP" secondAttribute="leading" id="qjP-hf-nre"/>
@@ -1211,7 +1215,11 @@ http://soundbible.com/128-Metal-Gong.html</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQH-F5-kyw">
-                                <rect key="frame" x="131.5" y="518" width="57" height="30"/>
+                                <rect key="frame" x="60" y="520" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="CGh-LX-JiT"/>
+                                    <constraint firstAttribute="height" constant="40" id="aVH-Ah-8PP"/>
+                                </constraints>
                                 <state key="normal" title="Go back">
                                     <color key="titleColor" red="0.92941176469999998" green="0.46274509800000002" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -1261,7 +1269,7 @@ http://soundbible.com/128-Metal-Gong.html</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vGL-ZR-QA6" firstAttribute="bottom" secondItem="hVo-ax-KjD" secondAttribute="bottom" constant="-111" id="HWn-Zr-zxD"/>
-                            <constraint firstItem="hVo-ax-KjD" firstAttribute="bottom" secondItem="gQH-F5-kyw" secondAttribute="bottom" constant="20" id="aLh-Pj-wfx"/>
+                            <constraint firstItem="hVo-ax-KjD" firstAttribute="bottom" secondItem="gQH-F5-kyw" secondAttribute="bottom" constant="8" id="aLh-Pj-wfx"/>
                             <constraint firstItem="vGL-ZR-QA6" firstAttribute="trailing" secondItem="hVo-ax-KjD" secondAttribute="trailing" id="dAS-qz-cCe"/>
                             <constraint firstItem="gQH-F5-kyw" firstAttribute="centerX" secondItem="Tpa-aA-UbQ" secondAttribute="centerX" id="hye-gq-Ze5"/>
                             <constraint firstItem="vGL-ZR-QA6" firstAttribute="top" secondItem="hVo-ax-KjD" secondAttribute="top" id="jUB-Qp-TeQ"/>
@@ -1279,7 +1287,7 @@ http://soundbible.com/128-Metal-Gong.html</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yra-zb-qbI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1689.375" y="-341.19718309859155"/>
+            <point key="canvasLocation" x="1646" y="-322"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9Ad-tt-RYK">
