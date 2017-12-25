@@ -255,7 +255,7 @@ Label</string>
                                 </constraints>
                                 <state key="normal" title="__"/>
                                 <connections>
-                                    <segue destination="fMF-na-urY" kind="show" id="Wez-ps-6Q9"/>
+                                    <segue destination="fMF-na-urY" kind="show" identifier="editDurations" id="Wez-ps-6Q9"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U77-OL-rQe">
@@ -320,7 +320,9 @@ Label</string>
                         <outlet property="changeDurationButton" destination="8E7-HU-NIH" id="h9F-mw-3gu"/>
                         <outlet property="durationTimeLabel" destination="mWQ-FN-j1Q" id="nfO-y5-cB5"/>
                         <outlet property="historyButton" destination="0F5-K4-j7a" id="6Rg-OS-PDY"/>
+                        <outlet property="meditationStackView" destination="lYQ-ka-EFE" id="d6c-Bc-iaL"/>
                         <outlet property="owlImage" destination="Peg-X6-OEJ" id="Cat-sK-Dzz"/>
+                        <outlet property="preparationStackView" destination="XdU-zL-bjj" id="Ppa-kY-FBg"/>
                         <outlet property="preparationTimeLabel" destination="SeJ-3R-ffD" id="w9c-xG-BMg"/>
                         <outlet property="settingsButton" destination="WK7-d7-rl2" id="yW6-Qz-UzS"/>
                         <outletCollection property="themedButtons" destination="0F5-K4-j7a" collectionClass="NSMutableArray" id="OzU-qm-zEG"/>

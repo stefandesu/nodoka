@@ -21,6 +21,8 @@ class StartViewController: ThemedViewController {
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var historyButton: UIButton!
     @IBOutlet weak var changeDurationButton: UIButton!
+    @IBOutlet weak var preparationStackView: UIStackView!
+    @IBOutlet weak var meditationStackView: UIStackView!
     
     override var owlImageVariant: ImageVariant { return .open }
     
@@ -45,11 +47,19 @@ class StartViewController: ThemedViewController {
         
         navigationController?.setNavigationBarHidden(true, animated: true)
         
-        // Put tab gesture recognizer on owl
+        // Put tab gesture recognizer on owl and stack views
         owlImage?.isUserInteractionEnabled = true
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(start))
+        var tapGesture = UITapGestureRecognizer(target: self, action: #selector(start))
         tapGesture.numberOfTapsRequired = 1
         owlImage?.addGestureRecognizer(tapGesture)
+        preparationStackView.isUserInteractionEnabled = true
+        tapGesture = UITapGestureRecognizer(target: self, action: #selector(editDurations))
+        tapGesture.numberOfTapsRequired = 1
+        preparationStackView.addGestureRecognizer(tapGesture)
+        meditationStackView.isUserInteractionEnabled = true
+        tapGesture = UITapGestureRecognizer(target: self, action: #selector(editDurations))
+        tapGesture.numberOfTapsRequired = 1
+        meditationStackView.addGestureRecognizer(tapGesture)
         
         if !userDefaults.bool(forKey: DefaultsKeys.hasLaunchedApp) {
             // Set up tooltips
@@ -60,8 +70,6 @@ class StartViewController: ThemedViewController {
             preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.bottom
             EasyTipView.globalPreferences = preferences
             
-            // TODO: Delay by ~500ms
-            // TODO: Remove when tapping anything
             // Prepare tooltip
             durationTipView = EasyTipView(text: "Tap this button to change preparation and meditation durations.")
             DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
@@ -102,6 +110,10 @@ class StartViewController: ThemedViewController {
     
     @IBAction func startButtonTapped(_ sender: Any) {
         start()
+    }
+    
+    @objc func editDurations() {
+        performSegue(withIdentifier: PropertyKeys.editDurationsSegue, sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

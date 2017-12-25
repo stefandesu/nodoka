@@ -12,6 +12,7 @@ struct PropertyKeys {
     static let startMeditationSegue = "startMeditation"
     static let endMeditationSegue = "endMeditation"
     static let openSettingsSegue = "openSettings"
+    static let editDurationsSegue = "editDurations"
     static let settingsGongStartSegue = "settingsGongStart"
     static let settingsGongEndSegue = "settingsGongEnd"
     static let settingsGongCellIdentifier = "settingsGongCell"
