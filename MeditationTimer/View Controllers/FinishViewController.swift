@@ -51,6 +51,11 @@ class FinishViewController: ThemedViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
     @IBAction func goBackButtonTapped(_ sender: UIButton) {
         // Prepare transition animation
         let transition = CATransition.init()

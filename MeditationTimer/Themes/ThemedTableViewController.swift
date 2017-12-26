@@ -24,6 +24,7 @@ class ThemedTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setUpTheme()
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     func setUpTheme() {

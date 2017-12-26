@@ -117,7 +117,6 @@ class StartViewController: ThemedViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("Prepare for segue")
         durationTipView?.dismiss()
     }
     

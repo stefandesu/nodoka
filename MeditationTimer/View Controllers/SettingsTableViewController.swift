@@ -157,8 +157,8 @@ class SettingsTableViewController: ThemedTableViewController, HealthKitHelperDel
             }
         }
         if identifier == PropertyKeys.settingsDurationSegue {
-            if let destination = segue.destination as? SettingsDurationTableViewController {
-                destination.showDoneButton = false
+            if let _ = segue.destination as? SettingsDurationTableViewController {
+                
             }
         }
     }

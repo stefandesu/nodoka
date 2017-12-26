@@ -74,11 +74,6 @@ class DebugListTableViewController: ThemedTableViewController {
         navigationItem.title = "History"
         navigationController?.setNavigationBarHidden(false, animated: true)
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .done, target: self, action: #selector(dismissMe))
-    }
-    
-    @objc func dismissMe() {
-        dismiss(animated: true, completion: nil)
     }
 
     // MARK: - Table view data source

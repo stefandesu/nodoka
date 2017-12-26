@@ -11,8 +11,6 @@ import UIKit
 class SettingsDurationTableViewController: ThemedTableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     let userDefaults = UserDefaults.standard
-    
-    var showDoneButton = true
 
     @IBOutlet weak var meditationTimePicker: UIPickerView!
     @IBOutlet weak var preparationTimePicker: UIPickerView!
@@ -38,10 +36,6 @@ class SettingsDurationTableViewController: ThemedTableViewController, UIPickerVi
         
         navigationItem.title = "Durations"
         navigationController?.setNavigationBarHidden(false, animated: true)
-        if showDoneButton {
-            // Came from home screen
-            navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .done, target: self, action: #selector(dismissMe))
-        }
         
         meditationTimePicker.delegate = self
         meditationTimePicker.dataSource = self
@@ -50,10 +44,6 @@ class SettingsDurationTableViewController: ThemedTableViewController, UIPickerVi
         
         meditationTimePicker.selectRow(userDefaults.integer(forKey: DefaultsKeys.duration), inComponent: 0, animated: false)
         preparationTimePicker.selectRow(userDefaults.integer(forKey: DefaultsKeys.preparation), inComponent: 0, animated: false)
-    }
-    
-    @objc func dismissMe() {
-        dismiss(animated: true, completion: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
