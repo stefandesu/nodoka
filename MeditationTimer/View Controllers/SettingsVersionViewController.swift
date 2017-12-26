@@ -48,7 +48,7 @@ class SettingsVersionViewController: ThemedViewController {
         - Tooltip at first launch: [EasyTipView](https://github.com/teodorpatras/EasyTipView)
         - UIScreen extension for animated brightness change by [khaullen on StackOverflow](https://stackoverflow.com/questions/15840979/how-to-set-screen-brightness-with-fade-animations)
         - UIColor hex extension: [crunchybagel.com](https://crunchybagel.com/working-with-hex-colors-in-swift-3/)
-        - Thanks for Igor, Salo, Matze, and Birte for beta testing!
+        - Thanks to Igor, Salo, Matze, and Birte for beta testing!
 
 
         **Third-Party Licenses**
