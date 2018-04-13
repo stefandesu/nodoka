@@ -57,6 +57,7 @@ class SettingsTableViewController: ThemedTableViewController, HealthKitHelperDel
     
     var startGong: Int = 0
     var endGong: Int = 0
+    var intervalGong: Int = 0
     var theme: String = ""
     var healthKitEnabled = false
     var healthKitStatus = ""
@@ -91,6 +92,7 @@ class SettingsTableViewController: ThemedTableViewController, HealthKitHelperDel
         // Load current settings from defaults
         startGong = userDefaults.integer(forKey: DefaultsKeys.startGong)
         endGong = userDefaults.integer(forKey: DefaultsKeys.endGong)
+        intervalGong = userDefaults.integer(forKey: DefaultsKeys.intervalGong)
         theme = userDefaults.string(forKey: DefaultsKeys.theme)!
         
         checkHealthKitAndRefresh()
@@ -147,6 +149,7 @@ class SettingsTableViewController: ThemedTableViewController, HealthKitHelperDel
             if let destination = segue.destination as? SettingsGongTableViewController {
                 destination.currentStartGong = startGong
                 destination.currentEndGong = endGong
+                destination.currentIntervalGong = intervalGong
                 destination.delegate = self
             }
         }
@@ -167,9 +170,12 @@ class SettingsTableViewController: ThemedTableViewController, HealthKitHelperDel
         if identifier == PropertyKeys.settingsGongStartSegue {
             startGong = gong
             userDefaults.set(gong, forKey: DefaultsKeys.startGong)
-        } else {
+        } else if identifier == PropertyKeys.settingsGongEndSegue {
             endGong = gong
             userDefaults.set(gong, forKey: DefaultsKeys.endGong)
+        } else {
+            intervalGong = gong
+            userDefaults.set(gong, forKey: DefaultsKeys.intervalGong)
         }
         updateLabels()
     }

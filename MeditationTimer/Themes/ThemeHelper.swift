@@ -14,7 +14,7 @@ class ThemeHelper {
         guard currentDepth <= maxDepth else { return [UILabel]() }
         
         // Determine all UILabels on current layer
-        var labels = view.subviews.flatMap { $0 as? UILabel }
+        var labels = view.subviews.compactMap { $0 as? UILabel }
         // Add all UILabels on next layer
         for subview in view.subviews {
             if type(of: subview) != UIButton.self && type(of: subview) != UISegmentedControl.self {

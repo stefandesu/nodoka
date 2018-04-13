@@ -11,8 +11,10 @@ import Foundation
 struct DefaultsKeys {
     static let duration = "duration"
     static let preparation = "preparation"
+    static let intervalTime = "intervalTime"
     static let startGong = "startGong"
     static let endGong = "endGong"
+    static let intervalGong = "intervalGong"
     static let theme = "theme"
     static let healthKitEnabled = "healthKitEnabled"
     static let changedBrightness = "changedBrightness"

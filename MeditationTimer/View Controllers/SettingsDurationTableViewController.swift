@@ -14,6 +14,7 @@ class SettingsDurationTableViewController: ThemedTableViewController, UIPickerVi
 
     @IBOutlet weak var meditationTimePicker: UIPickerView!
     @IBOutlet weak var preparationTimePicker: UIPickerView!
+    @IBOutlet weak var intervalTimePicker: UIPickerView!
     
     var meditationTimeList: [String] {
         var list = ["Open End"]
@@ -31,6 +32,14 @@ class SettingsDurationTableViewController: ThemedTableViewController, UIPickerVi
         return list
     }
     
+    var intervalTimeList: [String] {
+        var list = ["None"]
+        for minutes in 1...45 {
+            list.append("\(minutes) \(minutes == 1 ? "Minute" : "Minutes")")
+        }
+        return list
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,22 +50,28 @@ class SettingsDurationTableViewController: ThemedTableViewController, UIPickerVi
         meditationTimePicker.dataSource = self
         preparationTimePicker.delegate = self
         preparationTimePicker.dataSource = self
+        intervalTimePicker.delegate = self
+        intervalTimePicker.dataSource = self
         
         meditationTimePicker.selectRow(userDefaults.integer(forKey: DefaultsKeys.duration), inComponent: 0, animated: false)
         preparationTimePicker.selectRow(userDefaults.integer(forKey: DefaultsKeys.preparation), inComponent: 0, animated: false)
+        intervalTimePicker.selectRow(userDefaults.integer(forKey: DefaultsKeys.intervalTime), inComponent: 0, animated: false)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         meditationTimePicker.reloadAllComponents()
         preparationTimePicker.reloadAllComponents()
+        intervalTimePicker.reloadAllComponents()
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == PropertyKeys.preparationPickerTag {
-            return preparationTimePicker.bounds.height / 1.5
+            return preparationTimePicker.bounds.height / 1.6
         } else if indexPath.section == PropertyKeys.meditationPickerTag {
-            return meditationTimePicker.bounds.height
+            return meditationTimePicker.bounds.height / 1.2
+        } else if indexPath.section == PropertyKeys.intervalPickerTag {
+            return intervalTimePicker.bounds.height / 1.2
         } else {
             return 44.0
         }
@@ -71,9 +86,12 @@ class SettingsDurationTableViewController: ThemedTableViewController, UIPickerVi
         if pickerView.tag == PropertyKeys.preparationPickerTag {
             // Preparation time picker
             return preparationTimeList.count
-        } else {
+        } else if pickerView.tag == PropertyKeys.meditationPickerTag {
             // Meditation time picker
             return meditationTimeList.count
+        } else {
+            // Interval time picker
+            return intervalTimeList.count
         }
     }
     
@@ -81,17 +99,22 @@ class SettingsDurationTableViewController: ThemedTableViewController, UIPickerVi
         if pickerView.tag == PropertyKeys.preparationPickerTag {
             // Preparation time picker
             return NSAttributedString(string: preparationTimeList[row], attributes: [NSAttributedStringKey.foregroundColor: Theme.currentTheme.text])
-        } else {
+        } else if pickerView.tag == PropertyKeys.meditationPickerTag {
             // Meditation time picker
             return NSAttributedString(string: meditationTimeList[row], attributes: [NSAttributedStringKey.foregroundColor: Theme.currentTheme.text])
+        } else {
+            // Interval time picker
+            return NSAttributedString(string: intervalTimeList[row], attributes: [NSAttributedStringKey.foregroundColor: Theme.currentTheme.text])
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView.tag == PropertyKeys.preparationPickerTag {
             userDefaults.set(row, forKey: DefaultsKeys.preparation)
-        } else {
+        } else if pickerView.tag == PropertyKeys.meditationPickerTag {
             userDefaults.set(row, forKey: DefaultsKeys.duration)
+        } else {
+            userDefaults.set(row, forKey: DefaultsKeys.intervalTime)
         }
     }
 }

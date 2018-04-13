@@ -31,6 +31,7 @@ class SettingsGongTableViewController: ThemedTableViewController, SetSoundTableV
     
     var currentStartGong: Int?
     var currentEndGong: Int?
+    var currentIntervalGong: Int?
     var delegate: SettingsTableViewController?
     let gongs: [Int: String] = AudioHelper.availableSounds
     var useSystemSound = UserDefaults.standard.bool(forKey: DefaultsKeys.useSystemSound)
@@ -47,13 +48,13 @@ class SettingsGongTableViewController: ThemedTableViewController, SetSoundTableV
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 4
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section <= 1 {
+        if section <= 2 {
             return gongs.count
-        } else if section == 2 {
+        } else if section == 3 {
             return useSystemSound ? 1 : 2
         } else {
             return 0
@@ -62,17 +63,17 @@ class SettingsGongTableViewController: ThemedTableViewController, SetSoundTableV
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.section <= 1 {
+        if indexPath.section <= 2 {
             // Dynamic cells
             let cell = tableView.dequeueReusableCell(withIdentifier: PropertyKeys.settingsGongCellIdentifier, for: indexPath)
             cell.textLabel?.text = gongs[indexPath.row]
-            if (indexPath.section == 0 && indexPath.row == currentStartGong!) || (indexPath.section == 1 && indexPath.row == currentEndGong!) {
+            if (indexPath.section == 0 && indexPath.row == currentStartGong!) || (indexPath.section == 1 && indexPath.row == currentEndGong!) || (indexPath.section == 2 && indexPath.row == currentIntervalGong!) {
                 cell.accessoryType = .checkmark
             } else {
                 cell.accessoryType = .none
             }
             return cell
-        } else if indexPath.section == 2 {
+        } else if indexPath.section == 3 {
             // Static cells
             if indexPath.row == 0 {
                 var cell = tableView.dequeueReusableCell(withIdentifier: PropertyKeys.setSound1TableViewCellIdentifier) as? SetSound1TableViewCell
@@ -112,6 +113,11 @@ class SettingsGongTableViewController: ThemedTableViewController, SetSoundTableV
             delegate?.setGong(indexPath.row, for: PropertyKeys.settingsGongEndSegue)
             currentEndGong = indexPath.row
             playSound = currentEndGong!
+        } else if indexPath.section == 2 {
+            // Interval sound
+            delegate?.setGong(indexPath.row, for: PropertyKeys.settingsGongIntervalSegue)
+            currentIntervalGong = indexPath.row
+            playSound = currentIntervalGong!
         } else {
             return
         }
@@ -129,13 +135,15 @@ class SettingsGongTableViewController: ThemedTableViewController, SetSoundTableV
         } else if section == 1 {
             return "End Sound"
         } else if section == 2 {
+            return "Interval Sound"
+        } else if section == 3 {
             // return "Use System Sound Volume"
         }
         return nil
     }
     
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        if section == 2 && !useSystemSound {
+        if section == 3 && !useSystemSound {
             return "Note: Due to system limitations, an exact volume level independent of the system volume can't be guaranteed. This is only an approximation."
         }
         return nil

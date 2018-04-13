@@ -160,6 +160,14 @@ class MeditationViewController: ThemedViewController {
                     stop()
                 }
             }
+            // Play Interval Gong if applicable
+            let intervalGong = userDefaults.integer(forKey: DefaultsKeys.intervalGong)
+            let intervalTime = userDefaults.integer(forKey: DefaultsKeys.intervalTime)
+            if intervalGong != 0 && intervalTime > 0 && Int(timeMeditated) % (intervalTime*60) == 0 && remainingTime > 0.0 {
+                print("Playing Interval Gong")
+                AudioHelper.shared.stop()
+                AudioHelper.shared.play(intervalGong)
+            }
         }
     }
     

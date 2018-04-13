@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14087.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14075.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -1164,6 +1164,27 @@ http://soundbible.com/128-Metal-Gong.html</string>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Interval Time" id="bHG-ke-arl">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="tzw-0j-vQw">
+                                        <rect key="frame" x="0.0" y="255.5" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tzw-0j-vQw" id="PSX-IO-tkg">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <pickerView tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UKm-Ax-UaY">
+                                                    <rect key="frame" x="0.0" y="-86" width="320" height="216"/>
+                                                </pickerView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="UKm-Ax-UaY" firstAttribute="centerY" secondItem="PSX-IO-tkg" secondAttribute="centerY" id="PUl-WX-FF9"/>
+                                                <constraint firstItem="UKm-Ax-UaY" firstAttribute="centerX" secondItem="PSX-IO-tkg" secondAttribute="centerX" id="inQ-jT-0sW"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="ccP-84-jI2" id="uqO-pW-6UC"/>
@@ -1172,6 +1193,7 @@ http://soundbible.com/128-Metal-Gong.html</string>
                     </tableView>
                     <navigationItem key="navigationItem" id="a1H-X3-Llx"/>
                     <connections>
+                        <outlet property="intervalTimePicker" destination="UKm-Ax-UaY" id="rte-xe-TNt"/>
                         <outlet property="meditationTimePicker" destination="ORy-6T-48N" id="h3B-iR-vXw"/>
                         <outlet property="preparationTimePicker" destination="CcS-Pi-K8J" id="r5A-WS-39f"/>
                     </connections>

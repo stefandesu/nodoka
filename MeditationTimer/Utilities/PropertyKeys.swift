@@ -15,6 +15,7 @@ struct PropertyKeys {
     static let editDurationsSegue = "editDurations"
     static let settingsGongStartSegue = "settingsGongStart"
     static let settingsGongEndSegue = "settingsGongEnd"
+    static let settingsGongIntervalSegue = "settingsGongInterval"
     static let settingsGongCellIdentifier = "settingsGongCell"
     static let settingsThemeSegue = "settingsTheme"
     static let settingsThemeCellIdentifier = "settingsThemeCell"
@@ -22,6 +23,7 @@ struct PropertyKeys {
     static let settingsDurationSegue = "settingsDuration"
     static let preparationPickerTag = 0
     static let meditationPickerTag = 1
+    static let intervalPickerTag = 2
     static let setSound1TableViewCellIdentifier = "setSound1TableViewCell"
     static let setSound2TableViewCellIdentifier = "setSound2TableViewCell"
     // Storyboards
