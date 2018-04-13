@@ -17,7 +17,8 @@ class AudioHelper: NSObject, AVAudioPlayerDelegate {
                                   2: "Zen Bell",
                                   3: "Soft",
                                   4: "Metal",
-                                  5: "Strong"]
+                                  5: "Strong",
+                                  6: "Owl"]
     static let audioQueue = DispatchQueue(label: "audioQueue", attributes: .concurrent)
     
     var sounds: [Int: AVAudioPlayer?] = [0: nil]

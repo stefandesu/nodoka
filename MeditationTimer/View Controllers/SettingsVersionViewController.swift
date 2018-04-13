@@ -43,6 +43,7 @@ class SettingsVersionViewController: ThemedViewController {
         - Sounds (Default, Soft, Strong) by [Omachronic on Freesound.org](https://freesound.org/people/Omachronic/packs/8156/)
         - Sound (Zen) by [Mike Koenig](http://soundbible.com/1491-Zen-Buddhist-Temple-Bell.html)
         - Sound (Metal) by [Mike Koenig](http://soundbible.com/128-Metal-Gong.html)
+        - Sound (Owl) by [Benboncan](https://freesound.org/s/63220/)
         - Font Awesome by [Dave Gandy](http://fontawesome.io) (via [FontAwesome.swift](https://github.com/thii/FontAwesome.swift))
         - Markdown parser for this text view: [Haring](https://github.com/davidlari/Haring)
         - Tooltip at first launch: [EasyTipView](https://github.com/teodorpatras/EasyTipView)
