@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F819490220BF2E7C007051C6 /* TelegramToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F819490120BF2E7C007051C6 /* TelegramToken.swift */; };
+		F819490420BF2FA5007051C6 /* TelegramToken.swift.sample in Sources */ = {isa = PBXBuildFile; fileRef = F819490320BF2FA5007051C6 /* TelegramToken.swift.sample */; };
 		F8269AAB1FD4734E00471A39 /* FeedbackHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8269AAA1FD4734E00471A39 /* FeedbackHelper.swift */; };
 		F8269AAD1FD479C000471A39 /* FeedbackTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8269AAC1FD479C000471A39 /* FeedbackTableView.swift */; };
 		F8269AB01FD4AB0900471A39 /* SetSound1TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8269AAE1FD4AB0900471A39 /* SetSound1TableViewCell.swift */; };
@@ -49,6 +51,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F819490120BF2E7C007051C6 /* TelegramToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelegramToken.swift; sourceTree = "<group>"; };
+		F819490320BF2FA5007051C6 /* TelegramToken.swift.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TelegramToken.swift.sample; sourceTree = "<group>"; };
 		F8269AAA1FD4734E00471A39 /* FeedbackHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackHelper.swift; sourceTree = "<group>"; };
 		F8269AAC1FD479C000471A39 /* FeedbackTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackTableView.swift; sourceTree = "<group>"; };
 		F8269AAE1FD4AB0900471A39 /* SetSound1TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSound1TableViewCell.swift; sourceTree = "<group>"; };
@@ -144,6 +148,8 @@
 				F8CE06C01FCDD5900000CEAA /* AudioHelper.swift */,
 				F881AF541FD06C6400941850 /* HealthKitHelper.swift */,
 				F8CE06BA1FCDCBC60000CEAA /* PropertyKeys.swift */,
+				F819490120BF2E7C007051C6 /* TelegramToken.swift */,
+				F819490320BF2FA5007051C6 /* TelegramToken.swift.sample */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -348,6 +354,7 @@
 			files = (
 				F881AF591FD0AB5B00941850 /* SettingsAdvancedTableViewController.swift in Sources */,
 				F8269AB51FD4B42F00471A39 /* SetSound2TableViewCell.swift in Sources */,
+				F819490420BF2FA5007051C6 /* TelegramToken.swift.sample in Sources */,
 				F881AF571FD0AB0C00941850 /* UIScreenExtension.swift in Sources */,
 				F8D7F4E51FCCAAB600FE786B /* StartViewController.swift in Sources */,
 				F8867F591FCDB31D00A2C009 /* DefaultsKeys.swift in Sources */,
@@ -372,6 +379,7 @@
 				F8CE06C31FCDD9F80000CEAA /* SettingsTableViewController.swift in Sources */,
 				F8269AB01FD4AB0900471A39 /* SetSound1TableViewCell.swift in Sources */,
 				F8BDC6851FDD848A00E4541E /* ImageHelper.swift in Sources */,
+				F819490220BF2E7C007051C6 /* TelegramToken.swift in Sources */,
 				F8269AAB1FD4734E00471A39 /* FeedbackHelper.swift in Sources */,
 				F8F19E761FD80E2000E60CC2 /* FontHelper.swift in Sources */,
 				F84E7F6A1FCF5C2D00BF9320 /* ThemedViewController.swift in Sources */,

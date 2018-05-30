@@ -67,7 +67,7 @@ class FeedbackHelper: TelegramHelperDelegate {
 //userDefaults.set(true, forKey: DefaultsKeys.feedbackNotSent)
 
 class TelegramHelper {
-    static let endpointURL = URL(string: "https://api.telegram.org/bot***REMOVED***/sendMessage")
+    static let endpointURL = URL(string: "https://api.telegram.org/bot\(TelegramToken.token)/sendMessage")
     
     static func send(message: String, delegate: TelegramHelperDelegate?) {
         guard let endpointURL = endpointURL else { delegate?.telegramResponse(success: false); return }

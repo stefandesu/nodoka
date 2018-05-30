@@ -1,0 +1,11 @@
+//
+//  TelegramToken.swift
+//  MeditationTimer
+//
+//  Created by Stefan Peters on 30.05.18.
+//  Copyright © 2018 Stefan Peters. All rights reserved.
+//
+
+struct TelegramToken {
+    static let token = "123456789:abcdefghijklmnopqrstuvwxyz"
+}
