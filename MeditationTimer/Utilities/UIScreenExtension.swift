@@ -24,7 +24,9 @@ extension UIScreen {
                 blockOperation.addExecutionBlock({
                     if !_unownedOperation.isCancelled {
                         Thread.sleep(forTimeInterval: 1 / 60.0)
-                        self?.brightness = value
+                        DispatchQueue.main.async {
+                            self?.brightness = value
+                        }
                     }
                 })
                 return blockOperation

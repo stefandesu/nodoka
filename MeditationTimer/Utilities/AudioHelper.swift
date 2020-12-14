@@ -27,7 +27,7 @@ class AudioHelper: NSObject, AVAudioPlayerDelegate {
     static func setAudioSession(to status: Bool) {
         // make sure sound plays even on mute
         do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
             do {
                 try AVAudioSession.sharedInstance().setActive(status)
             } catch _ as NSError {
@@ -100,4 +100,9 @@ class AudioHelper: NSObject, AVAudioPlayerDelegate {
         }
     }
 
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromAVAudioSessionCategory(_ input: AVAudioSession.Category) -> String {
+	return input.rawValue
 }

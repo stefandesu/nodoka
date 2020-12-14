@@ -98,13 +98,13 @@ class SettingsDurationTableViewController: ThemedTableViewController, UIPickerVi
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         if pickerView.tag == PropertyKeys.preparationPickerTag {
             // Preparation time picker
-            return NSAttributedString(string: preparationTimeList[row], attributes: [NSAttributedStringKey.foregroundColor: Theme.currentTheme.text])
+            return NSAttributedString(string: preparationTimeList[row], attributes: [NSAttributedString.Key.foregroundColor: Theme.currentTheme.text])
         } else if pickerView.tag == PropertyKeys.meditationPickerTag {
             // Meditation time picker
-            return NSAttributedString(string: meditationTimeList[row], attributes: [NSAttributedStringKey.foregroundColor: Theme.currentTheme.text])
+            return NSAttributedString(string: meditationTimeList[row], attributes: [NSAttributedString.Key.foregroundColor: Theme.currentTheme.text])
         } else {
             // Interval time picker
-            return NSAttributedString(string: intervalTimeList[row], attributes: [NSAttributedStringKey.foregroundColor: Theme.currentTheme.text])
+            return NSAttributedString(string: intervalTimeList[row], attributes: [NSAttributedString.Key.foregroundColor: Theme.currentTheme.text])
         }
     }
     

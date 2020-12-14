@@ -34,7 +34,7 @@ class ThemedTableViewController: UITableViewController {
         // Navigation bar background (bar tint) color
         navigationController?.navigationBar.barTintColor = Theme.currentTheme.nagivationBar
         // Navigation bar title text color
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: Theme.currentTheme.text]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Theme.currentTheme.text]
         // Navigation bar button (tint) color
         navigationController?.navigationBar.tintColor = Theme.currentTheme.accent
         // Refresh table

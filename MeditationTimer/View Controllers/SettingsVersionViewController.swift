@@ -85,7 +85,7 @@ class SettingsVersionViewController: ThemedViewController {
         let markdownParser = MarkdownParser(font: UIFont.systemFont(ofSize: 15), color: Theme.currentTheme.text)
         markdownParser.link.color = Theme.currentTheme.accent
         markdownParser.automaticLinkDetectionEnabled = false
-        aboutTextView.linkTextAttributes = [ NSAttributedStringKey.foregroundColor.rawValue: Theme.currentTheme.accent ]
+        aboutTextView.linkTextAttributes = convertToOptionalNSAttributedStringKeyDictionary([ NSAttributedString.Key.foregroundColor.rawValue: Theme.currentTheme.accent ])
         aboutTextView.attributedText = markdownParser.parse(markdown)
         aboutTextView.backgroundColor = UIColor.clear
     }
@@ -100,8 +100,19 @@ extension SettingsVersionViewController: UITextViewDelegate {
     
     func textView(_ textView: UITextView, shouldInteractWith URL: URL,
                   in characterRange: NSRange) -> Bool {
-        UIApplication.shared.open(URL, options: [:], completionHandler: nil)
+        UIApplication.shared.open(URL, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
         return false
     }
     
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {
+	guard let input = input else { return nil }
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

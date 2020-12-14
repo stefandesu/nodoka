@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let userDefaults = UserDefaults.standard
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         // Set userDefaults standard values
@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
         
         // Set status bar to white
-        UIApplication.shared.statusBarStyle = Theme.currentTheme.statusBar
+//        UIApplication.shared.statusBarStyle = Theme.currentTheme.statusBar
         
         // Force initialization of shared AudioHelper instance
         AudioHelper.shared.stop()

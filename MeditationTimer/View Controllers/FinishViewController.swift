@@ -21,7 +21,7 @@ class FinishViewController: ThemedViewController {
         super.viewDidLoad()
         
         // restore view alpha
-        UIView.animate(withDuration: 3, delay: 0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+        UIView.animate(withDuration: 3, delay: 0, options: UIView.AnimationOptions.curveEaseInOut, animations: {
             self.view.alpha = 1.0
         }, completion: nil)
 
@@ -60,7 +60,7 @@ class FinishViewController: ThemedViewController {
         // Prepare transition animation
         let transition = CATransition.init()
         transition.duration = 0.5
-        transition.type = kCATransitionFade
+        transition.type = CATransitionType.fade
         // Push view controller
         navigationController?.view.layer.add(transition, forKey: kCATransition)
         navigationController?.popToRootViewController(animated: false)

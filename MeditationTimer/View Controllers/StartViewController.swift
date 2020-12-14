@@ -41,9 +41,9 @@ class StartViewController: ThemedViewController {
         durationTimeLabel.text = "\(meditationTimeString)"
         
         // Set button labels
-        settingsButton.setAttributedTitle(FontHelper.generate(icon: String.fontAwesomeIcon(name: .cog), withText: " Settings", ofSize: 17, andTextColor: Theme.currentTheme.accent), for: .normal)
-        historyButton.setAttributedTitle(FontHelper.generate(icon: String.fontAwesomeIcon(name: .history), withText: " History", ofSize: 17, andTextColor: Theme.currentTheme.accent), for: .normal)
-        changeDurationButton.setAttributedTitle(FontHelper.generate(icon: String.fontAwesomeIcon(name: .pencilSquare), withText: "", ofSize: 30, andTextColor: Theme.currentTheme.accent), for: .normal)
+        settingsButton.setAttributedTitle(FontHelper.generate(icon: String.fontAwesomeIcon(name: .cog), withText: " Settings", ofSize: 17, andTextColor: Theme.currentTheme.accent, style: .solid), for: .normal)
+        historyButton.setAttributedTitle(FontHelper.generate(icon: String.fontAwesomeIcon(name: .history), withText: " History", ofSize: 17, andTextColor: Theme.currentTheme.accent, style: .solid), for: .normal)
+        changeDurationButton.setAttributedTitle(FontHelper.generate(icon: String.fontAwesomeIcon(name: .penSquare), withText: "", ofSize: 25, andTextColor: Theme.currentTheme.accent, style: .solid), for: .normal)
         
         navigationController?.setNavigationBarHidden(true, animated: true)
         
@@ -101,7 +101,7 @@ class StartViewController: ThemedViewController {
             // Prepare transition animation
             let transition = CATransition.init()
             transition.duration = 0.5
-            transition.type = kCATransitionFade
+            transition.type = CATransitionType.fade
             // Push view controller
             navigationController?.view.layer.add(transition, forKey: kCATransition)
             navigationController?.pushViewController(destination, animated: false)

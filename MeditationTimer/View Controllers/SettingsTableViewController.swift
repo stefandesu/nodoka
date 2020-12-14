@@ -27,6 +27,8 @@ class SettingsTableViewController: ThemedTableViewController, HealthKitHelperDel
         case .notDetermined:
             statusText = "Nodoka can write mindfulness data to the Health app. Enabling Health app integration will ask you for system permission."
             enabled = false
+        @unknown default:
+            fatalError("Unknown HealthKit authorization status.")
         }
         DispatchQueue.main.async {
             self.setHealth(enabled: enabled, status: statusText)
@@ -73,7 +75,7 @@ class SettingsTableViewController: ThemedTableViewController, HealthKitHelperDel
         super.viewWillDisappear(animated)
         
         NotificationCenter.default.removeObserver(self,
-              name: .UIApplicationDidBecomeActive,
+              name: UIApplication.didBecomeActiveNotification,
               object: nil)
     }
     
@@ -82,7 +84,7 @@ class SettingsTableViewController: ThemedTableViewController, HealthKitHelperDel
         
         NotificationCenter.default.addObserver(self,
             selector: #selector(applicationDidBecomeActive),
-            name: .UIApplicationDidBecomeActive,
+            name: UIApplication.didBecomeActiveNotification,
             object: nil)
         
         refreshView()
@@ -134,7 +136,7 @@ class SettingsTableViewController: ThemedTableViewController, HealthKitHelperDel
             setHealth(enabled: true, status: nil)
             isCurrentlyAuthorizingHealthKit = true
             HealthKitHelper.healthQueue.async {
-                _ = HealthKitHelper.shared.authorizeHealthKit(delegate: self)
+                HealthKitHelper.shared.authorizeHealthKit(delegate: self)
             }
         } else {
             setHealth(enabled: false, status: nil)
@@ -143,7 +145,7 @@ class SettingsTableViewController: ThemedTableViewController, HealthKitHelperDel
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        NotificationCenter.default.removeObserver(self, name: .UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
         guard let identifier = segue.identifier else { return }
         if identifier == PropertyKeys.settingsGongStartSegue {
             if let destination = segue.destination as? SettingsGongTableViewController {
@@ -182,7 +184,7 @@ class SettingsTableViewController: ThemedTableViewController, HealthKitHelperDel
     func setTheme(_ theme: String) {
         userDefaults.set(theme, forKey: DefaultsKeys.theme)
         updateLabels()
-        UIApplication.shared.statusBarStyle = Theme.currentTheme.statusBar
+        setNeedsStatusBarAppearanceUpdate()
     }
     func setHealth(enabled: Bool, status: String?) {
         healthKitEnabled = enabled
@@ -190,6 +192,10 @@ class SettingsTableViewController: ThemedTableViewController, HealthKitHelperDel
         userDefaults.set(enabled, forKey: DefaultsKeys.healthKitEnabled)
         updateLabels()
         tableView.reloadData()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return Theme.currentTheme.statusBar
     }
 
     override func didReceiveMemoryWarning() {

@@ -28,8 +28,8 @@ class MeditationViewController: ThemedViewController {
     @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var stopButton: UIButton!
-    let pauseAttributedTitle = FontHelper.generate(icon: String.fontAwesomeIcon(name: .pause), withText: "", ofSize: 48, andTextColor: Theme.currentTheme.accent)
-    let continueAttributedTitle = FontHelper.generate(icon: String.fontAwesomeIcon(name: .play), withText: "", ofSize: 48, andTextColor: Theme.currentTheme.accent)
+    let pauseAttributedTitle = FontHelper.generate(icon: String.fontAwesomeIcon(name: .pause), withText: "", ofSize: 40, andTextColor: Theme.currentTheme.accent, style: .solid)
+    let continueAttributedTitle = FontHelper.generate(icon: String.fontAwesomeIcon(name: .play), withText: "", ofSize: 40, andTextColor: Theme.currentTheme.accent, style: .solid)
     
     override var owlImageVariant: ImageVariant {
         if preparationTime > 0 && !timer.isValid {
@@ -61,7 +61,7 @@ class MeditationViewController: ThemedViewController {
         
         // Set up button titles
         pauseButton.setAttributedTitle(pauseAttributedTitle, for: .normal)
-        stopButton.setAttributedTitle(FontHelper.generate(icon: "", withText: "Stop", ofSize: 15, andTextColor: Theme.currentTheme.accent), for: .normal)
+        stopButton.setAttributedTitle(FontHelper.generate(icon: "", withText: "Stop", ofSize: 15, andTextColor: Theme.currentTheme.accent, style: .solid), for: .normal)
         
         // Put tab gesture recognizer on owl
         owlImage?.isUserInteractionEnabled = true
@@ -124,7 +124,6 @@ class MeditationViewController: ThemedViewController {
     }
     
     @objc func timerTick() {
-        print("Timer Tick (\(preparationTime), \(remainingTime), \(timeMeditated))")
         
         // Fade info label after a while
         if timeUntilInfoFade >= 1 {
@@ -249,15 +248,15 @@ class MeditationViewController: ThemedViewController {
     
     func removeNoficationObserver() {
         // Remove notification observers
-        NotificationCenter.default.removeObserver(self, name: .UIApplicationWillResignActive, object: nil)
-        NotificationCenter.default.removeObserver(self, name: .UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIApplication.willResignActiveNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
         
     }
     
     func addNotificationOberserver() {
         // Set up enter background and became active notifications
-        NotificationCenter.default.addObserver(self, selector: #selector(appDidEnterBackground), name: .UIApplicationWillResignActive, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(appDidBecomeActive), name: .UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(appDidEnterBackground), name: UIApplication.willResignActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(appDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -310,7 +309,7 @@ class MeditationViewController: ThemedViewController {
         // Prepare transition animation
         let transition = CATransition.init()
         transition.duration = 0.5
-        transition.type = kCATransitionFade
+        transition.type = CATransitionType.fade
         // Push view controller
         navigationController?.view.layer.add(transition, forKey: kCATransition)
     }
